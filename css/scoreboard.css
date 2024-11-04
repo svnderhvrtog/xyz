@@ -46,6 +46,7 @@ h5 {
     font-style: italic;
     font-size: 32px;
     padding-left: 12px;
+    padding-right: 12px;
     margin-top: 0px;
 }
 
@@ -72,11 +73,8 @@ a {
 }
   
 .return {
-    grid-area: 2 / 1 / 3 / 6;
-    margin-top: 75%;
-    align-items: center;
-    text-align: center;
-    padding: 0;
+    margin-left: 90%;
+    margin-top: 40%;
 }
 
 .home,
@@ -116,7 +114,7 @@ a {
     font-family: "Cursed Timer ULiL", sans-serif;
 }
   
-.reset-btn{
+.reset-btn {
     letter-spacing: 0.125em;
 }
   
@@ -124,9 +122,8 @@ a {
     transform: scale(0.96);
 }
 
-.item {
+.item-score {
     display: flex;
-    padding-left: 80%;
 }
 
 .return:hover {
@@ -144,13 +141,14 @@ a {
         margin: 8em;
     }
 
-    .item {
-        display: flex;
-        padding-left: 13%;
+    .item-score {
+        margin-top: 10%;
+        margin-left: 13%;
     }
 
     .return {
-        margin-top: 20%;
+        display: block;
+        margin-left: 0%;
+        margin-top: 10%;
     }
 }
-
