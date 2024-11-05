@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <title>Sander Hartog - Blackjack XYZ</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Push your luck in a game of Blackjack, feel the excitement build as you aim to reach 21 without busting: by Sander Hartog (XYZ).">
+    <meta name="keywords" content="Front-end, Developer, Sander, Hartog, Blackjack, XYZ, 21">
+    <meta name="author" content="Sander Hartog">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="../icons/sanderhartog_featured.jpg">
+    <link rel="icon" href="../icons/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/blackjack.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h1>Blackjack</h1>
+        <p id="message-el">Want to play a round?</p>
+        <div class="center">
+            <button id="start-game">Start</button>
+            <button id="explainer">How it works</button>
+            <button id="new-card">New Card</button>
+        </div>
+        <p id="cards-el">Cards:</p>
+        <p id="sum-el">Total:</p>
+        <div class="return" id="return-button">
+            <a href="index.html">
+                <button>Return ⁰</button>
+            </a>    
+        </div>
+        <div id="explained">
+            <p class="explainer-text">Blackjack is a card game where players aim to have a hand value as close to 21 as possible, without going over. Each player is dealt two cards to start, and they can choose to "hit" (take another card) or "stand" (keep their current hand).
+            <br>
+            <br>
+            The goal is to beat the dealer’s hand without exceeding 21. If a player’s hand goes over 21, they "bust" and lose the round.</p>
+        </div>
+    </main>
+    <script src="../js/blackjack.js"></script>
+</body>

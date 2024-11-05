@@ -1,0 +1,97 @@
+/* Pre-settings */
+*::selection {
+    color: rgb(102, 150, 92);
+}
+
+/* Text */
+body {
+    background-image: url(../images/blackjack-wallpaper.png);
+    background-size: cover;
+    background-color: #232b20;
+    font-family: "Rye", serif;
+}
+
+h1 {
+    color: goldenrod;
+    text-align: center;
+    font-family: "Rye", serif;
+    font-size: 52px;
+    margin-top: 20vh;
+}
+
+p {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 24px;
+}
+
+button {
+    width: 180px;
+    font-size: 15px;
+    padding-inline: 40px;
+    padding-block: 6px;
+    background-color: #b80b0b;
+    color: whitesmoke;
+    border-radius: 10px;
+    border: #6e0707, 1px, solid;
+}
+
+/* Blackjack */
+.center {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.explainer-text {
+    padding-inline: 22%;
+}
+
+#new-card {
+    display: none;
+}
+
+#cards-el {
+    display: none;
+}
+
+#sum-el {
+    display: none;
+    margin-bottom: 6px;
+}
+
+#explainer {
+    display: block;
+}
+
+#explained {
+    display: none;
+    padding-bottom: 10vh;
+}
+
+#message-el {
+    padding-bottom: 10px;
+    padding-inline: 16px;
+}
+
+.return {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+}
+
+div {
+    font-family: "Cabin", sans-serif;
+    font-size: 24px;
+}
+
+/* Media queries */
+@media (max-width: 667px) {
+    .explainer-text {
+        padding-top: 1%;
+        padding-inline: 15%;
+    }
+}

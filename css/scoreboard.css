@@ -10,6 +10,10 @@
     padding: 0;
 }
 
+*::selection {
+    color: #ffffff50;
+}
+
 /* Text */
 body {
     background-color: #2a3048;

@@ -1,19 +1,20 @@
+/* Pre-settings */
 @font-face {
     font-family: "Pokemon";
     src:url(../font/Pokemon.ttf);
 }
 
+*::selection {
+    color: #ffffff50;
+}
+
+/* Text */
 body {
     font-family: "Pokemon";
     font-size: 16px;
     background-image: url(../images/poke-wallpaper.jpg);
     background-repeat: no-repeat;
     background-color: rgb(127, 181, 112);
-}
-
-input {
-    width: 20px;
-    height: 20px;
 }
 
 h4 {
@@ -24,11 +25,17 @@ h5 {
     font-size: 18px;
 }
 
-header {
-    padding-top: 1%;
-    padding-bottom: 2%;
+button {
+    width: 200px;
+    font-size: x-large;
+    padding-inline: 30px;
+    padding-block: 12px;
+    border: #cfcfcf6a, 3px, solid;
+    border-radius: 5px;
+    background-color: #ffffff00;
 }
 
+/* Poke */
 #introduction {
     padding-block: 20px;
     align-items: center;
@@ -37,6 +44,20 @@ header {
 
 #battle-option1, #battle-option2, #battle-option3, #battle-option4 {
     display: none;
+}
+
+header {
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.startbtn { 
+    margin-top: 50px;
+}
+
+.returnbtn {
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .selection-you {
@@ -71,23 +92,9 @@ header {
     padding-bottom: 0px;
 }
 
-button {
-    width: 200px;
-    font-size: x-large;
-    padding-inline: 30px;
-    padding-block: 12px;
-    border: #cfcfcf6a, 3px, solid;
-    border-radius: 5px;
-    background-color: #ffffff00;
-}
-
-.startbtn { 
-    margin-top: 50px;
-}
-
-.returnbtn {
-    margin-top: 10px;
-    margin-bottom: 50px;
+input {
+    width: 20px;
+    height: 20px;
 }
 
 .names {
@@ -123,7 +130,7 @@ button {
 .attacks {
     display: flex;
     gap: 0.4px;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 .attackbox {
@@ -149,7 +156,18 @@ button {
     text-align: left;
 }
 
+/* Media queries */
 @media (max-width: 992px) {
+    /* Text */
+    h4 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    /* Poke */
     .selection-you {
         display: block;
     }
@@ -160,6 +178,7 @@ button {
 
     .selection-choosematch-text {
         padding-top: 20px;
+        gap: 3%;
     }
 
     .startbtn { 
@@ -169,14 +188,6 @@ button {
     .returnbtn {
         margin-top: 10px;
         margin-bottom: 20px;
-    }
-
-    h4 {
-        font-size: 18px;
-    }
-    
-    h5 {
-        font-size: 14px;
     }
 
     .wrap {

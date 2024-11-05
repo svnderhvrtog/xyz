@@ -62,19 +62,19 @@ let vulpixHealthOne = document.getElementById('vulpixHP1');
 let vulpixHealthTwo = document.getElementById('vulpixHP2');
 
 // Sound general
-let victorySound = new Audio('../audio/victory.mp3');
+const victorySound = new Audio('../audio/victory.mp3');
 
 // Battle sound Bulbasaur
-let quickSound = new Audio('../audio/quick.mp3');
-let vineSound = new Audio('../audio/vine.mp3');
-let poisonSound = new Audio('../audio/poison.mp3');
-let leechSound = new Audio('../audio/leech.mp3');
+const quickSound = new Audio('../audio/quick.mp3');
+const vineSound = new Audio('../audio/vine.mp3');
+const poisonSound = new Audio('../audio/poison.mp3');
+const leechSound = new Audio('../audio/leech.mp3');
 
 // Battle sound Pidgey
-let tackleSound = new Audio('../audio/tackle.mp3');
-let gustSound = new Audio('../audio/gust.mp3');
-let hurricaneSound = new Audio('../audio/hurricane.mp3');
-let sandAttackSound = new Audio('../audio/sandattack.mp3');
+const tackleSound = new Audio('../audio/tackle.mp3');
+const gustSound = new Audio('../audio/gust.mp3');
+const hurricaneSound = new Audio('../audio/hurricane.mp3');
+const sandAttackSound = new Audio('../audio/sandattack.mp3');
 
 // Battle option 1
 const attackOneBvsS = document.getElementById('attack1BvsS').addEventListener('click', attackOneBvsSFunct);
