@@ -1,0 +1,478 @@
+/* Pre-settings */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*::selection{
+    color: var(--color-black);
+}
+
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-red: #FF0004;
+    --color-green: #00C91E;
+    --color-blue: #0022FF;
+}
+
+.wrapper-main {
+    width: 1200px;
+    margin: 0, auto;
+}
+
+html {
+    font-size: 100%;
+    overflow-x: hidden;
+}
+
+/* Text */
+body {
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+h4 {
+    font-family: "UnifrakturMaguntia";
+    font-weight: 100;
+    font-style: italic;
+    font-size: 32px;
+    padding-left: 12px;
+    margin-top: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+/* Background */
+.background-red {
+    background: var(--color-red);
+}
+
+/* Homepage */
+.container-workspace {
+    margin-top: 120px;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.container-items {
+    margin-top: 120px;
+    grid-area: 1 / 3 / 2 / 6;
+}
+
+.item {
+    display: flex;
+}
+
+.item:hover {
+    opacity: 70%;
+}
+
+.container-colors {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.container-data {
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+.tab-colors {
+    background-color: #ffffff40;
+    width: 150px;
+    justify-content: center;
+    padding-block: 16px;
+    display: flex;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+.dot {
+    width: 22px;
+    height: auto;
+}
+
+.tab-data {
+    background-color: #ffffff40;
+    width: 150px;
+    text-align: center;
+    padding-inline: 24px;
+    padding-block: 1px;
+    border-radius: 5px;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    padding-top: 3.2px;
+    background-color: #ffffff00;
+    border: solid;
+    border-radius: 100%;
+}
+
+/* Media queries */
+@media only screen and (max-width: 600px) {
+    /* Pre-settings */
+    .wrapper-main {
+        width: 100%;
+    }
+
+    body {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    /* Home */
+    main {
+        display: block;
+    }
+
+    h1 {
+        font-family: "UnifrakturMaguntia";
+        font-weight: 700;
+        font-style: normal;
+        font-size: 62px;
+        line-height: 95%;
+        text-align: right;
+        margin-top: 0px;
+    }
+    
+    h2 {
+        font-family: "Unbounded", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-size: 42px;
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+    }
+
+    .container-workspace {
+        margin-top: 60px;
+    }
+
+    .container-items {
+        padding-bottom: 3vh;
+    }
+
+    .container-colors {
+        padding-bottom: 2%;
+    }
+
+    .container-data {
+        padding-bottom: 5%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    /* Pre-settings */
+    .wrapper-main {
+        width: 100%;
+    }
+
+    body {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    /* Home */
+    main {
+        display: block;
+    }
+
+    h1 {
+        font-family: "UnifrakturMaguntia";
+        font-weight: 700;
+        font-style: normal;
+        font-size: 62px;
+        line-height: 95%;
+        text-align: right;
+        margin-top: 0px;
+    }
+    
+    h2 {
+        font-family: "Unbounded", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-size: 42px;
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+    }
+
+    .container-workspace {
+        margin-top: 60px;
+    }
+
+    .container-items {
+        padding-bottom: 3vh;
+    }
+
+    .container-colors {
+        padding-bottom: 2%;
+    }
+
+    .container-data {
+        padding-bottom: 5%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* Pre-settings */
+    .wrapper-main {
+        width: 100%;
+    }
+
+    body {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    /* Home */
+    main {
+        display: grid;
+        column-gap: 90px;
+        row-gap: 20vh;
+    }
+
+    h1 {
+        font-family: "UnifrakturMaguntia";
+        font-weight: 700;
+        font-style: normal;
+        font-size: 56px;
+        line-height: 95%;
+        text-align: right;
+        margin-top: 0px;
+    }
+    
+    h2 {
+        font-family: "Unbounded", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-size: 40px;
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+    }
+
+    .container-workspace {
+        margin-top: 120px;
+    }
+
+    .container-items {
+        padding-bottom: 1px;
+    }
+
+    .container-colors {
+        padding-bottom: 1px;
+    }
+
+    .container-data {
+        padding-bottom: 1px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    /* Pre-settings */
+    .wrapper-main {
+        width: 100%;
+      }
+  
+      body {
+          padding-left: 120px;
+          padding-right: 120px;
+      }
+  
+      /* Home */
+      main {
+          display: grid;
+          column-gap: 140px;
+          row-gap: 20vh;
+      }
+  
+      h1 {
+          font-family: "UnifrakturMaguntia";
+          font-weight: 700;
+          font-style: normal;
+          font-size: 72px;
+          line-height: 95%;
+          text-align: right;
+          margin-top: 0px;
+      }
+      
+      h2 {
+          font-family: "Unbounded", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-size: 58px;
+          margin-top: 0px;
+          margin-bottom: 24px;
+      }
+  
+      h3 {
+          font-family: "Unbounded", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 18px;
+      }
+}
+
+@media only screen and (min-width: 1200px) {
+    /* Pre-settings */
+    .wrapper-main {
+        width: 100%;
+      }
+  
+      body {
+          padding-left: 120px;
+          padding-right: 120px;
+      }
+  
+      /* Home */
+      main {
+          display: grid;
+          column-gap: 160px;
+          row-gap: 20vh;
+      }
+  
+      h1 {
+          font-family: "UnifrakturMaguntia";
+          font-weight: 700;
+          font-style: normal;
+          font-size: 98px;
+          line-height: 95%;
+          text-align: right;
+          margin-top: 0px;
+      }
+      
+      h2 {
+          font-family: "Unbounded", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-size: 68px;
+          margin-top: 0px;
+          margin-bottom: 24px;
+      }
+  
+      h3 {
+          font-family: "Unbounded", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 18px;
+      }
+}
+
+@media only screen and (min-width: 1440px) {
+    /* Pre-settings */
+    .wrapper-main {
+      width: 100%;
+    }
+
+    body {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    /* Home */
+    main {
+        display: grid;
+        column-gap: 200px;
+        row-gap: 20vh;
+    }
+
+    h1 {
+        font-family: "UnifrakturMaguntia";
+        font-weight: 700;
+        font-style: normal;
+        font-size: 98px;
+        line-height: 95%;
+        text-align: right;
+        margin-top: 0px;
+    }
+    
+    h2 {
+        font-family: "Unbounded", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-size: 68px;
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    /* Pre-settings */
+    .wrapper-main {
+      width: 100%;
+    }
+
+    body {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    /* Home */
+    main {
+        display: grid;
+        column-gap: 200px;
+        row-gap: 20vh;
+    }
+
+    h1 {
+        font-family: "UnifrakturMaguntia";
+        font-weight: 700;
+        font-style: normal;
+        font-size: 108px;
+        line-height: 95%;
+        text-align: right;
+        margin-top: 0px;
+    }
+    
+    h2 {
+        font-family: "Unbounded", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-size: 72px;
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+    }
+}

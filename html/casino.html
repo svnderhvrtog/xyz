@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <title>Sander Hartog - Casino XYZ</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Explore an exciting casino development project featuring popular games like blackjack, slots, and roulette. Cutting-edge gameplay for endless entertainment, by Sander Hartog (XYZ).">
+    <meta name="keywords" content="Front-end, Developer, Sander, Hartog, Casino, XYZ, Blackjack, Slots, Roulette">
+    <meta name="author" content="Sander Hartog">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Sander Hartog - Casino XYZ"/>
+    <meta property="og:description" content="Explore an exciting casino development project featuring popular games like blackjack, slots, and roulette. Cutting-edge gameplay for endless entertainment, by Sander Hartog (XYZ).">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
+    <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
+    <link rel="manifest" href="../json/manifest.webmanifest">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/casino.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body class="background background2">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BB063KRF2M');
+    </script>
+    <section id="sign-up">
+        <div class="name-input">
+            <h3>Enter your username:</h3>
+            <input id="username" type="text" name="username" placeholder="spacetraveler" style="margin-bottom: 24px;">
+        </div>
+        <div>
+            <h3>Choose your profile picture:</h3>
+            <div class="profile-container">
+                <img src="../images/casino/profile/profile1.jpg" width="200" id="profile-picture1" draggable="false">
+                <img src="../images/casino/profile/profile2.jpg" width="200" id="profile-picture2" draggable="false">
+                <img src="../images/casino/profile/profile3.jpg" width="200" id="profile-picture3" draggable="false">
+                <img src="../images/casino/profile/profile4.jpg" width="200" id="profile-picture4" draggable="false">
+            </div>
+            <div class="bet-container">
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+    </section>
+    <section id="welcome-screen">
+        <h3 id="welcome-text">Welcome user!</h3>
+        <img id="welcome-image" src="../images/casino/profile/profile1.jpg" width="200" draggable="false">
+    </section>
+    <main>
+        <header>
+            <div class="flex-row">
+                <img src="../icons/casino/blackjack-icon.png" alt="blackjack icon" width="40" height="40" class="icon">
+                <h1>Blackjack</h1>
+            </div>
+            <div class="flex-row">
+                <img id="header-profile" src="../images/casino/profile/profile1.jpg" width="40" height="40"> 
+                <h4 id="header-username"></h4>
+            </div>
+            <div class="flex-row">
+                <h4 id="total-credits">Total credits: 50 CR</h4>
+                <div id="return-button">
+                    <a href="index.html">
+                        <button class="return">Return ⁰</button>
+                    </a>    
+                </div>
+            </div>
+        </header>
+        <div class="games">
+            <div class="game" id="active1">
+                <img src="../icons/casino/blackjack-icon.png" alt="blackjack icon" width="40" height="40" class="icon" draggable="false">
+                <p class="small-text">Blackjack</p>
+            </div>
+            <div class="game">
+                <img src="../icons/casino/slots-icon.png" alt="slots icon" width="50" height="35" class="icon" draggable="false">
+                <p class="small-text">Slots</p>
+            </div>
+            <div class="game">
+                <img src="../icons/casino/roulette-icon.png" alt="roulette icon" width="50" height="40" class="icon" draggable="false">
+                <p class="small-text">Roulette</p>
+            </div>
+            <div class="game">
+                <img src="../icons/casino/rock-icon.png" alt="rock icon" width="60" height="40" class="icon" draggable="false">
+                <p class="small-text">Rock, paper, scissors</p>
+            </div>
+            <div class="game">
+                <img src="../icons/casino/more-icon.png" alt="rock icon" width="60" height="18" class="icon" draggable="false">
+                <p class="small-text">More</p>
+            </div>
+        </div>
+        <div class="overview">
+            <div>
+                <h3>Bet options</h3>
+                <div class="bet-container">
+                    <p class="smaller-text">1 CR</p>
+                    <p class="smaller-text">2 CR</p>
+                    <p class="smaller-text">5 CR</p>
+                </div>
+                <div class="bet-container">
+                    <input id="bet-one" value="1" type="radio" name="bet-option" checked>
+                    <input id="bet-two" value="2" type="radio" name="bet-option">
+                    <input id="bet-five" value="5" type="radio" name="bet-option">
+                </div>
+                <div class="bet-container">
+                    <button id="confirm">Confirm</button>
+                </div>
+            </div>
+            <div>
+                <h3>Leaderboard</h3>
+                <div class="leaderboard-container"> 
+                    <div class="leaderboard-player">
+                        <img src="../images/casino/profile/profile1.jpg" width="70" height="70" draggable="false">
+                        <div class="leaderboard-text">
+                            <h4>username</h4>
+                            <h5 class="leaderboard-h5">500 CR</h5>
+                        </div>
+                    </div>
+                    <div class="leaderboard-player">
+                        <img src="../images/casino/profile/profile1.jpg" width="70" height="70" draggable="false">
+                        <div class="leaderboard-text">
+                            <h4>username</h4>
+                            <h5 class="leaderboard-h5">500 CR</h5>
+                        </div>
+                    </div>
+                    <div class="leaderboard-player">
+                        <img src="../images/casino/profile/profile1.jpg" width="70" height="70" draggable="false">
+                        <div class="leaderboard-text">
+                            <h4>username</h4>
+                            <h5 class="leaderboard-h5">500 CR</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <section id="blackjack">
+                <h2 id="message-el">Place your bet!</h2>
+                <div class="center">
+                    <button id="explainer">How it works</button>
+                    <div class="flex-row">
+                        <button id="new-card">New Card</button>
+                        <button id="another-card">Another Card</button>
+                        <button id="keep-hand">Keep Hand</button>
+                        <button id="restart-black">Place new bet</button>
+                    </div>
+                </div>
+                <p id="cards-el">Cards:</p>
+                <div class="center-cards" id="cards-summary">
+                    <img src="" class="card" id="card-one">
+                    <img src="" class="card" id="card-two">
+                    <img src="" class="card" id="card-three"> 
+                    <img src="" class="card" id="card-four">
+                </div>
+                <p id="sum-el">Total:</p>
+                <div id="explained-black">
+                    <p class="explainer-text medium-text">
+                        How to start?
+                        <br>
+                        Place your bet in the left panel, you can choose between 1CR, 2CR or 5CR. Press the 'confirm'-button. You can now start the game Blackjack.
+                        <br>
+                        <br>
+                        Scoring
+                        <br>
+                        If you beat the dealer, you win double your bet. If you lose, you forfeit your entire bet. If your hand ties with the dealer's, the round ends in a push, and your bet is returned.
+                        <br>
+                        <br>
+                        How Blackjack works
+                        <br>
+                        Blackjack is a card game where the objective is to get a hand value as close to 21 as possible without exceeding it. You start with two cards and can choose to draw additional cards or stick with their current hand.
+                        <br>
+                        <br>
+                        The aim is to outscore the dealer without going over 21. If your hand exceeds 21, you "bust" and automatically lose the round.
+                    </p>
+                </div>
+            </section>
+            <section id="rps">
+
+            </section>
+        </section>
+    </main>
+    <script src="../js/casino.js"></script>
+    <script src="../js/cardeffect.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* Pre-settings */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    color: #ffffff50;
+}
+
+/* Text */
+body {
+    background-color: #2a3048;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h2 {
+    font-family: "Cursed Timer ULiL", sans-serif;
+    font-size: 86px;
+    text-align: center;
+    color: #f94f6d;
+    padding-top: 10px;
+}
+
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 36px;
+}
+
+h4 {
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+}
+
+h5 {
+    font-family: "UnifrakturMaguntia";
+    font-weight: 100;
+    font-style: italic;
+    font-size: 32px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Scoreboard */
+.container {
+    display: grid;
+    grid-column: auto;
+    gap: 0.5em;
+    color: #ffffff;;
+    text-align: center;
+}
+
+.home {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.guest {
+    grid-area: 1 / 3 / 2 / 6;
+}
+  
+.return {
+    margin-left: 83%;
+    margin-top: 40%;
+}
+
+.home,
+.guest {
+    width: 18em;
+    padding: 1em;
+}
+    
+.scoreboard-home,
+.scoreboard-guest {
+    width: 8.75em;
+    background-color: #080001;
+    margin: 1.25em auto;
+    border-radius: 5px;
+}
+ 
+.buttons {
+    display: flex;
+    gap: 0.4em;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.plusone-btn,
+.plustwo-btn,
+.plusthree-btn,
+.reset-btn {
+    border: 0;
+    padding: 6px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #9aabd8;
+    border: 2px solid #9aabd8;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Cursed Timer ULiL", sans-serif;
+}
+  
+.reset-btn {
+    letter-spacing: 0.125em;
+}
+  
+.buttons > button:active {
+    transform: scale(0.96);
+}
+
+.item-score {
+    display: flex;
+}
+
+.return:hover {
+    opacity: 70%;
+}
+  
+/* Media queries */
+@media (max-width: 667px) {
+    body {
+       height: 20vh;
+    }
+
+    .container {
+        display: block;
+        margin: 8em;
+    }
+
+    .item-score {
+        margin-top: 10%;
+        margin-left: 13%;
+    }
+
+    .return {
+        display: block;
+        margin-left: 0%;
+        margin-top: 10%;
+    }
+}

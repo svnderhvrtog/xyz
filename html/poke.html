@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <title>Sander Hartog - Poké XYZ</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Pokémon Battle Simulator: Choose a Pokémon and outsmart the challenger, by Sander Hartog (XYZ).">
+    <meta name="keywords" content="Front-end, Developer, Sander, Hartog, Portfolio, Pokémon, Workspace, Battle Simulator">
+    <meta name="author" content="Sander Hartog">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Sander Hartog - Poké XYZ"/>
+    <meta property="og:description" content="Pokémon Battle Simulator: Choose a Pokémon and outsmart the challenger, by Sander Hartog (XYZ).">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
+    <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
+    <link rel="manifest" href="../json/manifest.webmanifest">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/poke.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Unbounded:wght@200..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cursed-timer-ulil">
+</head>
+
+<body>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BB063KRF2M');
+    </script>
+    <!--Introduction-->
+    <section id="introduction">
+        <header>
+            <h1>POKEMON BATTLE</h1>
+            <img src="../icons/poke/poke-pokeball.png" width="60px">
+        </header>
+        <h2>CHOOSE A MATCH</h2>
+        <div class="selection-choosematch-text">
+            <h2>You</h2>
+            <h2>Challenger</h2>
+        </div>
+        <div class="selection-choosematch">
+            <div class="selection-you">
+                <div class="selection-option">
+                    <img src="../icons/poke/poke-bulbasaur.png" width="140px">
+                    <h3>Bulbasaur</h3>
+                    <input type="radio" name="selection-you-name" value="bulbasaur" checked>
+                </div>
+                <div class="selection-option">
+                    <img src="../icons/poke/poke-pidgey.png" width="140px">
+                    <h3>Pidgey</h3>
+                    <input type="radio" name="selection-you-name" value="pidgey">
+                </div>
+            </div>
+            <h2>VS</h2>
+            <div class="selection-cpu">
+                <div class="selection-option">
+                    <img src="../icons/poke/poke-squirtle.png" width="140px">
+                    <h3>Squirtle</h3>
+                    <input type="radio" name="selection-cpu-name" value="squirtle" checked>
+                </div>
+                <div class="selection-option">
+                    <img src="../icons/poke/poke-vulpix.png" width="140px">
+                    <h3>Vulpix</h3>
+                    <input type="radio" name="selection-cpu-name" value="vulpix">
+                </div>
+            </div>
+        </div>
+            <button id="start-button" class="startbtn">START BATTLE</button>
+            <br>
+            <a href="index.html">
+                <button class="returnbtn">RETURN ⁰</button>
+            </a>
+    </section>
+    <!--Battle 1-->
+    <section id="battle-option1">
+        <section class="wrap">
+            <div class="center">
+                <div class="names">
+                <h4>You</h4>
+                <h4>-</h4>
+                <h4>Bulbasaur</h4>
+                </div>
+                <h4 class="exclude" id="bulbasaurHP1">HP</h4>
+                <img src="../icons/poke/poke-bulbasaur.png" width="140px">
+            </div> 
+
+            <div class="center">
+                <div class="names">
+                <h4>Challenger</h4>
+                <h4>-</h4>
+                <h4>Squirtle</h4>
+                </div>
+                <h4 class="exclude" id="squirtleHP1">HP</h4>
+                <img src="../icons/poke/poke-squirtle.png" width="140px">
+            </div>
+
+            <div class="log">
+                <p>Log</p>
+                <p id="logtext1"></p>
+            </div>
+        </section>
+        <section class="attacks">
+                <div class="attackbox" id="attack1BvsS">
+                    <h4>Quick Attack</h4>
+                    <h5 id="attackCounter1BvsS">10/10</h5>
+                </div>
+                <div class="attackbox" id="attack2BvsS">
+                    <h4>Vine Whip</h4>
+                    <h5 id="attackCounter2BvsS">3/3</h5>
+                </div>
+                <div class="attackbox" id="attack3BvsS">
+                    <h4>Poison Powder</h4>
+                    <h5 id="attackCounter3BvsS">1/1</h5>
+                </div>
+                <div class="attackbox" id="attack4BvsS">
+                    <h4>Leech Life</h4>
+                    <h5 id="attackCounter4BvsS">3/3</h5>
+                </div>
+        </section>
+    </section>
+    <!--Battle 2-->
+    <section id="battle-option2">
+        <section class="wrap">
+            <div class="center">
+                <div class="names">
+                <h4>You</h4>
+                <h4>-</h4>
+                <h4>Bulbasaur</h4>
+                </div>
+                <h4 class="exclude" id="bulbasaurHP2">HP</h4>
+                <img src="../icons/poke/poke-bulbasaur.png" width="140px">
+            </div> 
+
+            <div class="center">
+                <div class="names">
+                <h4>Challenger</h4>
+                <h4>-</h4>
+                <h4>Vulpix</h4>
+                </div>
+                <h4 class="exclude" id="vulpixHP1">HP</h4>
+                <img src="../icons/poke/poke-vulpix.png" width="140px">
+            </div>
+
+            <div class="log">
+                <p>Log</p>
+                <p id="logtext2"></p>
+            </div>
+        </section>
+        <section class="attacks">
+            <div class="attackbox" id="attack1BvsV">
+                <h4>Quick Attack</h4>
+                <h5 id="attackCounter1BvsV">10/10</h5>
+            </div>
+            <div class="attackbox" id="attack2BvsV">
+                <h4>Vine Whip</h4>
+                <h5 id="attackCounter2BvsV">3/3</h5>
+            </div>
+            <div class="attackbox" id="attack3BvsV">
+                <h4>Poison Powder</h4>
+                <h5 id="attackCounter3BvsV">1/1</h5>
+            </div>
+            <div class="attackbox" id="attack4BvsV">
+                <h4>Leech Life</h4>
+                <h5 id="attackCounter4BvsV">3/3</h5>
+            </div>
+        </section>
+    </section>
+    <!--Battle 3-->
+    <section id="battle-option3">
+        <section class="wrap">
+            <div class="center">
+                <div class="names">
+                <h4>You</h4>
+                <h4>-</h4>
+                <h4>Pidgey</h4>
+                </div>
+                <h4 class="exclude" id="pidgeyHP1">HP</h4>
+                <img src="../icons/poke/poke-pidgey.png" width="140px">
+            </div> 
+
+            <div class="center">
+                <div class="names">
+                <h4>Challenger</h4>
+                <h4>-</h4>
+                <h4>Squirtle</h4>
+                </div>
+                <h4 class="exclude" id="squirtleHP2">HP</h4>
+                <img src="../icons/poke/poke-squirtle.png" width="140px">
+            </div>
+
+            <div class="log">
+                <p>Log</p>
+                <p id="logtext3"></p>
+            </div>
+        </section>
+        <section class="attacks">
+                <div class="attackbox" id="attack1PvsS">
+                    <h4>Tackle</h4>
+                    <h5 id="attackCounter1PvsS">5/5</h5>
+                </div>
+                <div class="attackbox" id="attack2PvsS">
+                    <h4>Gust</h4>
+                    <h5 id="attackCounter2PvsS">5/5</h5>
+                </div>
+                <div class="attackbox" id="attack3PvsS">
+                    <h4>Hurricane</h4>
+                    <h5 id="attackCounter3PvsS">3/3</h5>
+                </div>
+                <div class="attackbox" id="attack4PvsS">
+                    <h4>Sand Attack</h4>
+                    <h5 id="attackCounter4PvsS">3/3</h5>
+                </div>
+        </section>
+    </section>
+    <!--Battle 4-->
+    <section id="battle-option4">
+        <section class="wrap">
+            <div class="center">
+                <div class="names">
+                <h4>You</h4>
+                <h4>-</h4>
+                <h4>Pidgey</h4>
+                </div>
+                <h4 class="exclude" id="pidgeyHP2">HP</h4>
+                <img src="../icons/poke/poke-pidgey.png" width="140px">
+            </div> 
+
+            <div class="center">
+                <div class="names">
+                <h4>Challenger</h4>
+                <h4>-</h4>
+                <h4>Vulpix</h4>
+                </div>
+                <h4 class="exclude" id="vulpixHP2">HP</h4>
+                <img src="../icons/poke/poke-vulpix.png" width="140px">
+            </div>
+
+            <div class="log">
+                <p>Log</p>
+                <p id="logtext4"></p>
+            </div>
+        </section>
+        <section class="attacks">
+                <div class="attackbox" id="attack1PvsV">
+                    <h4>Tackle</h4>
+                    <h5 id="attackCounter1PvsV">5/5</h5>
+                </div>
+                <div class="attackbox" id="attack2PvsV">
+                    <h4>Gust</h4>
+                    <h5 id="attackCounter2PvsV">5/5</h5>
+                </div>
+                <div class="attackbox" id="attack3PvsV">
+                    <h4>Hurricane</h4>
+                    <h5 id="attackCounter3PvsV">3/3</h5>
+                </div>
+                <div class="attackbox" id="attack4PvsV">
+                    <h4>Sand Attack</h4>
+                    <h5 id="attackCounter4PvsV">3/3</h5>
+                </div>
+        </section>
+    </section>
+<script src="../js/poke.js"></script>
+</body>
+</html>

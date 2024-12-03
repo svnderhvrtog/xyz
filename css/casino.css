@@ -1,0 +1,380 @@
+/* Pre-settings */
+*::selection {
+    color: rgb(197, 160, 207);
+}
+
+:root {
+    --color-white: #ffffff;
+}
+
+/* Text */
+body {
+    background-size: auto;
+    font-family: "Quantico", sans-serif;
+}
+
+.background {
+    background-color: #080321;
+}
+
+.background2 {
+    background-image: url(../images/casino/sign-up/wormhole1.png);
+    background-size: cover;
+}
+
+main {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 24px;
+    margin-top: 24px;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-areas:
+    "hd hd hd hd hd hd hd hd hd hd"
+    "games overview overview content content content content content content content"
+}
+
+header {
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
+    border-radius: 24px;
+    padding-inline: 16px;
+    margin-bottom: 16px;
+    width: 98%;
+    height: auto;
+    grid-area: hd;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.icon {
+    padding-top: 10%;
+    padding-left: 2%;
+    align-content: center;
+    text-align: center;
+}
+
+.content {
+    background-image: url(../images/casino/background-blackjack.jpg);
+    margin: 10px;
+    border-radius: 10px;
+    border: solid #ffffff93 0.1px;
+    height: 628px;
+    grid-area: content;
+}
+
+h1 {
+    color: var(--color-white);
+    text-align: center;
+    font-family: "Quantico", sans-serif;
+    font-size: 36px;
+}
+
+h2 {
+    color: var(--color-white);
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+}
+
+h3 {
+    color: var(--color-white);
+    font-weight: 700;
+    text-align: center;
+    font-size: 24px;
+}
+
+h4 {
+    color: var(--color-white);
+    font-weight: 700;
+    text-align: center;
+    font-size: 16px;
+}
+
+h5 {
+    color: var(--color-white);
+    font-weight: 700;
+    text-align: center;
+    font-size: 12px;
+}
+
+p {
+    color: var(--color-white);
+    font-weight: 700;
+    text-align: center;
+    font-size: 24px;
+}
+
+button {
+    width: 180px;
+    font-size: 15px;
+    padding-inline: 40px;
+    padding-block: 16px;
+    background-color: #09012260;
+    color: #efefef;
+    border-radius: 10px;
+    border: solid #393431 1px;
+}
+
+button:hover {
+    border: solid #9333B4 1px;
+}
+
+input[type="radio"] {
+    width: 24px;
+    height: 24px;
+    background-color: #09012260;
+    border: solid #393431 1px;
+    appearance: none;
+    outline: none;
+}
+
+input[type="radio"]:not(:disabled):checked {
+    background-color: #9333B4;
+}
+
+input[type="radio"]:disabled {
+    background-color: #3934313a;
+    border: solid #3934313a 1px;
+  }
+
+#header-profile {
+    padding-top: 9%;
+}
+
+.return {
+    border-radius: 40px;
+    width: 120px;
+    padding-inline: 16px;
+    padding-block: 16px;
+    background-color: #9333B4;
+}
+
+.games {
+    text-align: center;
+    align-items: center;
+    /* width: 60%; */
+    padding-top: 36px;
+    margin-right: 16px;
+    padding: 24px;
+    background-color: #1D0E35;
+    border-radius: 10px;
+    gap: 36px;
+    grid-area: games;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    /* height: 74.8vh;  */
+    height: 580px;
+}
+
+.game:hover {
+    opacity: 65%;
+}
+
+.small-text {
+    font-size: 12px;
+}
+
+.smaller-text {
+    font-size: 14px;
+}
+
+.medium-text {
+    font-size: 16px;
+}
+
+.overview {
+    /* width: 278px; */
+    margin-right: 8px;
+    background-color: #1D0E35;
+    border-radius: 10px;
+    grid-area: overview;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 628px;
+}
+
+.bet-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#confirm {
+    margin-top: 36px;
+}
+
+.leaderboard-container {
+    display: block;
+}
+
+.leaderboard-text {
+    margin-top: -8px;
+}
+
+.leaderboard-player {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.leaderboard-h5 {
+    margin-top: -12px;
+}
+
+/* Sign-up */
+.name-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container {
+    margin-top: -8px;
+    margin-bottom: 8px;
+    padding-block: 24px;
+    display: flex;
+    gap: 24px;
+}
+
+#sign-up {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+}
+
+/* Welcome */
+#welcome-screen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;  
+}
+
+/* Blackjack */
+#blackjack {
+    padding-top: 5.8%;
+}
+
+.center {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-cards {
+    padding-block: 24px;
+    display: none;
+    flex-flow: row;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.explainer-text {
+    padding-inline: 18%;
+}
+
+#new-card {
+    display: none;
+}
+
+#another-card {
+    display: none;
+}
+
+#keep-hand {
+    display: none;
+}
+
+#cards-el {
+    display: none;
+}
+
+#sum-el {
+    display: none;
+    margin-bottom: 6px;
+}
+
+#explainer {
+    display: block;
+}
+
+#explained-black {
+    display: none;
+    padding-bottom: 10vh;
+}
+
+#restart-black {
+    display: none;
+}
+
+#message-el {
+    padding-bottom: 10px;
+    padding-inline: 16px;
+}
+
+div {
+    font-family: "Cabin", sans-serif;
+    font-size: 24px;
+}
+
+.card {
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-inline: 24px;
+    padding: 24px;
+    text-align: right;
+    color: #181a1a;
+    border-radius: 10px;
+    position: relative;
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    transform: rotate3d(0);
+}
+  
+.card:hover {
+    transition-duration: 150ms;
+    box-shadow: 0 5px 20px 5px #00000044;
+}
+
+#card-one, #card-two, #card-three, #card-four {
+    display: none;
+}
+
+/* Media queries */
+@media (max-width: 667px) {
+    .explainer-text {
+        padding-top: 1%;
+        padding-inline: 15%;
+    }
+
+    .card {
+        padding: 16px;
+        margin-inline: 8px;
+        width: 18%;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+	<title>Sander Hartog - Scoreboard XYZ</title>
+	<meta charset="utf-8">
+	<meta name="description" content="A user-friendly score counter application for tracking points in games, events, or sports, by Sander Hartog (XYZ).">
+	<meta name="keywords" content="Front-end, Developer, Sander, Hartog, Scoreboard, XYZ, Workspace, Counter">
+	<meta name="author" content="Sander Hartog">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Sander Hartog - Scoreboard XYZ"/>
+    <meta property="og:description" content="A user-friendly score counter application for tracking points in games, events, or sports, by Sander Hartog (XYZ).">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
+    <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
+    <link rel="manifest" href="../json/manifest.webmanifest">
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/scoreboard.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Unbounded:wght@200..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cursed-timer-ulil">
+</head>
+
+<body>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BB063KRF2M');
+    </script>
+    <main class="container">
+        <h1 hidden>Scoreboard counter for tracking points</h1>
+		<div class="home">
+			<h3>HOME</h3>
+			<div class="scoreboard-home">
+				<h2 id="home-score">0</h2>
+			</div>
+			<div class="buttons">
+				<button class="plusone-btn" id="home-score-btn-1">+1</button>
+				<button class="plustwo-btn" id="home-score-btn-2">+2</button>
+				<button class="plusthree-btn" id="home-score-btn-3">+3</button>
+				<button class="reset-btn" id="reset-home-score">Reset</button>
+			</div>
+		</div>
+		<div class="guest">
+			<h3>GUEST</h3>
+			<div class="scoreboard-guest">
+				<h2 id="guest-score">0</h2>
+			</div>
+			<div class="buttons">
+				<button class="plusone-btn" id="guest-score-btn-1">+1</button>
+				<button class="plustwo-btn" id="guest-score-btn-2">+2</button>
+				<button class="plusthree-btn" id="guest-score-btn-3">+3</button>
+				<button class="reset-btn" id="reset-guest-score">Reset</button>
+			</div>
+		</div>
+        <a href="index.html">
+            <div class="return">
+                <div class="item-score">
+                    <h4>Return</h4>
+                    <h5>⁰</h5>
+                </div>
+            </div>
+        </a>
+	</main>
+    <script src="../js/scoreboard.js"></script>
+</body>
+</html>
