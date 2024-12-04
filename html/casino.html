@@ -73,29 +73,31 @@
             </div>
         </header>
         <div class="games">
-            <div class="game" id="active1">
+            <div class="game" id="game1">
                 <img src="../icons/casino/blackjack-icon.png" alt="blackjack icon" width="40" height="40" class="icon" draggable="false">
                 <p class="small-text">Blackjack</p>
             </div>
-            <div class="game">
+            <div class="game" id="game2">
                 <img src="../icons/casino/slots-icon.png" alt="slots icon" width="50" height="35" class="icon" draggable="false">
                 <p class="small-text">Slots</p>
             </div>
-            <div class="game">
+            <div class="game" id="game3">
                 <img src="../icons/casino/roulette-icon.png" alt="roulette icon" width="50" height="40" class="icon" draggable="false">
                 <p class="small-text">Roulette</p>
             </div>
-            <div class="game">
+            <div class="game" id="game4">
                 <img src="../icons/casino/rock-icon.png" alt="rock icon" width="60" height="40" class="icon" draggable="false">
-                <p class="small-text">Rock, paper, scissors</p>
+                <p class="small-text">Rock, Paper, Scissors</p>
             </div>
-            <div class="game">
-                <img src="../icons/casino/more-icon.png" alt="rock icon" width="60" height="18" class="icon" draggable="false">
+            <div class="game" id="more">
+                <img src="../icons/casino/more-icon.png" alt="more icon" width="60" height="18" class="icon" draggable="false">
                 <p class="small-text">More</p>
             </div>
         </div>
+        
         <div class="overview">
-            <div>
+            <!---->
+            <div id="blackjack-bet">
                 <h3>Bet options</h3>
                 <div class="bet-container">
                     <p class="smaller-text">1 CR</p>
@@ -111,6 +113,21 @@
                     <button id="confirm">Confirm</button>
                 </div>
             </div>
+            <!---->
+            <div id="rps-bet">
+                <h3>Bet options</h3>
+                <div class="bet-container">
+                    <p class="smaller-text" id="slider-output">5 CR</p>
+                </div>
+                <div class="bet-container">
+                    <input id="bet-slider" min="1" max="10" value="5" type="range" name="bet-option" checked>
+                </div>
+                <div class="bet-container">
+                    <button id="confirm">Confirm</button>
+                </div>
+            </div>
+            <!---->
+
             <div>
                 <h3>Leaderboard</h3>
                 <div class="leaderboard-container"> 
@@ -139,10 +156,10 @@
             </div>
         </div>
         <section class="content">
-            <section id="blackjack">
-                <h2 id="message-el">Place your bet!</h2>
+            <section id="blackjack" class="game-padding">
+                <h2 id="message-el" class="message">Place your bet!</h2>
                 <div class="center">
-                    <button id="explainer">How it works</button>
+                    <button id="explainer-black">How it works</button>
                     <div class="flex-row">
                         <button id="new-card">New Card</button>
                         <button id="another-card">Another Card</button>
@@ -179,12 +196,36 @@
                     </p>
                 </div>
             </section>
-            <section id="rps">
-
+            <section id="rps" class="game-padding">
+                <h2 id="message-el-rps" class="message">Place your bet!</h2>
+                <div class="center">
+                <button id="explainer-rps">How it works</button>
+                </div>
+                <div id="explained-rps">
+                    <p class="explainer-text medium-text">
+                        How to start?
+                        <br>
+                        Place your bet in the left panel, you can choose between 1CR up to 10CR. Press the 'confirm'-button. You can now start the game Rock, Paper, Scissors.
+                        <br>
+                        <br>
+                        Scoring
+                        <br>
+                        If you beat the opponent, you win double your bet. If you lose, you forfeit your entire bet. If your hand is the same as the opponent's, your bet is returned.
+                        <br>
+                        <br>
+                        How Rock, Paper, Scissors works
+                        <br>
+                        Choose Rock, Paper, or Scissors. If you and the opponent choose the same, it’s a tie. Rock beats Scissors, Scissors beat Paper, and Paper beats Rock.
+                    </p>
+                </div>
             </section>
         </section>
     </main>
-    <script src="../js/casino.js"></script>
-    <script src="../js/cardeffect.js"></script>
+    <script src="../js/casino/main.js"></script>
+    <script src="../js/casino/blackjack.js"></script>
+    <script src="../js/casino/cardeffect.js"></script>
+    <script src="../js/casino/slots.js"></script>
+    <script src="../js/casino/roulette.js"></script>
+    <script src="../js/casino/rps.js"></script>
 </body>
 </html>

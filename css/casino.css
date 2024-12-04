@@ -18,7 +18,7 @@ body {
 }
 
 .background2 {
-    background-image: url(../images/casino/sign-up/wormhole1.png);
+    background-image: url(../images/casino/background/background-overlay.png);
     background-size: cover;
 }
 
@@ -64,7 +64,7 @@ header {
 }
 
 .content {
-    background-image: url(../images/casino/background-blackjack.jpg);
+    background-image: url(../images/casino/background/background-games.jpg);
     margin: 10px;
     border-radius: 10px;
     border: solid #ffffff93 0.1px;
@@ -268,11 +268,40 @@ input[type="radio"]:disabled {
     height: 100vh;  
 }
 
-/* Blackjack */
-#blackjack {
+/* Games */
+#blackjack, #blackjack-bet {
+    display: block;
+}
+
+#rps, #rps-bet {
+    display: none;
+}
+
+.game-padding {
     padding-top: 5.8%;
 }
 
+.message {
+    padding-bottom: 10px;
+    padding-inline: 16px;
+}
+
+.explainer-text {
+    padding-inline: 18%;
+}
+
+/* RPS */
+#slider-output {
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+#explained-rps {
+    display: none;
+    padding-bottom: 10vh;
+}
+
+/* Blackjack */
 .center {
     display: flex;
     flex-flow: column;
@@ -288,10 +317,6 @@ input[type="radio"]:disabled {
     gap: 16px;
     justify-content: center;
     align-items: center;
-}
-
-.explainer-text {
-    padding-inline: 18%;
 }
 
 #new-card {
@@ -315,7 +340,7 @@ input[type="radio"]:disabled {
     margin-bottom: 6px;
 }
 
-#explainer {
+#explainer-black {
     display: block;
 }
 
@@ -326,11 +351,6 @@ input[type="radio"]:disabled {
 
 #restart-black {
     display: none;
-}
-
-#message-el {
-    padding-bottom: 10px;
-    padding-inline: 16px;
 }
 
 div {
