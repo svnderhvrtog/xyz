@@ -31,6 +31,7 @@
         gtag('js', new Date());
         gtag('config', 'G-BB063KRF2M');
     </script>
+    <!--Sign-up-->
     <section id="sign-up">
         <div class="name-input">
             <h3>Enter your username:</h3>
@@ -49,18 +50,20 @@
             </div>
         </div>
     </section>
+    <!--Welcome screen-->
     <section id="welcome-screen">
         <h3 id="welcome-text">Welcome user!</h3>
         <img id="welcome-image" src="../images/casino/profile/profile1.jpg" width="200" draggable="false">
     </section>
     <main>
+        <!--Header-->
         <header>
             <div class="flex-row">
-                <img src="../icons/casino/blackjack-icon.png" alt="blackjack icon" width="40" height="40" class="icon">
-                <h1>Blackjack</h1>
+                <img src="../icons/casino/blackjack-icon.png" id="header-game-icon" alt="game icon" width="40" height="40" class="icon-header" draggable="false">
+                <h1 id="header-game-text">Blackjack</h1>
             </div>
             <div class="flex-row">
-                <img id="header-profile" src="../images/casino/profile/profile1.jpg" width="40" height="40"> 
+                <img id="header-profile" src="../images/casino/profile/profile1.jpg" width="40" height="40" draggable="false"> 
                 <h4 id="header-username"></h4>
             </div>
             <div class="flex-row">
@@ -72,6 +75,7 @@
                 </div>
             </div>
         </header>
+        <!--Games-->
         <div class="games">
             <div class="game" id="game1">
                 <img src="../icons/casino/blackjack-icon.png" alt="blackjack icon" width="40" height="40" class="icon" draggable="false">
@@ -86,7 +90,7 @@
                 <p class="small-text">Roulette</p>
             </div>
             <div class="game" id="game4">
-                <img src="../icons/casino/rock-icon.png" alt="rock icon" width="60" height="40" class="icon" draggable="false">
+                <img src="../icons/casino/rock-icon.png" alt="rock icon" width="40" height="40" class="icon" draggable="false">
                 <p class="small-text">Rock, Paper, Scissors</p>
             </div>
             <div class="game" id="more">
@@ -94,9 +98,9 @@
                 <p class="small-text">More</p>
             </div>
         </div>
-        
+        <!--Bet-->
         <div class="overview">
-            <!---->
+            <!--Blackjack Bet-->
             <div id="blackjack-bet">
                 <h3>Bet options</h3>
                 <div class="bet-container">
@@ -105,15 +109,49 @@
                     <p class="smaller-text">5 CR</p>
                 </div>
                 <div class="bet-container">
-                    <input id="bet-one" value="1" type="radio" name="bet-option" checked>
-                    <input id="bet-two" value="2" type="radio" name="bet-option">
-                    <input id="bet-five" value="5" type="radio" name="bet-option">
+                    <input id="bet-one-blackjack" value="1" type="radio" name="bet-option-blackjack" checked>
+                    <input id="bet-two-blackjack" value="2" type="radio" name="bet-option-blackjack">
+                    <input id="bet-five-blackjack" value="5" type="radio" name="bet-option-blackjack">
                 </div>
                 <div class="bet-container">
-                    <button id="confirm">Confirm</button>
+                    <button id="confirm-blackjack" class="confirm">Confirm</button>
                 </div>
             </div>
-            <!---->
+            <!--Slots Bet-->
+            <div id="slots-bet">
+                <h3>Bet options</h3>
+                <div class="bet-container">
+                    <p class="smaller-text">1 CR</p>
+                    <p class="smaller-text">2 CR</p>
+                    <p class="smaller-text">5 CR</p>
+                </div>
+                <div class="bet-container">
+                    <input id="bet-one-slots" value="1" type="radio" name="bet-option-slots" checked>
+                    <input id="bet-two-slots" value="2" type="radio" name="bet-option-slots">
+                    <input id="bet-five-slots" value="5" type="radio" name="bet-option-slots">
+                </div>
+                <div class="bet-container">
+                    <button id="confirm-slots" class="confirm">Confirm</button>
+                </div>
+            </div>
+            <!--Roulette Bet-->
+            <div id="roulette-bet">
+                <h3>Bet options</h3>
+                <div class="bet-container">
+                    <p class="smaller-text">1 CR</p>
+                    <p class="smaller-text">2 CR</p>
+                    <p class="smaller-text">5 CR</p>
+                </div>
+                <div class="bet-container">
+                    <input id="bet-one-roulette" value="1" type="radio" name="bet-option-roulette" checked>
+                    <input id="bet-two-roulette" value="2" type="radio" name="bet-option-roulette">
+                    <input id="bet-five-roulette" value="5" type="radio" name="bet-option-roulette">
+                </div>
+                <div class="bet-container">
+                    <button id="confirm-roulette" class="confirm">Confirm</button>
+                </div>
+            </div>
+            <!--Rock, Paper, Scissors Bet-->
             <div id="rps-bet">
                 <h3>Bet options</h3>
                 <div class="bet-container">
@@ -123,11 +161,10 @@
                     <input id="bet-slider" min="1" max="10" value="5" type="range" name="bet-option" checked>
                 </div>
                 <div class="bet-container">
-                    <button id="confirm">Confirm</button>
+                    <button id="confirm-rps" class="confirm">Confirm</button>
                 </div>
             </div>
-            <!---->
-
+            <!--Leaderboard-->
             <div>
                 <h3>Leaderboard</h3>
                 <div class="leaderboard-container"> 
@@ -155,7 +192,9 @@
                 </div>
             </div>
         </div>
+        <!--Game content-->
         <section class="content">
+            <!--Blackjack-->
             <section id="blackjack" class="game-padding">
                 <h2 id="message-el" class="message">Place your bet!</h2>
                 <div class="center">
@@ -196,10 +235,48 @@
                     </p>
                 </div>
             </section>
+
+            <!--Slots-->
+            <section id="slots" class="game-padding">
+
+            </section>
+
+            <!--Roulette-->
+            <section id="roulette" class="game-padding">
+
+            </section>
+
+            <!--Rock, Paper, Scissors-->
             <section id="rps" class="game-padding">
                 <h2 id="message-el-rps" class="message">Place your bet!</h2>
                 <div class="center">
-                <button id="explainer-rps">How it works</button>
+                    <button id="explainer-rps">How it works</button>
+                    <button id="restart-rps">Place new bet</button>
+                </div>
+                <div id="select-rps" class="rps-flex">
+                    <div class="rps-item" id="rock-suit">
+                        <img src="../icons/casino/rock-icon.png" width="200" draggable="false">
+                        <h2>Rock</h2>
+                    </div>
+                    <div class="rps-item" id="paper-suit">
+                        <img src="../icons/casino/paper-icon.png" width="200" draggable="false">
+                        <h2>Paper</h2>
+                    </div>
+                    <div class="rps-item" id="scissors-suit">
+                        <img src="../icons/casino/scissors-icon.png" width="200" draggable="false">
+                        <h2>Scissors</h2>
+                    </div>
+                </div>
+                <div id="result-rps" class="rps-flex">
+                    <div>
+                        <img src="" width="200" draggable="false" id="choosen-suit">
+                        <h2 id="choosen-suit-text"></h2>
+                    </div>
+                    <h2 class="vs-text">VS</h2>
+                    <div>
+                        <img src="" width="200" draggable="false" id="cpu-suit">
+                        <h2 id="cpu-suit-text"></h2>
+                    </div>
                 </div>
                 <div id="explained-rps">
                     <p class="explainer-text medium-text">
@@ -219,6 +296,8 @@
                     </p>
                 </div>
             </section>
+
+            <!--More-->
         </section>
     </main>
     <script src="../js/casino/main.js"></script>

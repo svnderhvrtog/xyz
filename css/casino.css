@@ -63,6 +63,13 @@ header {
     text-align: center;
 }
 
+.icon-header {
+    padding-top: 10%;
+    padding-left: 2%;
+    align-content: center;
+    text-align: center;
+}
+
 .content {
     background-image: url(../images/casino/background/background-games.jpg);
     margin: 10px;
@@ -162,7 +169,6 @@ input[type="radio"]:disabled {
 .games {
     text-align: center;
     align-items: center;
-    /* width: 60%; */
     padding-top: 36px;
     margin-right: 16px;
     padding: 24px;
@@ -174,7 +180,6 @@ input[type="radio"]:disabled {
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    /* height: 74.8vh;  */
     height: 580px;
 }
 
@@ -195,7 +200,6 @@ input[type="radio"]:disabled {
 }
 
 .overview {
-    /* width: 278px; */
     margin-right: 8px;
     background-color: #1D0E35;
     border-radius: 10px;
@@ -214,7 +218,7 @@ input[type="radio"]:disabled {
     text-align: center;
 }
 
-#confirm {
+.confirm {
     margin-top: 36px;
 }
 
@@ -277,6 +281,14 @@ input[type="radio"]:disabled {
     display: none;
 }
 
+#slots-bet {
+    display: none;
+}
+
+#roulette-bet {
+    display: none;
+}
+
 .game-padding {
     padding-top: 5.8%;
 }
@@ -299,6 +311,37 @@ input[type="radio"]:disabled {
 #explained-rps {
     display: none;
     padding-bottom: 10vh;
+}
+
+.rps-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 54px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rps-item:hover {
+    opacity: 65%;
+}
+
+#select-rps {
+    display: none;
+    padding-top: 3%;
+}
+
+#result-rps {
+    display: none;
+    padding-top: 3%;
+}
+
+.vs-text {
+    margin-top: -50px;
+    margin-right: 14px;
+}
+
+#restart-rps {
+    display: none;
 }
 
 /* Blackjack */
