@@ -281,11 +281,11 @@ input[type="radio"]:disabled {
     display: none;
 }
 
-#slots-bet {
+#slots, #slots-bet {
     display: none;
 }
 
-#roulette-bet {
+#roulette, #roulette-bet {
     display: none;
 }
 
@@ -303,13 +303,14 @@ input[type="radio"]:disabled {
 }
 
 /* RPS */
-#slider-output {
+#slider-output-rps {
     padding-top: 3px;
     padding-bottom: 4px;
 }
 
 #explained-rps {
     display: none;
+    padding-top: 1px;
     padding-bottom: 10vh;
 }
 
@@ -344,6 +345,30 @@ input[type="radio"]:disabled {
     display: none;
 }
 
+/* Slots */
+#slider-output-slots {
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+#explained-slots {
+    display: none;
+    padding-top: 1px;
+    padding-bottom: 10vh;
+}
+
+#restart-slots {
+    display: none;
+}
+
+.slot {
+    width: 19%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    padding: 16px;
+}
+
 /* Blackjack */
 .center {
     display: flex;
@@ -371,10 +396,6 @@ input[type="radio"]:disabled {
 }
 
 #keep-hand {
-    display: none;
-}
-
-#cards-el {
     display: none;
 }
 
@@ -426,6 +447,63 @@ div {
 
 #card-one, #card-two, #card-three, #card-four {
     display: none;
+}
+
+/* Roulette */
+.roulette-item {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.roulette-item:hover {
+    opacity: 65%;
+}
+
+.center-roulette {
+    margin-left: -32px;
+    width: 240px;
+    height: 240px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.center-roulette2 {
+    margin-left: -14px;
+    width: 170px;
+    height: 170px;
+    padding-top: 56px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 50% 50%;
+}
+
+#select-roulette {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#restart-roulette {
+    display: none;
+}
+
+#explained-roulette {
+    display: none;
+}
+
+#result-roulette {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#roulette-resultIMG {
+    padding-top: 6%;
+    width: 24%;
 }
 
 /* Media queries */

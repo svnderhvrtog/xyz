@@ -35,7 +35,7 @@
     <section id="sign-up">
         <div class="name-input">
             <h3>Enter your username:</h3>
-            <input id="username" type="text" name="username" placeholder="spacetraveler" style="margin-bottom: 24px;">
+            <input id="username" type="text" name="username" placeholder="Galaxy" style="margin-bottom: 24px;">
         </div>
         <div>
             <h3>Choose your profile picture:</h3>
@@ -62,7 +62,7 @@
                 <img src="../icons/casino/blackjack-icon.png" id="header-game-icon" alt="game icon" width="40" height="40" class="icon-header" draggable="false">
                 <h1 id="header-game-text">Blackjack</h1>
             </div>
-            <div class="flex-row">
+            <div class="flex-row" id="profile-div">
                 <img id="header-profile" src="../images/casino/profile/profile1.jpg" width="40" height="40" draggable="false"> 
                 <h4 id="header-username"></h4>
             </div>
@@ -121,14 +121,10 @@
             <div id="slots-bet">
                 <h3>Bet options</h3>
                 <div class="bet-container">
-                    <p class="smaller-text">1 CR</p>
-                    <p class="smaller-text">2 CR</p>
-                    <p class="smaller-text">5 CR</p>
+                    <p class="smaller-text" id="slider-output-slots">5 CR</p>
                 </div>
                 <div class="bet-container">
-                    <input id="bet-one-slots" value="1" type="radio" name="bet-option-slots" checked>
-                    <input id="bet-two-slots" value="2" type="radio" name="bet-option-slots">
-                    <input id="bet-five-slots" value="5" type="radio" name="bet-option-slots">
+                    <input id="bet-slider-slots" min="1" max="10" value="5" type="range" name="bet-option-slots" checked>
                 </div>
                 <div class="bet-container">
                     <button id="confirm-slots" class="confirm">Confirm</button>
@@ -155,10 +151,10 @@
             <div id="rps-bet">
                 <h3>Bet options</h3>
                 <div class="bet-container">
-                    <p class="smaller-text" id="slider-output">5 CR</p>
+                    <p class="smaller-text" id="slider-output-rps">5 CR</p>
                 </div>
                 <div class="bet-container">
-                    <input id="bet-slider" min="1" max="10" value="5" type="range" name="bet-option" checked>
+                    <input id="bet-slider-rps" min="1" max="10" value="5" type="range" name="bet-option-rps" checked>
                 </div>
                 <div class="bet-container">
                     <button id="confirm-rps" class="confirm">Confirm</button>
@@ -171,21 +167,21 @@
                     <div class="leaderboard-player">
                         <img src="../images/casino/profile/profile1.jpg" width="70" height="70" draggable="false">
                         <div class="leaderboard-text">
-                            <h4>username</h4>
+                            <h4>username 🥇</h4>
                             <h5 class="leaderboard-h5">500 CR</h5>
                         </div>
                     </div>
                     <div class="leaderboard-player">
                         <img src="../images/casino/profile/profile1.jpg" width="70" height="70" draggable="false">
                         <div class="leaderboard-text">
-                            <h4>username</h4>
+                            <h4>username 🥈</h4>
                             <h5 class="leaderboard-h5">500 CR</h5>
                         </div>
                     </div>
                     <div class="leaderboard-player">
                         <img src="../images/casino/profile/profile1.jpg" width="70" height="70" draggable="false">
                         <div class="leaderboard-text">
-                            <h4>username</h4>
+                            <h4>username 🥉</h4>
                             <h5 class="leaderboard-h5">500 CR</h5>
                         </div>
                     </div>
@@ -206,19 +202,18 @@
                         <button id="restart-black">Place new bet</button>
                     </div>
                 </div>
-                <p id="cards-el">Cards:</p>
                 <div class="center-cards" id="cards-summary">
-                    <img src="" class="card" id="card-one">
-                    <img src="" class="card" id="card-two">
-                    <img src="" class="card" id="card-three"> 
-                    <img src="" class="card" id="card-four">
+                    <img src="" class="card" id="card-one" draggable="false">
+                    <img src="" class="card" id="card-two" draggable="false">
+                    <img src="" class="card" id="card-three" draggable="false"> 
+                    <img src="" class="card" id="card-four" draggable="false">
                 </div>
                 <p id="sum-el">Total:</p>
                 <div id="explained-black">
                     <p class="explainer-text medium-text">
                         How to start?
                         <br>
-                        Place your bet in the left panel, you can choose between 1CR, 2CR or 5CR. Press the 'confirm'-button. You can now start the game Blackjack.
+                        Choose your bet amount from the options on the left panel: 1CR, 2CR, or 5CR. Once you've decided, press the 'Confirm' button. You're now ready to start playing! 
                         <br>
                         <br>
                         Scoring
@@ -235,17 +230,82 @@
                     </p>
                 </div>
             </section>
-
             <!--Slots-->
             <section id="slots" class="game-padding">
-
+                <h2 id="message-el-slots" class="message">Place your bet!</h2>
+                <div class="center">
+                    <button id="explainer-slots">How it works</button>
+                    <button id="restart-slots">Place new bet</button>
+                </div>
+                <div class="center-cards" id="slots-summary">
+                    <img src="../images/casino/slots/slot1.png" class="slot" id="slot-one" draggable="false">
+                    <img src="../images/casino/slots/slot3.png" class="slot" id="slot-two" draggable="false">
+                    <img src="../images/casino/slots/slot5.png" class="slot" id="slot-three" draggable="false"> 
+                </div>
+                <div id="explained-slots">
+                    <p class="explainer-text medium-text">
+                        How to start?
+                        <br>
+                        Select your bet amount on the left panel, choosing anywhere from 1CR to 10CR. Once you've decided, press the 'Confirm' button. You're now ready to start playing!                        
+                        <br>
+                        <br>
+                        Scoring
+                        <br>
+                        If you get two matching symbols, your bet will be multiplied by 1.5. If you get three matching symbols, your bet will be multiplied by 3. However, if none of the symbols match, you won’t win anything.                        
+                        <br>
+                        <br>
+                        How Slots works
+                        <br>
+                        Set your bet amount, spin the reels, and watch as the outcome unfolds—if luck is on your side, you could win big and rack up lots of credits!                    
+                    </p>
+                </div>
             </section>
 
             <!--Roulette-->
             <section id="roulette" class="game-padding">
-
+                <h2 id="message-el-roulette" class="message">Place your bet!</h2>
+                <div class="center">
+                    <button id="explainer-roulette">How it works</button>
+                    <button id="restart-roulette">Place new bet</button>
+                </div>
+                <div id="select-roulette">
+                    <div class="center-roulette">
+                        <img src="../images/casino/roulette/digit1.png" class="roulette-item" id="roulette-digit-one" draggable="false">
+                        <img src="../images/casino/roulette/digit2.png" class="roulette-item" id="roulette-digit-two" draggable="false">
+                        <img src="../images/casino/roulette/digit3.png" class="roulette-item" id="roulette-digit-three" draggable="false"> 
+                        <img src="../images/casino/roulette/digit4.png" class="roulette-item" id="roulette-digit-four" draggable="false"> 
+                        <img src="../images/casino/roulette/digit5.png" class="roulette-item" id="roulette-digit-five" draggable="false"> 
+                        <img src="../images/casino/roulette/digit6.png" class="roulette-item" id="roulette-digit-six" draggable="false"> 
+                        <img src="../images/casino/roulette/digit7.png" class="roulette-item" id="roulette-digit-seven" draggable="false"> 
+                        <img src="../images/casino/roulette/digit8.png" class="roulette-item" id="roulette-digit-eight" draggable="false"> 
+                        <img src="../images/casino/roulette/digit9.png" class="roulette-item" id="roulette-digit-nine" draggable="false">
+                    </div>
+                    <div class="center-roulette2">
+                        <img src="../images/casino/roulette/color1.png" class="roulette-item" id="roulette-color-one" draggable="false"> 
+                        <img src="../images/casino/roulette/color2.png" class="roulette-item" id="roulette-color-two" draggable="false"> 
+                    </div>
+                </div>
+                <div id="result-roulette">
+                    <img src="" id="roulette-resultIMG" draggable="false">
+                </div>
+                <div id="explained-roulette">
+                    <p class="explainer-text medium-text">
+                        How to start?
+                        <br>
+                        Select your bet amount on the left panel, choosing anywhere from 1CR to 10CR. Once you've decided, press the 'Confirm' button. You're now ready to start playing!                        
+                        <br>
+                        <br>
+                        Scoring
+                        <br>
+                        If you get two matching symbols, your bet will be multiplied by 1.5. If you get three matching symbols, your bet will be multiplied by 3. However, if none of the symbols match, you won’t win anything.                        
+                        <br>
+                        <br>
+                        How Slots works
+                        <br>
+                        Set your bet amount, spin the reels, and watch as the outcome unfolds—if luck is on your side, you could win big and rack up lots of credits!                    
+                    </p>
+                </div>
             </section>
-
             <!--Rock, Paper, Scissors-->
             <section id="rps" class="game-padding">
                 <h2 id="message-el-rps" class="message">Place your bet!</h2>
@@ -282,7 +342,7 @@
                     <p class="explainer-text medium-text">
                         How to start?
                         <br>
-                        Place your bet in the left panel, you can choose between 1CR up to 10CR. Press the 'confirm'-button. You can now start the game Rock, Paper, Scissors.
+                        Select your bet amount on the left panel, choosing anywhere from 1CR to 10CR. Once you've decided, press the 'Confirm' button. You're now ready to start playing!                        
                         <br>
                         <br>
                         Scoring

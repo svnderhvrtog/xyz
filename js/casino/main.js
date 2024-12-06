@@ -55,8 +55,8 @@ const submit = document.getElementById('submit').addEventListener('click', () =>
     if(userNameInput.value === ''){
         alert('please insert value')
         return
-    } else if (userNameInput.value.length >= 12){
-        alert('please not more than 12 charakters')
+    } else if (userNameInput.value.length >= 8){
+        alert('please not more than 8 charakters')
         return
     }
     if(profilePictureSelected === true){
@@ -104,7 +104,7 @@ window.addEventListener('load', () => {
             credits = localStorage.getItem('credits');
             creditsText.textContent = `Total credits: ${credits} CR`;
         // IMPORTANT OM DEZE DURATIE WEER OMHOOG TE ZETTEN ZODAT LAADSCHERM WORDT GETOOND!!!!!!!!!!!!
-        }, 0);
+        }, 2000);
     } else if (localStorage.getItem("userName") === null) {
         signUpSection.style.display = "flex"
     }
@@ -122,6 +122,7 @@ const rouletteSelectGame = document.getElementById('roulette');
 const rouletteSelectBet = document.getElementById('roulette-bet');
 const rpsSelectGame = document.getElementById('rps');
 const rpsSelectBet = document.getElementById('rps-bet');
+const profileDiv = document.getElementById('profile-div');
 
 const game1 = document.getElementById('game1').addEventListener('click', () => {
     if(gameOnGoing === false) {
@@ -130,6 +131,7 @@ const game1 = document.getElementById('game1').addEventListener('click', () => {
         gameHeaderIcon.height = "40";
         gameHeaderIcon.style.marginTop = "0px";
         gameHeaderIcon.style.marginLeft = "0px";
+        profileDiv.style.marginLeft = "0px"
         gameHeaderText.textContent = 'Blackjack';
         gameHeaderText.style.marginRight = "0px";
         blackjackSelectGame.style.display = "block";
@@ -152,6 +154,7 @@ const game2 = document.getElementById('game2').addEventListener('click', () => {
         gameHeaderIcon.height = "35";
         gameHeaderIcon.style.marginTop = "4px";
         gameHeaderIcon.style.marginLeft = "4px";
+        profileDiv.style.marginLeft = "0px"
         gameHeaderText.textContent = 'Slots';
         gameHeaderText.style.marginRight = "56px";
         blackjackSelectGame.style.display = "none";
@@ -176,6 +179,7 @@ const game3 = document.getElementById('game3').addEventListener('click', () => {
         gameHeaderIcon.style.marginLeft = "0px";
         gameHeaderText.textContent = 'Roulette';
         gameHeaderText.style.marginRight = "2px";
+        profileDiv.style.marginLeft = "0px"
         blackjackSelectGame.style.display = "none";
         blackjackSelectBet.style.display = "none";
         slotsSelectGame.style.display = "none";
@@ -194,10 +198,11 @@ const game4 = document.getElementById('game4').addEventListener('click', () => {
         gameHeaderIcon.src = "../icons/casino/rock-icon.png";
         gameHeaderIcon.width = "40";
         gameHeaderIcon.height = "40";
-        gameHeaderIcon.style.marginTop = "-1px";
-        gameHeaderIcon.style.marginLeft = "2px";
+        gameHeaderIcon.style.marginTop = "22px";
+        gameHeaderIcon.style.marginLeft = "14px";
+        profileDiv.style.marginLeft = "226px"
         gameHeaderText.textContent = 'Rock, Paper, Scissors';
-        gameHeaderText.style.marginRight = "-216px";
+        gameHeaderText.style.marginRight = "-716px";
         blackjackSelectGame.style.display = "none";
         blackjackSelectBet.style.display = "none";
         slotsSelectGame.style.display = "none";
@@ -216,6 +221,5 @@ const more = document.getElementById('more').addEventListener('click', () => {
 });
 
 // General properties
-// const cardAudio = new Audio('../audio/casino/card.mp3');
 const coinsAudio = new Audio('../audio/casino/coins.mp3');
 const loseAudio = new Audio('../audio/casino/lose.mp3');

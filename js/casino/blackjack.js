@@ -51,6 +51,7 @@ confirmButtonBlack.addEventListener('click', () => {
             startBlackGame()
         }, 500)
     }    
+    localStorage.credits = credits
 });
 
 let cards = [];
@@ -62,7 +63,6 @@ let messageBlack = "";
 
 const messageElBlack = document.getElementById('message-el');
 const sumElBlack = document.getElementById('sum-el');
-const cardElBlack = document.getElementById('cards-el');
 const explainerBlack = document.getElementById('explainer-black');
 const explainedBlack = document.getElementById('explained-black');
 const cardSummaryBlack = document.querySelector(".center-cards");
@@ -71,6 +71,7 @@ const cardOne = document.getElementById('card-one');
 const cardTwo = document.getElementById('card-two');
 const cardThree = document.getElementById('card-three');
 const cardFour = document.getElementById('card-four');
+const cardAudio = new Audio('../audio/casino/card.mp3');
 
 const newCard = document.getElementById('new-card');
 newCard.addEventListener('click', drawThirdCard);
@@ -109,7 +110,6 @@ function startBlackGame() {
     explainedBlack.style.display = "none";
     messageElBlack.style.display = "block";
     sumElBlack.style.display = "block";
-    cardElBlack.style.display = "none";
     cardSummaryBlack.style.display = "flex";
     newCard.style.display = "block";
     keepHand.style.display = "block";
@@ -191,12 +191,7 @@ function randomDisplayCard(card1, card2){
 };
 
 function renderBlack(){
-    // cardAudio.play();
-    cardElBlack.textContent = "Cards: "
-    for (i = 0; i < cards.length; i++) {
-        cardElBlack.textContent += cards[i] + " ";
-    };
-
+    cardAudio.play();
     sumElBlack.textContent = "Total: " + sum;
     if (sum <= 20) {
         messageBlack = "Do you want to draw a new card?";
@@ -396,7 +391,6 @@ function restartBlackFunc(){
     explainedBlack.style.display = "none";
     messageElBlack.style.display = "block";
     sumElBlack.style.display = "none";
-    cardElBlack.style.display = "none";
     cardSummaryBlack.style.display = "none";
     newCard.style.display = "none";
     keepHand.style.display = "none";
