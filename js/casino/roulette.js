@@ -62,10 +62,6 @@ const resultRoulette = document.getElementById('result-roulette');
 const restartRoulette = document.getElementById('restart-roulette')
 restartRoulette.addEventListener('click', restartRouletteFunc)
 const resultImgRoulette = document.getElementById('roulette-resultIMG');
-const loadAudio = new Audio('../audio/casino/roulette-load.mp3');
-const bigWinAudio = new Audio('../audio/casino/roulette-bigwin.mp3');
-const loseRouletteAudio = new Audio('../audio/casino/roulette-lose.mp3');
-
 
 explainerRoulette.addEventListener('click', () => {
     explainerRoulette.style.display = "none";

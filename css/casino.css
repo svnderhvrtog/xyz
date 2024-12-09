@@ -22,18 +22,6 @@ body {
     background-size: cover;
 }
 
-main {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    margin-inline: 24px;
-    margin-top: 24px;
-    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-    grid-template-areas:
-    "hd hd hd hd hd hd hd hd hd hd"
-    "games overview overview content content content content content content content"
-}
-
 header {
     justify-content: space-between;
     text-align: center;
@@ -200,6 +188,7 @@ input[type="radio"]:disabled {
 }
 
 .overview {
+    margin-left: 0px;
     margin-right: 8px;
     background-color: #1D0E35;
     border-radius: 10px;
@@ -241,6 +230,40 @@ input[type="radio"]:disabled {
     margin-top: -12px;
 }
 
+#overlay-options {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000080;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#overlay-content {
+    padding-top: 2%;
+    background-color: #ffffff75;
+    width: 60%;
+    height: 460px;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.center-options {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 /* Sign-up */
 .name-input {
     display: flex;
@@ -263,6 +286,11 @@ input[type="radio"]:disabled {
     height: 100vh; 
 }
 
+.profile-setupimg {
+    width: 200px;   
+    height: 200px;
+}
+
 /* Welcome */
 #welcome-screen {
     display: none;
@@ -271,6 +299,8 @@ input[type="radio"]:disabled {
     align-items: center; 
     height: 100vh;  
 }
+
+
 
 /* Games */
 #blackjack, #blackjack-bet {
@@ -322,7 +352,13 @@ input[type="radio"]:disabled {
     align-items: center;
 }
 
-.rps-item:hover {
+.rps-item {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.rps-item-hov:hover {
     opacity: 65%;
 }
 
@@ -507,15 +543,596 @@ div {
 }
 
 /* Media queries */
-@media (max-width: 667px) {
+@media only screen and (max-width: 600px) {
+    .breakpoint {
+        display: none;
+    }
+
+    .breakpoint-flex {
+        display: none;
+    }
+
+    .message {
+        padding-top: 12%;
+        padding-bottom: 10px;
+        padding-inline: 16px;
+        font-size: 24px;
+    }
+
+    .overview {
+        margin-left: 8px;
+        margin-right: 8px;
+        background-color: #1D0E35;
+        border-radius: 10px;
+        grid-area: overview;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        height: 300px;
+    }
+
+    .games {
+        padding-top: 0px;
+        margin-bottom: 24px;
+        margin-right: 0px;
+        margin-top: 16px;
+        margin-inline: 8px;
+        padding: 36px;
+        background-color: #1D0E35;
+        border-radius: 10px;
+        grid-area: games;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center; 
+        height: 200px;
+    }
+
+    .rps-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 48px;
+    }
+
+    #game4 {
+        margin-top: -26px;
+    }
+
+    header {
+        justify-content: space-evenly;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
+        border-radius: 24px;
+        margin-inline: 6px;
+        padding-inline: 8px;
+        margin-bottom: 24px;
+        width: 100%;
+        height: auto;
+        grid-area: hd;
+    }
+
+    main {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-inline: 24px;
+        margin-top: 24px;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-areas:
+        "hd hd hd hd hd"
+        "overview overview overview overview overview"
+        "content content content content content"
+        "games games games games games"
+    }
+
+    .flex-row-options {
+        display: block;
+        gap: 24px;
+    }
+
+    .options-img {
+        padding-top: 1%;
+        width: 28%;
+    }
+
+    .content {
+        margin-top: 24px;
+    }
+
     .explainer-text {
         padding-top: 1%;
         padding-inline: 15%;
+        font-size: 13px;
     }
 
     .card {
         padding: 16px;
         margin-inline: 8px;
-        width: 18%;
+        width: 16%;
+    }
+
+    /* Sign-up */
+    .profile-setupimg {
+        width: 140px;   
+        height: 140px;
+    }    
+
+    .profile-container {
+        margin-top: -8px;
+        margin-bottom: 8px;
+        padding-block: 24px;
+        display: block;
+        text-align: center;
+    }
+
+    .rps-icon {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media only screen and (min-width: 601px) {    
+    .breakpoint {
+        display: none;
+    }
+
+    .breakpoint-flex {
+        display: none;
+    }
+
+    .message {
+        padding-top: 12%;
+        padding-bottom: 10px;
+        padding-inline: 16px;
+        font-size: 24px;
+    }
+
+    .overview {
+        margin-left: 8px;
+        margin-right: 8px;
+        background-color: #1D0E35;
+        border-radius: 10px;
+        grid-area: overview;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        height: 300px;
+    }
+
+    .games {
+        padding-top: 0px;
+        margin-bottom: 24px;
+        margin-right: 0px;
+        margin-top: 16px;
+        margin-inline: 8px;
+        padding: 36px;
+        background-color: #1D0E35;
+        border-radius: 10px;
+        grid-area: games;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center; 
+        height: 200px;
+    }
+
+    .flex-row-options {
+        display: block;
+        gap: 24px;
+    }
+
+    .options-img {
+        padding-top: 1%;
+        width: 21%;
+    }
+
+    #game4 {
+        margin-top: -10px;
+    }
+
+    .options-text {
+        margin-top: 27px;
+    }
+
+    header {
+        justify-content: space-evenly;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
+        border-radius: 24px;
+        margin-inline: 6px;
+        padding-inline: 8px;
+        margin-bottom: 24px;
+        width: 100%;
+        height: auto;
+        grid-area: hd;
+    }
+
+    main {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-inline: 24px;
+        margin-top: 24px;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-areas:
+        "hd hd hd hd hd"
+        "overview overview overview overview overview"
+        "content content content content content"
+        "games games games games games"
+    }
+
+    .content {
+        margin-top: 24px;
+    }
+
+    .explainer-text {
+        padding-top: 1%;
+        padding-inline: 15%;
+        font-size: 13px;
+    }
+
+    .card {
+        padding: 16px;
+        margin-inline: 8px;
+        width: 16%;
+    }
+
+    /* Sign-up */
+    .profile-setupimg {
+        width: 140px;   
+        height: 140px;
+    }    
+
+    .profile-container {
+        margin-top: -8px;
+        margin-bottom: 8px;
+        padding-block: 24px;
+        display: block;
+        text-align: center;
+    }
+
+    .rps-icon {
+        width: 160px;
+        height: 160px;
+    }
+
+    .rps-flex {
+        gap: 24px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-inline: 24px;
+        margin-top: 24px;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-areas:
+        "hd hd hd hd hd"
+        "overview overview overview overview overview"
+        "content content content content content"
+        "games games games games games"
+    }
+
+    header {
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
+        border-radius: 24px;
+        margin-inline: 6px;
+        padding-inline: 8px;
+        margin-bottom: 24px;
+        width: 100%;
+        height: auto;
+        grid-area: hd;
+    }
+
+    .explainer-text {
+        padding-top: 1%;
+        padding-inline: 15%;
+        font-size: 16px;
+    }
+    
+    .message {
+        padding-top: 0%;
+        padding-bottom: 10px;
+        padding-inline: 16px;
+        font-size: 36px;
+    }
+
+    .rps-flex {
+        gap: 54px;
+    }
+
+    #game4 {
+        margin-top: -10px;
+    }
+
+
+    .breakpoint {
+        display: none;
+    }
+
+    .breakpoint-flex {
+        display: flex;
+    }
+
+    .flex-row-options {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .options-img {
+        padding-top: 10%;
+        width: 70%;
+    }
+
+
+    /* Sign-up */
+    .profile-setupimg {
+        width: 140px;   
+        height: 140px;
+    }
+
+    .profile-container {
+        margin-top: -8px;
+        margin-bottom: 8px;
+        padding-block: 24px;
+        display: block;
+        text-align: center;
+    }    
+
+    .card {
+        padding: 16px;
+        margin-inline: 8px;
+        width: 10%;
+    }
+
+    .rps-icon {
+        width: 168px;
+        height: 168px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .breakpoint {
+        display: block;
+    }
+
+    .breakpoint-flex {
+        display: flex;
+    }
+
+    main {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-inline: 24px;
+        margin-top: 24px;
+        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+        grid-template-areas:
+        "hd hd hd hd hd hd hd hd hd hd"
+        "games overview overview content content content content content content content"
+    }
+
+    .options-img {
+        padding-top: 10%;
+        width: 70%;
+    }
+
+    .content {
+        margin-top: 0px;
+    }
+
+    #game4 {
+        margin-top: -10px;
+    }
+
+    .options-text {
+        margin-top: 24px;
+    }
+
+
+    .rps-flex {
+        gap: 54px;
+    }
+
+
+    .overview {
+        margin-left: 0px;
+        margin-right: 8px;
+        margin-top: -10px;
+        background-color: #1D0E35;
+        border-radius: 10px;
+        grid-area: overview;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        height: 636px;
+    }
+
+    .games {
+        margin-top: 1px;
+        margin-bottom: 10px;
+        text-align: center;
+        align-items: center;
+        padding-top: 36px;
+        margin-right: 16px;
+        padding: 24px;
+        background-color: #1D0E35;
+        border-radius: 10px;
+        gap: 36px;
+        grid-area: games;
+        flex-wrap: nowrap;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        height: 590px;
+    }
+
+    .flex-row-options {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    header {
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 48px;
+        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
+        margin-inline: 0px;
+        border-radius: 24px;
+        padding-inline: 16px;
+        margin-bottom: 16px;
+        width: 98%;
+        height: auto;
+        grid-area: hd;
+    }
+
+    /* Sign-up */
+    .profile-setupimg {
+        width: 200px;   
+        height: 200px;
+    }  
+    .profile-container {
+        margin-top: -8px;
+        margin-bottom: 8px;
+        padding-block: 24px;
+        display: flex;
+        gap: 24px;
+        text-align: left;
+    }
+
+    .explainer-text {
+        padding-inline: 18%;
+    }
+
+    .rps-icon {
+        width: 182px;
+        height: 182px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    main {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-inline: 24px;
+        margin-top: 24px;
+        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+        grid-template-areas:
+        "hd hd hd hd hd hd hd hd hd hd"
+        "games overview overview content content content content content content content"
+    }
+
+    .overview {
+        margin-left: 0px;
+        margin-right: 8px;
+        margin-top: -10px;
+        background-color: #1D0E35;
+        border-radius: 10px;
+        grid-area: overview;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        height: 636px;
+    }
+
+    #game4 {
+        margin-top: -10px;
+    }
+
+    .options-text {
+        margin-top: 24px;
+    }
+
+    .games {
+        margin-top: 1px;
+        margin-bottom: 10px;
+        text-align: center;
+        align-items: center;
+        padding-top: 36px;
+        margin-right: 16px;
+        padding: 24px;
+        background-color: #1D0E35;
+        border-radius: 10px;
+        gap: 36px;
+        grid-area: games;
+        flex-wrap: nowrap;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        height: 590px;
+    }
+
+    .rps-flex {
+        gap: 54px;
+    }
+
+    .flex-row-options {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    header {
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 48px;
+        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
+        margin-inline: 0px;
+        border-radius: 24px;
+        padding-inline: 16px;
+        margin-bottom: 16px;
+        width: 98%;
+        height: auto;
+        grid-area: hd;
+    }
+
+    .options-img {
+        padding-top: 10%;
+        width: 70%;
+    }
+
+    .explainer-text {
+        padding-inline: 18%;
+    }
+
+    .rps-icon {
+        width: 200px;
+        height: 200px;
     }
 }

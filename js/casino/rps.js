@@ -78,6 +78,7 @@ function randomSuitFunc() {
 }
 
 function resultRPSFunc() {
+    rpsWaitAudio.play();
     messageElRPS.textContent = "And the winner is..."
     selectRPS.style.display = "none";
     resultRPS.style.display = "flex";
@@ -130,7 +131,7 @@ function resultRPSFunc() {
                 }, 500)
             } else if (playerSuit === 2) {
                 messageElRPS.textContent = "You won!"
-                coinsAudio.play()
+                coinsAudio.play();
                 credits += (parseInt(betSliderRPS.value) * 2)
                 creditsText.style.color = 'green'
                 creditsText.textContent = `Total credits: ${credits} CR`;
@@ -139,6 +140,7 @@ function resultRPSFunc() {
                     creditsText.textContent = `Total credits: ${credits} CR`;
                 }, 500)
             } else if (playerSuit === 3) {
+                rpsLoseAudio.play();
                 messageElRPS.textContent = "You lost!"
             }
             localStorage.credits = credits
@@ -147,6 +149,7 @@ function resultRPSFunc() {
             cpuSuitImg.src = '../icons/casino/paper-icon.png'
             cpuSuitText.textContent = 'Paper'
             if(playerSuit === 1){
+                rpsLoseAudio.play();
                 messageElRPS.textContent = "You lost!"
             } else if (playerSuit === 2) {
                 messageElRPS.textContent = "It's a draw!"
@@ -184,6 +187,7 @@ function resultRPSFunc() {
                     creditsText.textContent = `Total credits: ${credits} CR`;
                 }, 500)
             } else if (playerSuit === 2) {
+                rpsLoseAudio.play();
                 messageElRPS.textContent = "You lost!"
             } else if (playerSuit === 3) {
                 messageElRPS.textContent = "It's a draw!"

@@ -71,7 +71,6 @@ const cardOne = document.getElementById('card-one');
 const cardTwo = document.getElementById('card-two');
 const cardThree = document.getElementById('card-three');
 const cardFour = document.getElementById('card-four');
-const cardAudio = new Audio('../audio/casino/card.mp3');
 
 const newCard = document.getElementById('new-card');
 newCard.addEventListener('click', drawThirdCard);

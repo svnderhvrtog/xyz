@@ -31,10 +31,6 @@ const sumarySlots = document.getElementById('slots-summary');
 const slotOne = document.getElementById('slot-one');
 const slotTwo = document.getElementById('slot-two');
 const slotThree = document.getElementById('slot-three');
-const slotsStartAudio = new Audio('../audio/casino/slots-start.mp3');
-const slotsJackpotAudio = new Audio('../audio/casino/slots-jackpot.mp3');
-const slotsWinAudio = new Audio('../audio/casino/slots-win.mp3');
-
 
 const restartSlots = document.getElementById('restart-slots');
 restartSlots.addEventListener('click', restartSlotsFunc);
