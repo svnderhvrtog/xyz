@@ -1,8 +1,6 @@
 // Audio properties
-
-let audioEnabled = true;
-
 const audioFiles = {
+    introAudio: new Audio('../audio/casino/intro.mp3'),
     coinsAudio: new Audio('../audio/casino/coins.mp3'),
     loseAudio: new Audio('../audio/casino/lose.mp3'),
     gameBlackAudio: new Audio('../audio/casino/game-blackjack.mp3'),
@@ -22,21 +20,21 @@ const audioFiles = {
 };
 
 const { 
-    coinsAudio, loseAudio, gameBlackAudio, gameSlotsAudio, gameRouletteAudio, 
-    gameRPSAudio, optionsAudio, cardAudio, loadAudio, bigWinAudio, 
-    loseRouletteAudio, slotsStartAudio, slotsJackpotAudio, slotsWinAudio, 
-    rpsLoseAudio, rpsWaitAudio
+    introAudio, coinsAudio, loseAudio, gameBlackAudio, gameSlotsAudio,
+    gameRouletteAudio, gameRPSAudio, optionsAudio, cardAudio, loadAudio,
+    bigWinAudio, loseRouletteAudio, slotsStartAudio, slotsJackpotAudio,
+    slotsWinAudio, rpsLoseAudio, rpsWaitAudio
 } = audioFiles;
 
-
+// Animation
+const animationDurationShort = 500;
+const animationDurationLong = 2500;
 
 // General settings, sign-up & welcome
 const signUpSection = document.getElementById('sign-up');
 const userNameInput = document.getElementById('username');
 const welcomeScreen = document.getElementById('welcome-screen');
 const creditsText = document.getElementById('total-credits');
-const introAudio = new Audio('../audio/casino/intro.mp3');
-
 const profilePicture1 = document.getElementById('profile-picture1');
 const profilePicture2 = document.getElementById('profile-picture2');
 const profilePicture3 = document.getElementById('profile-picture3');
@@ -82,20 +80,20 @@ const welcomeText = document.getElementById('welcome-text');
 const welcomeImage = document.getElementById('welcome-image');
 const headerUserName = document.getElementById('header-username');
 const headerProfileImage = document.getElementById('header-profile');
-
+const inputDiv = document.getElementById('input-div');
 const submit = document.getElementById('submit').addEventListener('click', () => {
     if(userNameInput.value === ''){
-        alert('Please insert a username')
+        errorMessage('Please enter a username');
         return
     } else if (userNameInput.value.length > 8){
-        alert('Your username cannot be more than 8 characters')
+        errorMessage('Your username cannot be more than 8 characters');
         return
     }
     if(profilePictureSelected === true){
         mainSection.style.display = "grid";
         signUpSection.style.display = "none";
     } else {
-        alert('Please choose a profile picture')
+        errorMessage('Please choose a profile picture');
         return
     }
     if (profilePicture1.src.includes("profile1-active.jpg")){
@@ -119,8 +117,17 @@ const submit = document.getElementById('submit').addEventListener('click', () =>
     setTimeout(() => {
         welcomeScreen.style.display = "none";
         mainSection.style.display = "grid";
-    }, 2500)
+    }, animationDurationLong)
 });
+
+function errorMessage(text) {
+    const message = document.createElement('p');
+    const messageText = document.createTextNode(text);
+    message.classList.add('error-message');
+    message.style.display = "block";
+    message.appendChild(messageText);
+    inputDiv.appendChild(message);
+};
 
 window.addEventListener('load', () => {
     welcomeText.textContent = `Welcome ${localStorage.getItem('userName')}!`
@@ -135,8 +142,7 @@ window.addEventListener('load', () => {
             headerProfileImage.src = localStorage.getItem('userPicture');
             credits = localStorage.getItem('credits');
             creditsText.textContent = `Total credits: ${credits} CR`;
-        // IMPORTANT OM DEZE DURATIE WEER OMHOOG TE ZETTEN ZODAT LAADSCHERM WORDT GETOOND!!!!!!!!!!!!
-        }, 2000);
+        }, animationDurationLong);
     } else if (localStorage.getItem("userName") === null) {
         signUpSection.style.display = "flex"
     }
@@ -164,7 +170,7 @@ const game1 = document.getElementById('game1').addEventListener('click', () => {
         gameHeaderIcon.height = "40";
         gameHeaderIcon.style.marginTop = "0px";
         gameHeaderIcon.style.marginLeft = "0px";
-        profileDiv.style.marginLeft = "0px"
+        profileDiv.style.marginLeft = "0px";
         gameHeaderText.textContent = 'Blackjack';
         gameHeaderText.style.marginRight = "0px";
         blackjackSelectGame.style.display = "block";
@@ -188,7 +194,7 @@ const game2 = document.getElementById('game2').addEventListener('click', () => {
         gameHeaderIcon.height = "35";
         gameHeaderIcon.style.marginTop = "4px";
         gameHeaderIcon.style.marginLeft = "4px";
-        profileDiv.style.marginLeft = "0px"
+        profileDiv.style.marginLeft = "0px";
         gameHeaderText.textContent = 'Slots';
         gameHeaderText.style.marginRight = "56px";
         blackjackSelectGame.style.display = "none";
@@ -214,7 +220,7 @@ const game3 = document.getElementById('game3').addEventListener('click', () => {
         gameHeaderIcon.style.marginLeft = "0px";
         gameHeaderText.textContent = 'Roulette';
         gameHeaderText.style.marginRight = "2px";
-        profileDiv.style.marginLeft = "0px"
+        profileDiv.style.marginLeft = "0px";
         blackjackSelectGame.style.display = "none";
         blackjackSelectBet.style.display = "none";
         slotsSelectGame.style.display = "none";
@@ -236,7 +242,7 @@ const game4 = document.getElementById('game4').addEventListener('click', () => {
         gameHeaderIcon.height = "40";
         gameHeaderIcon.style.marginTop = "22px";
         gameHeaderIcon.style.marginLeft = "14px";
-        profileDiv.style.marginLeft = "230px"
+        profileDiv.style.marginLeft = "230px";
         gameHeaderText.textContent = 'Rock, Paper, Scissors';
         gameHeaderText.style.marginRight = "-716px";
         blackjackSelectGame.style.display = "none";
@@ -268,10 +274,14 @@ overlayOptions.addEventListener('click', (event) => {
 });
 
 // Options audio
-const audioText = document.getElementById('audio-text')
-const audioImg = document.getElementById('audio-img')
+const audioText = document.getElementById('audio-text');
+const audioImg = document.getElementById('audio-img');
+let audioEnabled = true;
 
-audioText.addEventListener('click', () => {
+audioText.addEventListener('click', changeAudio);
+audioImg.addEventListener('click', changeAudio);
+
+function changeAudio() {
     audioEnabled = !audioEnabled; 
     audioText.textContent = audioEnabled ? 'Audio ON' : 'Audio OFF';
     for (const audio of Object.values(audioFiles)) {
@@ -280,19 +290,7 @@ audioText.addEventListener('click', () => {
     audioImg.src = audioEnabled
         ? '../icons/casino/audioOn-icon.png'
         : '../icons/casino/audioOff-icon.png';
-});
-
-audioImg.addEventListener('click', () => {
-    audioEnabled = !audioEnabled; 
-    audioText.textContent = audioEnabled ? 'Audio ON' : 'Audio OFF';
-    for (const audio of Object.values(audioFiles)) {
-        audio.volume = audioEnabled ? 1 : 0;
-    }
-    audioImg.src = audioEnabled
-        ? '../icons/casino/audioOn-icon.png'
-        : '../icons/casino/audioOff-icon.png';
-});
-
+};
 
 // Options account
 const accountText = document.getElementById('account-text');
@@ -316,3 +314,21 @@ accountImg.addEventListener('click', () => {
     }
 });
 
+// Credits function
+function creditsDeposit() {
+    creditsText.style.color = 'red';
+    creditsText.textContent = `Total credits: ${credits} CR`;
+    setTimeout(() => {
+        creditsText.style.color = 'white';
+        creditsText.textContent = `Total credits: ${credits} CR`;
+    }, animationDurationShort)
+};
+
+function creditsAccumulated() {
+    creditsText.style.color = 'green';
+    creditsText.textContent = `Total credits: ${credits} CR`;
+    setTimeout(() => {
+        creditsText.style.color = 'white';
+        creditsText.textContent = `Total credits: ${credits} CR`;
+    }, animationDurationShort)
+};        

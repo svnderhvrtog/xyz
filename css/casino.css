@@ -1,6 +1,6 @@
 /* Pre-settings */
 *::selection {
-    color: rgb(197, 160, 207);
+    color: #c5a0cf;
 }
 
 :root {
@@ -13,6 +13,34 @@ body {
     font-family: "Quantico", sans-serif;
 }
 
+h1, h2, h3, h4, h5, p {
+    font-weight: 700;
+    color: var(--color-white);
+    text-align: center;
+    font-family: "Quantico", sans-serif;
+}
+
+h1, h2 {
+    font-size: 36px;
+}
+
+h3, p {
+    font-size: 24px;
+}
+
+h4, .medium-text {
+    font-size: 16px;
+}
+
+h5, .small-text {
+    font-size: 12px;
+}
+
+.smaller-text {
+    font-size: 14px;
+}
+
+/* Background */
 .background {
     background-color: #080321;
 }
@@ -22,20 +50,19 @@ body {
     background-size: cover;
 }
 
-header {
-    justify-content: space-between;
-    text-align: center;
+/* General */
+main {
+    display: none;
+    justify-content: center;
     align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 48px;
-    background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
-    border-radius: 24px;
-    padding-inline: 16px;
-    margin-bottom: 16px;
-    width: 98%;
-    height: auto;
-    grid-area: hd;
+    margin-inline: 24px;
+    margin-top: 24px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas:
+    "hd hd hd hd hd"
+    "overview overview overview overview overview"
+    "content content content content content"
+    "games games games games games"
 }
 
 .flex-row {
@@ -44,69 +71,10 @@ header {
     gap: 24px;
 }
 
-.icon {
-    padding-top: 10%;
-    padding-left: 2%;
-    align-content: center;
-    text-align: center;
-}
-
-.icon-header {
-    padding-top: 10%;
-    padding-left: 2%;
-    align-content: center;
-    text-align: center;
-}
-
-.content {
-    background-image: url(../images/casino/background/background-games.jpg);
-    margin: 10px;
-    border-radius: 10px;
-    border: solid #ffffff93 0.1px;
-    height: 628px;
-    grid-area: content;
-}
-
-h1 {
-    color: var(--color-white);
-    text-align: center;
-    font-family: "Quantico", sans-serif;
-    font-size: 36px;
-}
-
-h2 {
-    color: var(--color-white);
-    font-weight: 700;
-    text-align: center;
-    font-size: 36px;
-}
-
-h3 {
-    color: var(--color-white);
-    font-weight: 700;
-    text-align: center;
-    font-size: 24px;
-}
-
-h4 {
-    color: var(--color-white);
-    font-weight: 700;
-    text-align: center;
-    font-size: 16px;
-}
-
-h5 {
-    color: var(--color-white);
-    font-weight: 700;
-    text-align: center;
-    font-size: 12px;
-}
-
-p {
-    color: var(--color-white);
-    font-weight: 700;
-    text-align: center;
-    font-size: 24px;
+.flex-row-options {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
 }
 
 button {
@@ -115,13 +83,65 @@ button {
     padding-inline: 40px;
     padding-block: 16px;
     background-color: #09012260;
-    color: #efefef;
+    color: var(--color-white);
     border-radius: 10px;
     border: solid #393431 1px;
 }
 
 button:hover {
     border: solid #9333B4 1px;
+}
+
+div {
+    font-family: "Cabin", sans-serif;
+    font-size: 24px;
+}
+
+/* Menu */ 
+header {
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    background: linear-gradient(127deg, #281130 0%, #190930 35%, #090122 100%);
+    margin-inline: 0px;
+    border-radius: 24px;
+    padding-inline: 16px;
+    margin-bottom: 16px;
+    width: 98%;
+    height: auto;
+    grid-area: hd;
+}
+
+#header-profile {
+    padding-top: 9%;
+}
+
+.icon, .icon-header {
+    padding-top: 10%;
+    padding-left: 2%;
+    align-content: center;
+    text-align: center;
+}
+
+.return {
+    border-radius: 40px;
+    width: 120px;
+    padding-inline: 16px;
+    padding-block: 16px;
+    background-color: #9333B4;
+}
+
+/* Content */
+.content {
+    background-image: url(../images/casino/background/background-games.jpg);
+    margin: 10px;
+    border-radius: 10px;
+    border: solid #ffffff93 0.1px;
+    height: 628px;
+    grid-area: content;
 }
 
 input[type="radio"] {
@@ -140,53 +160,30 @@ input[type="radio"]:not(:disabled):checked {
 input[type="radio"]:disabled {
     background-color: #3934313a;
     border: solid #3934313a 1px;
-  }
-
-#header-profile {
-    padding-top: 9%;
 }
 
-.return {
-    border-radius: 40px;
-    width: 120px;
-    padding-inline: 16px;
-    padding-block: 16px;
-    background-color: #9333B4;
-}
-
+/* Games */
 .games {
-    text-align: center;
-    align-items: center;
+    background-color: #1D0E35;
+    height: 580px;
+    padding: 24px;
     padding-top: 36px;
     margin-right: 16px;
-    padding: 24px;
-    background-color: #1D0E35;
     border-radius: 10px;
     gap: 36px;
-    grid-area: games;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     align-items: center; 
-    height: 580px;
+    grid-area: games;
 }
 
 .game:hover {
     opacity: 65%;
 }
 
-.small-text {
-    font-size: 12px;
-}
-
-.smaller-text {
-    font-size: 14px;
-}
-
-.medium-text {
-    font-size: 16px;
-}
-
+/* Overview */
 .overview {
     margin-left: 0px;
     margin-right: 8px;
@@ -230,6 +227,7 @@ input[type="radio"]:disabled {
     margin-top: -12px;
 }
 
+/* Options */
 #overlay-options {
     display: none;
     position: fixed;
@@ -300,9 +298,13 @@ input[type="radio"]:disabled {
     height: 100vh;  
 }
 
+.error-message {
+    font-size: 16px;
+    margin-block-start: -8px;
+    color: red;
+}
 
-
-/* Games */
+/* Games general */
 #blackjack, #blackjack-bet {
     display: block;
 }
@@ -332,80 +334,6 @@ input[type="radio"]:disabled {
     padding-inline: 18%;
 }
 
-/* RPS */
-#slider-output-rps {
-    padding-top: 3px;
-    padding-bottom: 4px;
-}
-
-#explained-rps {
-    display: none;
-    padding-top: 1px;
-    padding-bottom: 10vh;
-}
-
-.rps-flex {
-    display: flex;
-    flex-direction: row;
-    gap: 54px;
-    justify-content: center;
-    align-items: center;
-}
-
-.rps-item {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.rps-item-hov:hover {
-    opacity: 65%;
-}
-
-#select-rps {
-    display: none;
-    padding-top: 3%;
-}
-
-#result-rps {
-    display: none;
-    padding-top: 3%;
-}
-
-.vs-text {
-    margin-top: -50px;
-    margin-right: 14px;
-}
-
-#restart-rps {
-    display: none;
-}
-
-/* Slots */
-#slider-output-slots {
-    padding-top: 3px;
-    padding-bottom: 4px;
-}
-
-#explained-slots {
-    display: none;
-    padding-top: 1px;
-    padding-bottom: 10vh;
-}
-
-#restart-slots {
-    display: none;
-}
-
-.slot {
-    width: 19%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 16px;
-    padding: 16px;
-}
-
-/* Blackjack */
 .center {
     display: flex;
     flex-flow: column;
@@ -414,6 +342,7 @@ input[type="radio"]:disabled {
     align-items: center;
 }
 
+/* Blackjack */
 .center-cards {
     padding-block: 24px;
     display: none;
@@ -453,11 +382,6 @@ input[type="radio"]:disabled {
     display: none;
 }
 
-div {
-    font-family: "Cabin", sans-serif;
-    font-size: 24px;
-}
-
 .card {
     width: 10%;
     justify-content: center;
@@ -483,6 +407,30 @@ div {
 
 #card-one, #card-two, #card-three, #card-four {
     display: none;
+}
+
+/* Slots */
+#slider-output-slots {
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+#explained-slots {
+    display: none;
+    padding-top: 1px;
+    padding-bottom: 10vh;
+}
+
+#restart-slots {
+    display: none;
+}
+
+.slot {
+    width: 19%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    padding: 16px;
 }
 
 /* Roulette */
@@ -542,14 +490,103 @@ div {
     width: 24%;
 }
 
+/* RPS */
+#slider-output-rps {
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+#explained-rps {
+    display: none;
+    padding-top: 1px;
+    padding-bottom: 10vh;
+}
+
+.rps-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 54px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rps-item {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.rps-item-hov:hover {
+    opacity: 65%;
+}
+
+#select-rps {
+    display: none;
+    padding-top: 3%;
+}
+
+#result-rps {
+    display: none;
+    padding-top: 3%;
+}
+
+.vs-text {
+    margin-top: -50px;
+    margin-right: 14px;
+}
+
+#restart-rps {
+    display: none;
+}
+
 /* Media queries */
 @media only screen and (max-width: 600px) {
+    /* General */
     .breakpoint {
         display: none;
     }
 
     .breakpoint-flex {
         display: none;
+    }
+
+    .flex-row-options {
+        display: block;
+        gap: 24px;
+    }
+
+    /* Menu */
+    header {
+        justify-content: space-evenly;
+        gap: 8px;
+        margin-inline: 6px;
+        padding-inline: 8px;
+        margin-bottom: 24px;
+    }
+
+    /* Overview */
+    .overview {
+        margin-left: 8px;
+        height: 300px;
+    }
+
+    /* Content */
+    .content {
+        margin-top: 24px;
+    }
+
+    /* Games */
+    .games {
+        padding-top: 0px;
+        margin-bottom: 24px;
+        margin-right: 0px;
+        margin-top: 16px;
+        margin-inline: 8px;
+        padding: 36px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 200px;
     }
 
     .message {
@@ -559,36 +596,20 @@ div {
         font-size: 24px;
     }
 
-    .overview {
-        margin-left: 8px;
-        margin-right: 8px;
-        background-color: #1D0E35;
-        border-radius: 10px;
-        grid-area: overview;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; 
-        height: 300px;
+    #game4 {
+        margin-top: -26px;
     }
 
-    .games {
-        padding-top: 0px;
-        margin-bottom: 24px;
-        margin-right: 0px;
-        margin-top: 16px;
+    .explainer-text {
+        padding-top: 1%;
+        padding-inline: 15%;
+        font-size: 13px;
+    }
+
+    .card {
+        padding: 16px;
         margin-inline: 8px;
-        padding: 36px;
-        background-color: #1D0E35;
-        border-radius: 10px;
-        grid-area: games;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: center;
-        align-items: center; 
-        height: 200px;
+        width: 16%;
     }
 
     .rps-flex {
@@ -597,65 +618,15 @@ div {
         gap: 48px;
     }
 
-    #game4 {
-        margin-top: -26px;
+    .rps-icon {
+        width: 100px;
+        height: 100px;
     }
 
-    header {
-        justify-content: space-evenly;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
-        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
-        border-radius: 24px;
-        margin-inline: 6px;
-        padding-inline: 8px;
-        margin-bottom: 24px;
-        width: 100%;
-        height: auto;
-        grid-area: hd;
-    }
-
-    main {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        margin-inline: 24px;
-        margin-top: 24px;
-        grid-template-columns: 20% 20% 20% 20% 20%;
-        grid-template-areas:
-        "hd hd hd hd hd"
-        "overview overview overview overview overview"
-        "content content content content content"
-        "games games games games games"
-    }
-
-    .flex-row-options {
-        display: block;
-        gap: 24px;
-    }
-
+    /* Options */
     .options-img {
         padding-top: 1%;
         width: 28%;
-    }
-
-    .content {
-        margin-top: 24px;
-    }
-
-    .explainer-text {
-        padding-top: 1%;
-        padding-inline: 15%;
-        font-size: 13px;
-    }
-
-    .card {
-        padding: 16px;
-        margin-inline: 8px;
-        width: 16%;
     }
 
     /* Sign-up */
@@ -665,26 +636,58 @@ div {
     }    
 
     .profile-container {
-        margin-top: -8px;
-        margin-bottom: 8px;
-        padding-block: 24px;
         display: block;
         text-align: center;
     }
-
-    .rps-icon {
-        width: 100px;
-        height: 100px;
-    }
 }
 
-@media only screen and (min-width: 601px) {    
+@media only screen and (min-width: 601px) {   
+    /* General */ 
     .breakpoint {
         display: none;
     }
 
     .breakpoint-flex {
         display: none;
+    }
+
+    .flex-row-options {
+        display: block;
+        gap: 24px;
+    }
+
+    /* Menu */
+    header {
+        justify-content: space-evenly;
+        gap: 8px;
+        margin-inline: 6px;
+        padding-inline: 8px;
+        margin-bottom: 24px;
+    }
+
+    /* Overview */
+    .overview {
+        margin-left: 8px;
+        height: 300px;
+    }
+
+    /* Content */
+    .content {
+        margin-top: 24px;
+    }
+
+    /* Games */
+    .games {
+        padding-top: 0px;
+        margin-bottom: 24px;
+        margin-right: 0px;
+        margin-top: 16px;
+        margin-inline: 8px;
+        padding: 36px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 200px;
     }
 
     .message {
@@ -694,89 +697,8 @@ div {
         font-size: 24px;
     }
 
-    .overview {
-        margin-left: 8px;
-        margin-right: 8px;
-        background-color: #1D0E35;
-        border-radius: 10px;
-        grid-area: overview;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; 
-        height: 300px;
-    }
-
-    .games {
-        padding-top: 0px;
-        margin-bottom: 24px;
-        margin-right: 0px;
-        margin-top: 16px;
-        margin-inline: 8px;
-        padding: 36px;
-        background-color: #1D0E35;
-        border-radius: 10px;
-        grid-area: games;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        text-align: center;
-        justify-content: center;
-        align-items: center; 
-        height: 200px;
-    }
-
-    .flex-row-options {
-        display: block;
-        gap: 24px;
-    }
-
-    .options-img {
-        padding-top: 1%;
-        width: 21%;
-    }
-
     #game4 {
         margin-top: -10px;
-    }
-
-    .options-text {
-        margin-top: 27px;
-    }
-
-    header {
-        justify-content: space-evenly;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
-        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
-        border-radius: 24px;
-        margin-inline: 6px;
-        padding-inline: 8px;
-        margin-bottom: 24px;
-        width: 100%;
-        height: auto;
-        grid-area: hd;
-    }
-
-    main {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        margin-inline: 24px;
-        margin-top: 24px;
-        grid-template-columns: 20% 20% 20% 20% 20%;
-        grid-template-areas:
-        "hd hd hd hd hd"
-        "overview overview overview overview overview"
-        "content content content content content"
-        "games games games games games"
-    }
-
-    .content {
-        margin-top: 24px;
     }
 
     .explainer-text {
@@ -791,18 +713,8 @@ div {
         width: 16%;
     }
 
-    /* Sign-up */
-    .profile-setupimg {
-        width: 140px;   
-        height: 140px;
-    }    
-
-    .profile-container {
-        margin-top: -8px;
-        margin-bottom: 8px;
-        padding-block: 24px;
-        display: block;
-        text-align: center;
+    .rps-flex {
+        gap: 24px;
     }
 
     .rps-icon {
@@ -810,42 +722,52 @@ div {
         height: 160px;
     }
 
-    .rps-flex {
-        gap: 24px;
+    /* Options */
+    .options-img {
+        padding-top: 1%;
+        width: 21%;
+    }
+
+    .options-text {
+        margin-top: 27px;
+    }
+
+    /* Sign-up */
+    .profile-setupimg {
+        width: 140px;   
+        height: 140px;
+    }    
+
+    .profile-container {
+        display: block;
+        text-align: center;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    main {
+    /* General */
+    .breakpoint {
         display: none;
-        justify-content: center;
-        align-items: center;
-        margin-inline: 24px;
-        margin-top: 24px;
-        grid-template-columns: 20% 20% 20% 20% 20%;
-        grid-template-areas:
-        "hd hd hd hd hd"
-        "overview overview overview overview overview"
-        "content content content content content"
-        "games games games games games"
     }
 
-    header {
-        justify-content: space-between;
-        text-align: center;
-        align-items: center;
+    .breakpoint-flex {
+        display: flex;
+    }
+
+    .flex-row-options {
         display: flex;
         flex-direction: row;
+        gap: 24px;
+    }
+
+    /* Menu */
+    header {
+        justify-content: space-between;
         gap: 8px;
-        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
-        border-radius: 24px;
         margin-inline: 6px;
         padding-inline: 8px;
         margin-bottom: 24px;
-        width: 100%;
-        height: auto;
-        grid-area: hd;
-    }
+     }
 
     .explainer-text {
         padding-top: 1%;
@@ -860,34 +782,30 @@ div {
         font-size: 36px;
     }
 
-    .rps-flex {
-        gap: 54px;
-    }
-
     #game4 {
         margin-top: -10px;
     }
 
-
-    .breakpoint {
-        display: none;
+    .card {
+        padding: 16px;
+        margin-inline: 8px;
+        width: 10%;
     }
 
-    .breakpoint-flex {
-        display: flex;
+    .rps-flex {
+        gap: 54px;
     }
 
-    .flex-row-options {
-        display: flex;
-        flex-direction: row;
-        gap: 24px;
+    .rps-icon {
+        width: 168px;
+        height: 168px;
     }
-
+    
+    /* Options */
     .options-img {
         padding-top: 10%;
         width: 70%;
     }
-
 
     /* Sign-up */
     .profile-setupimg {
@@ -896,26 +814,20 @@ div {
     }
 
     .profile-container {
-        margin-top: -8px;
-        margin-bottom: 8px;
-        padding-block: 24px;
         display: block;
         text-align: center;
-    }    
-
-    .card {
-        padding: 16px;
-        margin-inline: 8px;
-        width: 10%;
-    }
-
-    .rps-icon {
-        width: 168px;
-        height: 168px;
     }
 }
 
 @media only screen and (min-width: 992px) {
+    /* General */
+    main {
+        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+        grid-template-areas:
+        "hd hd hd hd hd hd hd hd hd hd"
+        "games overview overview content content content content content content content"
+    }
+
     .breakpoint {
         display: block;
     }
@@ -924,96 +836,62 @@ div {
         display: flex;
     }
 
-    main {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        margin-inline: 24px;
-        margin-top: 24px;
-        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-        grid-template-areas:
-        "hd hd hd hd hd hd hd hd hd hd"
-        "games overview overview content content content content content content content"
+    /* Overview */
+    .overview {
+        margin-left: 0px;
+        margin-top: -10px;
+        height: 636px;
     }
 
-    .options-img {
-        padding-top: 10%;
-        width: 70%;
-    }
-
+    /* Content */
     .content {
         margin-top: 0px;
+    }
+
+    /* Games */
+    .games {
+        padding-top: 36px;
+        margin-top: 1px;
+        margin-bottom: 10px;
+        margin-right: 16px;
+        padding: 24px;
+        flex-wrap: nowrap;
+        display: flex;
+        flex-direction: column;
+        height: 590px;
     }
 
     #game4 {
         margin-top: -10px;
     }
 
-    .options-text {
-        margin-top: 24px;
+    .explainer-text {
+        padding-inline: 18%;
     }
 
+    .card {
+        padding: 16px;
+        margin-inline: 16px;
+        width: 12%;
+    }
 
     .rps-flex {
         gap: 54px;
     }
 
-
-    .overview {
-        margin-left: 0px;
-        margin-right: 8px;
-        margin-top: -10px;
-        background-color: #1D0E35;
-        border-radius: 10px;
-        grid-area: overview;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; 
-        height: 636px;
+    .rps-icon {
+        width: 182px;
+        height: 182px;
     }
 
-    .games {
-        margin-top: 1px;
-        margin-bottom: 10px;
-        text-align: center;
-        align-items: center;
-        padding-top: 36px;
-        margin-right: 16px;
-        padding: 24px;
-        background-color: #1D0E35;
-        border-radius: 10px;
-        gap: 36px;
-        grid-area: games;
-        flex-wrap: nowrap;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; 
-        height: 590px;
+    /* Options */
+    .options-img {
+        padding-top: 10%;
+        width: 70%;
     }
 
-    .flex-row-options {
-        display: flex;
-        flex-direction: row;
-        gap: 24px;
-    }
-
-    header {
-        justify-content: space-between;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        gap: 48px;
-        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
-        margin-inline: 0px;
-        border-radius: 24px;
-        padding-inline: 16px;
-        margin-bottom: 16px;
-        width: 98%;
-        height: auto;
-        grid-area: hd;
+    .options-text {
+        margin-top: 24px;
     }
 
     /* Sign-up */
@@ -1022,117 +900,65 @@ div {
         height: 200px;
     }  
     .profile-container {
-        margin-top: -8px;
-        margin-bottom: 8px;
-        padding-block: 24px;
         display: flex;
         gap: 24px;
         text-align: left;
     }
-
-    .explainer-text {
-        padding-inline: 18%;
-    }
-
-    .rps-icon {
-        width: 182px;
-        height: 182px;
-    }
 }
 
 @media only screen and (min-width: 1200px) {
+    /* General */
     main {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        margin-inline: 24px;
-        margin-top: 24px;
         grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
         grid-template-areas:
         "hd hd hd hd hd hd hd hd hd hd"
         "games overview overview content content content content content content content"
     }
 
+    /* Overview */
     .overview {
         margin-left: 0px;
-        margin-right: 8px;
         margin-top: -10px;
-        background-color: #1D0E35;
-        border-radius: 10px;
-        grid-area: overview;
+        height: 636px;
+    }
+
+    /* Games */
+    .games {
+        padding-top: 36px;
+        margin-top: 1px;
+        margin-bottom: 10px;
+        margin-right: 16px;
+        padding: 24px;
+        flex-wrap: nowrap;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center; 
-        height: 636px;
+        height: 590px;
     }
 
     #game4 {
         margin-top: -10px;
     }
 
-    .options-text {
-        margin-top: 24px;
-    }
-
-    .games {
-        margin-top: 1px;
-        margin-bottom: 10px;
-        text-align: center;
-        align-items: center;
-        padding-top: 36px;
-        margin-right: 16px;
-        padding: 24px;
-        background-color: #1D0E35;
-        border-radius: 10px;
-        gap: 36px;
-        grid-area: games;
-        flex-wrap: nowrap;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; 
-        height: 590px;
+    .explainer-text {
+        padding-inline: 18%;
     }
 
     .rps-flex {
         gap: 54px;
     }
 
-    .flex-row-options {
-        display: flex;
-        flex-direction: row;
-        gap: 24px;
+    .rps-icon {
+        width: 200px;
+        height: 200px;
     }
 
-    header {
-        justify-content: space-between;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        gap: 48px;
-        background: linear-gradient(127deg, rgba(40,17,48,1) 0%, rgba(25,9,48,1) 35%, rgba(9,1,34,1) 100%);
-        margin-inline: 0px;
-        border-radius: 24px;
-        padding-inline: 16px;
-        margin-bottom: 16px;
-        width: 98%;
-        height: auto;
-        grid-area: hd;
+    /* Options */
+    .options-text {
+        margin-top: 24px;
     }
 
     .options-img {
         padding-top: 10%;
         width: 70%;
-    }
-
-    .explainer-text {
-        padding-inline: 18%;
-    }
-
-    .rps-icon {
-        width: 200px;
-        height: 200px;
     }
 }

@@ -33,17 +33,17 @@
     </script>
     <!--Sign-up-->
     <section id="sign-up">
-        <div class="name-input">
+        <div class="name-input" id="input-div">
             <h3>Enter your username:</h3>
             <input id="username" type="text" name="username" placeholder="Galaxy" style="margin-bottom: 24px;">
         </div>
         <div>
             <h3>Choose your profile picture:</h3>
             <div class="profile-container">
-                <img src="../images/casino/profile/profile1.jpg" id="profile-picture1" draggable="false" class="profile-setupimg">
-                <img src="../images/casino/profile/profile2.jpg" id="profile-picture2" draggable="false" class="profile-setupimg">
-                <img src="../images/casino/profile/profile3.jpg" id="profile-picture3" draggable="false" class="profile-setupimg">
-                <img src="../images/casino/profile/profile4.jpg" id="profile-picture4" draggable="false" class="profile-setupimg">
+                <img src="../images/casino/profile/profile1.jpg" id="profile-picture1" draggable="false" class="profile-setupimg" alt="racoon wearing a spacesuit">
+                <img src="../images/casino/profile/profile2.jpg" id="profile-picture2" draggable="false" class="profile-setupimg" alt="woman with pink hair wearing a spacesuit">
+                <img src="../images/casino/profile/profile3.jpg" id="profile-picture3" draggable="false" class="profile-setupimg" alt="fictional alien wearing glasses, looks like a hamster">
+                <img src="../images/casino/profile/profile4.jpg" id="profile-picture4" draggable="false" class="profile-setupimg" alt="spaceman wearing headphones and a spacesuit without helmet">
             </div>
             <div class="bet-container">
                 <button id="submit">Submit</button>
@@ -53,7 +53,7 @@
     <!--Welcome screen-->
     <section id="welcome-screen">
         <h3 id="welcome-text">Welcome user!</h3>
-        <img id="welcome-image" src="../images/casino/profile/profile1.jpg" width="200" draggable="false">
+        <img id="welcome-image" src="../images/casino/profile/profile1.jpg" width="200" draggable="false" id="profile picture of user">
     </section>
     <main>
         <!--Options overlay-->
@@ -62,11 +62,11 @@
                 <h2>Options</h2>
                 <div class="flex-row-options center-options"> 
                     <div class="center-options">
-                        <img src="../icons/casino/audioOn-icon.png" class="options-img" id="audio-img" draggable="false">
+                        <img src="../icons/casino/audioOn-icon.png" class="options-img" id="audio-img" draggable="false" alt="illustration icon of audio">
                         <h3 id="audio-text">Audio ON</h3>
                     </div>
                     <div class="center-options">
-                        <img src="../icons/casino/person-icon.png" class="options-img" id="account-img" draggable="false">
+                        <img src="../icons/casino/person-icon.png" class="options-img" id="account-img" draggable="false" alt="illustration icon of a person">
                         <h3 id="account-text">Delete account</h3>
                     </div>
                 </div>
@@ -75,11 +75,11 @@
         <!--Header-->
         <header>
             <div class="flex-row breakpoint-flex">
-                <img src="../icons/casino/blackjack-icon.png" id="header-game-icon" alt="game icon" width="40" height="40" class="icon-header" draggable="false">
+                <img src="../icons/casino/blackjack-icon.png" id="header-game-icon" alt="game icon of current selected game" width="40" height="40" class="icon-header" draggable="false">
                 <h1 id="header-game-text">Blackjack</h1>
             </div>
             <div class="flex-row breakpoint-flex" id="profile-div">
-                <img id="header-profile" src="../images/casino/profile/profile1.jpg" width="40" height="40" draggable="false"> 
+                <img id="header-profile" src="../images/casino/profile/profile1.jpg" width="40" height="40" draggable="false" alt="user profile picture selected on welcome screen"> 
                 <h4 id="header-username"></h4>
             </div>
             <div class="flex-row">
@@ -94,23 +94,23 @@
         <!--Games-->
         <div class="games">
             <div class="game" id="game1">
-                <img src="../icons/casino/blackjack-icon.png" alt="blackjack icon" width="40" height="40" class="icon" draggable="false">
+                <img src="../icons/casino/blackjack-icon.png" alt="icon of the casinogame blackjack" width="40" height="40" class="icon" draggable="false">
                 <p class="small-text">Blackjack</p>
             </div>
             <div class="game" id="game2">
-                <img src="../icons/casino/slots-icon.png" alt="slots icon" width="50" height="35" class="icon" draggable="false">
+                <img src="../icons/casino/slots-icon.png" alt="icon of the casinogame slots" width="50" height="35" class="icon" draggable="false">
                 <p class="small-text">Slots</p>
             </div>
             <div class="game" id="game3">
-                <img src="../icons/casino/roulette-icon.png" alt="roulette icon" width="50" height="40" class="icon" draggable="false">
+                <img src="../icons/casino/roulette-icon.png" alt="icon of the casinogame roulette" width="50" height="40" class="icon" draggable="false">
                 <p class="small-text">Roulette</p>
             </div>
             <div class="game" id="game4">
-                <img src="../icons/casino/rock-icon.png" alt="rock icon" width="40" height="40" class="icon" draggable="false">
+                <img src="../icons/casino/rock-icon.png" alt="icon of a rock, from the casinogame rock, paper, scissors" width="40" height="40" class="icon" draggable="false">
                 <p class="small-text">Rock, Paper, Scissors</p>
             </div>
             <div class="game" id="options">
-                <img src="../icons/casino/options-icon.png" alt="options icon" width="60" height="18" class="icon" draggable="false">
+                <img src="../icons/casino/options-icon.png" alt="icon for the options of space casino" width="60" height="18" class="icon" draggable="false">
                 <p class="small-text options-text">Options</p>
             </div>
         </div>
@@ -181,23 +181,23 @@
                 <h3>Leaderboard</h3>
                 <div class="leaderboard-container"> 
                     <div class="leaderboard-player">
-                        <img src="../images/casino/profile/profile4.jpg" width="70" height="70" draggable="false">
+                        <img src="../images/casino/profile/profile4.jpg" width="70" height="70" draggable="false" alt="spaceman wearing headphones and a spacesuit without helmet">
                         <div class="leaderboard-text">
-                            <h4>sander 🥇</h4>
+                            <h4>Sander 🥇</h4>
                             <h5 class="leaderboard-h5">531 CR</h5>
                         </div>
                     </div>
                     <div class="leaderboard-player">
-                        <img src="../images/casino/profile/profile2.jpg" width="70" height="70" draggable="false">
+                        <img src="../images/casino/profile/profile2.jpg" width="70" height="70" draggable="false" alt="woman with pink hair wearing a spacesuit">
                         <div class="leaderboard-text">
-                            <h4>rosalie 🥈</h4>
+                            <h4 style="margin-inline: 2.5px;">Rosalie 🥈</h4>
                             <h5 class="leaderboard-h5">488 CR</h5>
                         </div>
                     </div>
                     <div class="leaderboard-player">
-                        <img src="../images/casino/profile/profile3.jpg" width="70" height="70" draggable="false">
+                        <img src="../images/casino/profile/profile3.jpg" width="70" height="70" draggable="false" alt="fictional alien wearing glasses, looks like a hamster">
                         <div class="leaderboard-text">
-                            <h4>maxxy 🥉</h4>
+                            <h4 style="margin-inline: 8px;">Peter 🥉</h4>
                             <h5 class="leaderboard-h5">364 CR</h5>
                         </div>
                     </div>
@@ -219,10 +219,10 @@
                     </div>
                 </div>
                 <div class="center-cards" id="cards-summary">
-                    <img src="" class="card" id="card-one" draggable="false">
-                    <img src="" class="card" id="card-two" draggable="false">
-                    <img src="" class="card" id="card-three" draggable="false"> 
-                    <img src="" class="card" id="card-four" draggable="false">
+                    <img src="" class="card" id="card-one" draggable="false" alt="playing card from the game Blackjack">
+                    <img src="" class="card" id="card-two" draggable="false" alt="playing card from the game Blackjack">
+                    <img src="" class="card" id="card-three" draggable="false" alt="playing card from the game Blackjack"> 
+                    <img src="" class="card" id="card-four" draggable="false" alt="playing card from the game Blackjack">
                 </div>
                 <p id="sum-el">Total:</p>
                 <div id="explained-black">
@@ -285,23 +285,23 @@
                 </div>
                 <div id="select-roulette">
                     <div class="center-roulette">
-                        <img src="../images/casino/roulette/digit1.png" class="roulette-item" id="roulette-digit-one" draggable="false">
-                        <img src="../images/casino/roulette/digit2.png" class="roulette-item" id="roulette-digit-two" draggable="false">
-                        <img src="../images/casino/roulette/digit3.png" class="roulette-item" id="roulette-digit-three" draggable="false"> 
-                        <img src="../images/casino/roulette/digit4.png" class="roulette-item" id="roulette-digit-four" draggable="false"> 
-                        <img src="../images/casino/roulette/digit5.png" class="roulette-item" id="roulette-digit-five" draggable="false"> 
-                        <img src="../images/casino/roulette/digit6.png" class="roulette-item" id="roulette-digit-six" draggable="false"> 
-                        <img src="../images/casino/roulette/digit7.png" class="roulette-item" id="roulette-digit-seven" draggable="false"> 
-                        <img src="../images/casino/roulette/digit8.png" class="roulette-item" id="roulette-digit-eight" draggable="false"> 
-                        <img src="../images/casino/roulette/digit9.png" class="roulette-item" id="roulette-digit-nine" draggable="false">
+                        <img src="../images/casino/roulette/digit1.png" class="roulette-item" id="roulette-digit-one" draggable="false" alt="a digit saying one, for roulette">
+                        <img src="../images/casino/roulette/digit2.png" class="roulette-item" id="roulette-digit-two" draggable="false" alt="a digit saying two, for roulette">
+                        <img src="../images/casino/roulette/digit3.png" class="roulette-item" id="roulette-digit-three" draggable="false" alt="a digit saying three, for roulette"> 
+                        <img src="../images/casino/roulette/digit4.png" class="roulette-item" id="roulette-digit-four" draggable="false" alt="a digit saying four, for roulette"> 
+                        <img src="../images/casino/roulette/digit5.png" class="roulette-item" id="roulette-digit-five" draggable="false" alt="a digit saying five, for roulette"> 
+                        <img src="../images/casino/roulette/digit6.png" class="roulette-item" id="roulette-digit-six" draggable="false" alt="a digit saying six, for roulette"> 
+                        <img src="../images/casino/roulette/digit7.png" class="roulette-item" id="roulette-digit-seven" draggable="false" alt="a digit saying seven, for roulette"> 
+                        <img src="../images/casino/roulette/digit8.png" class="roulette-item" id="roulette-digit-eight" draggable="false" alt="a digit saying eight, for roulette"> 
+                        <img src="../images/casino/roulette/digit9.png" class="roulette-item" id="roulette-digit-nine" draggable="false" alt="a digit saying nine, for roulette">
                     </div>
                     <div class="center-roulette2">
-                        <img src="../images/casino/roulette/color1.png" class="roulette-item" id="roulette-color-one" draggable="false"> 
-                        <img src="../images/casino/roulette/color2.png" class="roulette-item" id="roulette-color-two" draggable="false"> 
+                        <img src="../images/casino/roulette/color1.png" class="roulette-item" id="roulette-color-one" draggable="false" alt="an empty digit tile with the color green, for roulette"> 
+                        <img src="../images/casino/roulette/color2.png" class="roulette-item" id="roulette-color-two" draggable="false" alt="an empty digit tile with the color purple, for roulette"> 
                     </div>
                 </div>
                 <div id="result-roulette">
-                    <img src="" id="roulette-resultIMG" draggable="false">
+                    <img src="" id="roulette-resultIMG" draggable="false"  alt="the result of the game roulette, a number from 1 - 9 with a purple or green color">
                 </div>
                 <div id="explained-roulette">
                     <p class="explainer-text medium-text">
@@ -330,26 +330,26 @@
                 </div>
                 <div id="select-rps" class="rps-flex">
                     <div class="rps-item rps-item-hov" id="rock-suit">
-                        <img src="../icons/casino/rock-icon.png" draggable="false" class="rps-icon">
+                        <img src="../icons/casino/rock-icon.png" draggable="false" class="rps-icon"  alt="a moon rock icon for the game Rock, Paper, Scissors">
                         <h2>Rock</h2>
                     </div>
                     <div class="rps-item rps-item-hov" id="paper-suit">
-                        <img src="../icons/casino/paper-icon.png" draggable="false" class="rps-icon">
+                        <img src="../icons/casino/paper-icon.png" draggable="false" class="rps-icon" alt="a paper box icon for the game Rock, Paper, Scissors">
                         <h2>Paper</h2>
                     </div>
                     <div class="rps-item rps-item-hov" id="scissors-suit">
-                        <img src="../icons/casino/scissors-icon.png" draggable="false" class="rps-icon">
+                        <img src="../icons/casino/scissors-icon.png" draggable="false" class="rps-icon" alt="a scissors icon for the game Rock, Paper, Scissors">
                         <h2>Scissors</h2>
                     </div>
                 </div>
                 <div id="result-rps" class="rps-flex">
                     <div class="rps-item">
-                        <img src="" draggable="false" id="choosen-suit" class="rps-icon">
+                        <img src="" draggable="false" id="choosen-suit" class="rps-icon" alt="a choosen suit icon either rock paper or scissors">
                         <h2 id="choosen-suit-text"></h2>
                     </div>
                     <h2 class="vs-text">VS</h2>
                     <div class="rps-item">
-                        <img src="" draggable="false" id="cpu-suit" class="rps-icon">
+                        <img src="" draggable="false" id="cpu-suit" class="rps-icon" alt="a random suit icon either rock paper or scissors">
                         <h2 id="cpu-suit-text"></h2>
                     </div>
                 </div>
