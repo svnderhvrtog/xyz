@@ -1,0 +1,92 @@
+[
+  {
+    "set": "bears",
+    "card1": "bear",
+    "card2": "bear"
+  },
+  {
+    "set": "birds",
+    "card1": "bird",
+    "card2": "bird"
+  },
+  {
+    "set": "calves",
+    "card1": "calf",
+    "card2": "calf"
+  },
+  {
+    "set": "cats",
+    "card1": "cat",
+    "card2": "cat"
+  },
+  {
+    "set": "chickens",
+    "card1": "chicken",
+    "card2": "chicken"
+  },
+  {
+    "set": "cows",
+    "card1": "cow",
+    "card2": "cow"
+  },
+  {
+    "set": "dogs",
+    "card1": "dog",
+    "card2": "dog"
+  },
+  {
+    "set": "ducks",
+    "card1": "duck",
+    "card2": "duck"
+  },
+  {
+    "set": "goats",
+    "card1": "goat",
+    "card2": "goat"
+  },
+  {
+    "set": "geese",
+    "card1": "goose",
+    "card2": "goose"
+  },
+  {
+    "set": "horses",
+    "card1": "horse",
+    "card2": "horse"
+  },
+  {
+    "set": "kittens",
+    "card1": "kitten",
+    "card2": "kitten"
+  },
+  {
+    "set": "lambs",
+    "card1": "lamb",
+    "card2": "lamb"
+  },
+  {
+    "set": "mouses",
+    "card1": "mouse",
+    "card2": "mouse"
+  },
+  {
+    "set": "pigs",
+    "card1": "pig",
+    "card2": "pig"
+  },
+  {
+    "set": "piglets",
+    "card1": "piglet",
+    "card2": "piglet"
+  },
+  {
+    "set": "puppies",
+    "card1": "puppy",
+    "card2": "puppy"
+  },
+  {
+    "set": "roosters",
+    "card1": "rooster",
+    "card2": "rooster"
+  }
+]

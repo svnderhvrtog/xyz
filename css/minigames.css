@@ -1,0 +1,134 @@
+body {
+  background-color: #636363;
+  margin: 0;
+  overflow: hidden;
+  min-height:200vh;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../images/minigames/background-text.png);
+  background-repeat: repeat-y;
+  transform: rotate(-45deg); /* Kantel de achtergrond -45 graden */
+  animation: moveBackground 10s linear infinite; /* Vloeiende animatie met juiste timing */
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: rotate(-45deg) translateX(0);
+  }
+  100% {
+    transform:  rotate(-45deg) translateX(-14.8%); /* Exact afgestemd voor naadloze beweging */
+  }
+}
+
+#game-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100vh;
+  position: relative;
+}
+
+.memory-img {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10%;
+  padding-left: 10%;
+}
+
+.tic-img {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30%;
+  margin-left: -2%;
+}
+
+.minigames-select {
+  width: 86%;
+  height: auto;
+}
+
+#memory {
+  display: none;
+}
+
+#field {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#field > div {
+  padding: 5px;
+  position: relative;
+}
+
+#field img {
+  width: 100%;
+}
+
+.board4 {
+  flex: 25%;
+  max-width: 25%;
+  box-sizing: border-box;
+}
+
+.board5 {
+  flex: 20%;
+  max-width: 20%;
+  box-sizing: border-box;
+}
+
+.board6 {
+  flex: 16.66666%;
+  max-width: 16.66666%;
+  box-sizing: border-box;
+}
+
+img {
+  margin: 0;
+  display: block;
+}
+
+.covered, .uncovered {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  padding-inline: -5px;
+}
+
+.uncovered {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    width: 400%;
+    height: 400%;
+  }
+  #field {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .background {
+    width: 250vh;
+    height: 130vh;
+  }
+}
+

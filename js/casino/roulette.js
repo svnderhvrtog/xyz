@@ -119,6 +119,7 @@ function startRouletteGame() {
                 messageElRoulette.textContent = 'You lost!';
             };
         }, 3000);
+        localStorage.credits = credits;
     };
 
     function handleColorChoice(validNumbers) {
@@ -145,6 +146,7 @@ function startRouletteGame() {
                 messageElRoulette.textContent = 'You lost!';
             }
         }, 3000);
+        localStorage.credits = credits;
     };
 };
 

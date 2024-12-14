@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head> 
+    <title>Sander Hartog - More Minigames XYZ</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Explore the experimental workspace XYZ of Sander Hartog! Front-end developer specializing in crafting user-friendly digital experiences.">
+    <meta name="keywords" content="Front-end, Developer, Sander, Hartog, Portfolio, XYZ, Workspace">
+    <meta name="author" content="Sander Hartog">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Sander Hartog - Workspace XYZ"/>
+    <meta property="og:description" content="Explore the experimental workspace XYZ of Sander Hartog! Front-end developer specializing in crafting user-friendly digital experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
+    <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
+    <link rel="manifest" href="../json/manifest.webmanifest">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/minigames.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Unbounded:wght@200..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BB063KRF2M');
+    </script>
+    <main>
+        <section id="game-select">
+            <img src="../images/minigames/memory.png" class="minigames-select memory-img slide">
+            <img src="../images/minigames/tic-tac-toe.png" class="minigames-select tic-img">
+        </section>
+        <section id="memory">
+            <select id="select">
+                <option disabled selected>Kies een speelveld</option>
+                <option value="4">4 x 4</option>
+                <option value="5">5 x 5</option>
+                <option value="6">6 x 6</option>
+            </select>
+            <div id="tries"></div>
+            <div id="success"></div>
+            <div id="field"></div>
+        </section>
+        <section id="tic-tac-toe">
+
+        </section>
+        <div class="background"></div>
+    </main>
+	<script src="../js/minigames.js" type="module"></script>
+    <script src="../js/memory.js" type="module"></script>
+</body>
+</html>
