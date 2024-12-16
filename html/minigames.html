@@ -7,7 +7,7 @@
     <meta name="description" content="Explore the experimental workspace XYZ of Sander Hartog! Front-end developer specializing in crafting user-friendly digital experiences.">
     <meta name="keywords" content="Front-end, Developer, Sander, Hartog, Portfolio, XYZ, Workspace">
     <meta name="author" content="Sander Hartog">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta property="og:title" content="Sander Hartog - Workspace XYZ"/>
     <meta property="og:description" content="Explore the experimental workspace XYZ of Sander Hartog! Front-end developer specializing in crafting user-friendly digital experiences.">
     <meta property="og:type" content="website">
@@ -20,10 +20,7 @@
     <link rel="stylesheet" href="../css/minigames.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Unbounded:wght@200..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -36,26 +33,64 @@
     </script>
     <main>
         <section id="game-select">
-            <img src="../images/minigames/memory.png" class="minigames-select memory-img slide">
-            <img src="../images/minigames/tic-tac-toe.png" class="minigames-select tic-img">
+            <img src="../images/minigames/memory.png" class="minigames-select memory-img slide" draggable="false">
+            <img src="../images/minigames/tic-tac-toe.png" class="minigames-select tic-img" draggable="false">
         </section>
         <section id="memory">
-            <select id="select">
-                <option disabled selected>Kies een speelveld</option>
-                <option value="4">4 x 4</option>
-                <option value="5">5 x 5</option>
-                <option value="6">6 x 6</option>
-            </select>
-            <div id="tries"></div>
-            <div id="success"></div>
+            <div id="select">
+                <h2>Choose a game-mode</h2>
+                <div>
+                    <button id="game-4">Short</button>
+                    <button id="game-5">Medium</button>
+                    <button id="game-6">Long</button>
+                </div>
+            </div>
             <div id="field"></div>
+            <h2 id="success"></h2>
         </section>
         <section id="tic-tac-toe">
-
+            <div id="root">
+                <h2 id="heading-text">Game set-up</h2>
+                <div id="settings-menu">
+                    <div>
+                        <label>Width:</label>
+                        <input type="range" min="3" max="9" value="3" id="input-width" oninput="this.nextElementSibling.value = this.value">
+                        <output>3</output>
+                    </div>
+                    <div>
+                        <label>Height:</label>
+                        <input type="range" min="3" max="9" value="3" id="input-height" oninput="this.nextElementSibling.value = this.value">
+                        <output>3</output>
+                    </div>
+                    <div>
+                        <label>Win condition:</label>
+                        <input type="range" min="3" max="6" value="3" id="input-win-condition" oninput="this.nextElementSibling.value = this.value">
+                        <output>3</output>
+                    </div>
+                </div>
+                <div id="game">
+                    <div id="board"></div>
+                    <div id="score">
+                        <div>
+                            <img src="../images/minigames/playerX.svg">
+                            <div id="score-x"></div>
+                        </div>
+                        <div>
+                            <img src="../images/minigames/playerO.svg">
+                            <div id="score-o">3</div>
+                        </div>
+                    </div>
+                    <div id="button-container">
+                        <button id="btn-start">Play game</button>
+                        <button id="btn-rest">Reset score</button>
+                    </div>
+                </div>
+            </div>
         </section>
         <div class="background"></div>
     </main>
 	<script src="../js/minigames.js" type="module"></script>
     <script src="../js/memory.js" type="module"></script>
+    <script src="../js/tic-tac-toe.js" type="module"></script>
 </body>
 </html>
