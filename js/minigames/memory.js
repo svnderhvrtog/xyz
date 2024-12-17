@@ -14,7 +14,6 @@ fetch('../json/cards.json')
 
 const fieldSize = document.getElementById('select');
 fieldSize.addEventListener('change', onSelectFieldSize);
-
 const myField = document.getElementById("field");
 myField.addEventListener("click", onClickCard);
 
@@ -33,26 +32,23 @@ class Card {
 
 function onSelectFieldSize(event){
 	const clickedElementId = event.target.id;
-
-	shuffle(myCardArray)
-
+	shuffle(myCardArray);
 	if(clickedElementId === 'game-4') {
-		boardClass = 'board4'
+		boardClass = 'board4';
 		myCardSet = myCardArray.slice(0, 8);	
 	} else if (clickedElementId === 'game-5') {
-		boardClass = 'board5'	
+		boardClass = 'board5';
 		myCardSet = myCardArray.slice(0, 12);
 	} else if (clickedElementId === 'game-6') {
-		boardClass = 'board6'			
-		myCardSet = myCardArray.slice(0, 18)
-	}
+		boardClass = 'board6';
+		myCardSet = myCardArray.slice(0, 18);
+	};
 	select.style.display = 'none';
 	const doubledCards = myCardSet.concat(myCardSet);
     shuffle(doubledCards);
     myCardSet = doubledCards;
-
-	shuffle(myCardSet)
-	populateField()
+	shuffle(myCardSet);
+	populateField();
 };
 
 function shuffle(array){
@@ -68,16 +64,13 @@ function populateField() {
 		let newTile = document.createElement("div");
 		let newCard = document.createElement("img");
 		let newCover = document.createElement("img");
-
 		newTile.setAttribute("class", boardClass);
-		let imageURL = "../images/memory/" + card.card1 + ".jpg";
+		let imageURL = "../images/minigames/memory/" + card.card1 + ".jpg";
 		newCard.setAttribute("src", imageURL);
 		newCard.setAttribute("draggable", false);
-
-		newCover.setAttribute("src", "../images/memory/cover.jpg");
+		newCover.setAttribute("src", "../images/minigames/memory/cover.jpg");
 		newCover.setAttribute("class", "covered");
 		newCover.setAttribute("draggable", false);
-
 		newCard.setAttribute("name", card.card1);
 		newTile.appendChild(newCard);
 		newTile.appendChild(newCover);
@@ -91,17 +84,17 @@ const clickedCards = [];
 function onClickCard(e) {
 	if (clickedCards.length >= 2) {
         return
-    }
+    };
 	if(e.target.className === "covered"){
 		e.target.className = "uncovered";
-		clickedCards.push(e.target.parentNode.firstChild.getAttribute("name"))
-		matchCount++
+		clickedCards.push(e.target.parentNode.firstChild.getAttribute("name"));
+		matchCount++;
 		if(matchCount >= 2){
 			evaluateMatch()
 			matchCount = 0;
-			keepScore()
+			keepScore();
 		}
-	}
+	};
 };
 
 function evaluateMatch() {
@@ -122,7 +115,7 @@ function evaluateMatch() {
             });
             clickedCards.length = 0; 
         }, 1500);
-    }
+    };
 };
 
 const counterSuccess = document.getElementById('success');
@@ -130,18 +123,18 @@ let clickCount = 0;
 let succesCount = 0;
 
 function keepScore() {
-	clickCount++
+	clickCount++;
 	if(clickedCards[0] === clickedCards[1]) {
-		succesCount++
-	}
+		succesCount++;
+	};
 };
 
 function checkGameOver() {
 	if(myField.children.length === 0) {
 	counterSuccess.style.display = "block";
-	counterSuccess.innerHTML = `Well done! The total amount of tries are ${clickCount}, of which ${succesCount} succesfull! <br> You'll be sent to the overview in 5 seconds.`
+	counterSuccess.innerHTML = `Well done! The total amount of tries are ${clickCount}, of which ${succesCount} succesfull! <br> You'll be sent to the overview in 5 seconds.`;
 		setTimeout(gameReset, 6000);
-	}
+	};
 };
 
 function gameReset() {

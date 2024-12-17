@@ -1,3 +1,9 @@
+/* Pre-settings */
+:root {
+  --color-white: #ffffff;
+}
+
+/* Text etc */
 body {
   background-color: #636363;
   margin: 0;
@@ -5,8 +11,50 @@ body {
   font-family: "Kanit", sans-serif;
 }
 
+h2 {
+  color: var(--color-white);
+  font-size: 32px;
+  text-shadow: 2px 4px #00000040;
+}
 
+h3 {
+  color: var(--color-white);
+  font-size: 24px;
+  text-shadow: 2px 4px #00000040;
+}
 
+label, output, p {
+  color: var(--color-white);
+}
+
+img {
+  margin: 0;
+  display: block;
+}
+
+button {
+  width: 100px;
+  height: 60px;
+  border-radius: 8px;
+  color: var(--color-white);
+  background-color: #0000009e;
+  border: #0000009e;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+/* Background */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../images/minigames/background-text.png);
+  background-repeat: repeat;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+/* Launch-page */
 #success {
   text-align: center;
   align-items: center;
@@ -14,7 +62,6 @@ body {
   padding-top: 15%;
   padding-inline: 10%;
 }
-
 
 .minigames-select {
   width: 86%;
@@ -31,6 +78,13 @@ body {
 }
 
 /* Memory */
+#select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6%;
+}
+
 #field {
   display: flex;
   flex-wrap: wrap;
@@ -70,60 +124,22 @@ body {
   box-sizing: border-box;
 }
 
-img {
-  margin: 0;
-  display: block;
-}
-
 .covered, .uncovered {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Match de breedte van de container */
-  height: 100%; /* Match de hoogte van de container */
-  box-sizing: border-box; /* Zorg ervoor dat padding niet de grootte beïnvloedt */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .uncovered {
   display: none;
 }
 
-#select {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 30vh;
-}
-
-h2 {
-  color: #ffffff;
-  font-size: 32px;
-  text-shadow: 2px 4px #00000040;
-}
-
-h3 {
-  color: #ffffff;
-  font-size: 24px;
-  text-shadow: 2px 4px #00000040;
-}
-
-button {
-  width: 100px;
-  height: 60px;
-  border: #0000009e;
-  border-radius: 8px;
-  color: #ffffff;
-  background-color: #0000009e;
-  margin-right: 16px;
-}
-
 /* Tic-tac-toe */
-button {
-  cursor: pointer;
-}
-
 #root {
-  padding-top: 22vh;
+  padding-top: 5%;
 }
 
 #settings-menu {
@@ -153,7 +169,7 @@ button {
 
 #input-win-condition {
   margin-top: 6px;
-  margin-left: -55px;
+  margin-left: -43px;
 }
 
 #settings-menu input[type='range'] {
@@ -180,8 +196,6 @@ button {
   flex-wrap: wrap;
   box-sizing: border-box;
   border: 1px solid grey;
-  width: 64px;
-  height: 64px;
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
@@ -222,29 +236,19 @@ button {
   align-items: center;
   gap: 20px;
   padding: 10px 20px;
+  margin-top: 4px;
+  margin-bottom: 10px;
 }
 
 #score > div > img {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 #score div#score-x,
 #score div#score-o {
   width: 200px;
   font-size: 32px;
-}
-
-label {
-  color: #ffffff;
-}
-
-output {
-  color: #ffffff;
-}
-
-p {
-  color: #ffffff;
 }
 
 #button-container {
@@ -255,90 +259,112 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-  #game-select {
-    display: block;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 100vh;
-    position: relative;
+  /* Background */
+  .background {
+    width: 350%;
+    height: 150%;
   }
 
-  .memory-img {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
+  /* Launch-page */
+  #game-select {
+    display: block;
+    height: 100vh;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .memory-img, .tic-img {
+    display: block;
     justify-content: center;
     align-items: center;
     padding-top: 0px;
     padding-left: 0px;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .memory-img {
+    top: 28%;
+    left: 50%;
   }
 
   .tic-img {
-    grid-column: 2;
-    grid-row: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0px;
-    margin-left: 0px;
+    top: 65%;
+    left: 50%;
   }
 
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background-image: url(../images/minigames/background-text.png);
-    background-repeat: repeat;
-    transform: rotate(-45deg);
-    z-index: -1;
+  /* Tic-tac-toe */
+  #board div.cell {
+    width: 48px;
+    height: 48px;
+  }
+
+  #score {
+    display: block;
   }
 }
 
 @media only screen and (min-width: 601px) {
+  /* Background */
+  .background {
+    width: 300%;
+    height: 150%;
+  }
+
+  /* Launch-page */
   #game-select {
     display: block;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     height: 100vh;
     position: relative;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .memory-img, .tic-img {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    padding-left: 0px;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 70%;
   }
 
   .memory-img {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10%;
-    padding-left: 10%;
+    top: 25%;
+    left: 50%;
   }
 
   .tic-img {
-    grid-column: 2;
-    grid-row: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -30%;
-    margin-left: -2%;
+    top: 75%;
+    left: 50%;
   }
 
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background-image: url(../images/minigames/background-text.png);
-    background-repeat: repeat;
-    transform: rotate(-45deg);
-    z-index: -1;
+  /* Tic-tac-toe */
+  #board div.cell {
+    width: 48px;
+    height: 48px;
+  }
+
+  #score {
+    display: block;
   }
 }
 
 @media screen and (min-width: 768px) {
+  /* Background */
+  .background {
+    width: 270%;
+    height: 200%;
+  }
+
+  /* Launch-page */
   #game-select {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -351,40 +377,54 @@ p {
     grid-column: 1;
     grid-row: 1;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     padding-top: 10%;
-    padding-left: 10%;
+    padding-left: 15%;
+    top: 42%;
+    left: 50%;
+    width: 100%;
   }
 
   .tic-img {
     grid-column: 2;
     grid-row: 2;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    justify-content: right;
+    align-items: right;
     margin-top: -30%;
     margin-left: -2%;
+    top: 65%;
+    left: 40%;
+    width: 100%;
   }
 
+  /* Memory */
   #field {
     max-width: 768px;
   }
+  
+  /* Tic-tac-toe */
+  #board div.cell {
+    width: 72px;
+    height: 72px;
+  }
 
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background-image: url(../images/minigames/background-text.png);
-    background-repeat: repeat;
-    transform: rotate(-45deg);
-    z-index: -1;
+  #score {
+    display: flex;
   }
 }
 
 @media only screen and (min-width: 992px) {
+  /* Background */
+  .background {
+    width: 230%;
+    height: 200%;
+  }
+
+  /* Launch-page */
   #game-select {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -393,20 +433,47 @@ p {
     position: relative;
   }
 
-  .background {
+  .memory-img {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    padding-left: 10%;
+    top: 45%;
+    left: 55%;
+  }
+
+  .tic-img {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background-image: url(../images/minigames/background-text.png);
-    background-repeat: repeat;
-    transform: rotate(-45deg);
-    z-index: -1;
+    justify-content: right;
+    align-items: right;
+    margin-top: -30%;
+    margin-left: -2%;
+    top: 65%;
+    left: 45%;
+  }
+
+  /* Tic-tac-toe */
+  #board div.cell {
+    width: 72px;
+    height: 72px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
+  /* Background */
+  .background {
+    width: 200%;
+    height: 200%;
+  }
+
+  /* Launch-page */
   #game-select {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -415,16 +482,35 @@ p {
     position: relative;
   }
 
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background-image: url(../images/minigames/background-text.png);
-    background-repeat: repeat;
-    transform: rotate(-45deg);
-    z-index: -1;
+  .memory-img, .tic-img {
+    width: 90%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .memory-img {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 10%;
+    padding-left: 10%;
+    top: 40%;
+    left: 50%;
+  }
+
+  .tic-img {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: -30%;
+    margin-left: -2%;
+    top: 65%;
+    left: 42%;
+  }
+
+  /* Tic-tac-toe */
+  #board div.cell {
+    width: 72px;
+    height: 72px;
   }
 }
-

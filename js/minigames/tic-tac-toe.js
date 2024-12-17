@@ -1,4 +1,4 @@
-// Variables
+// Tic-tac-toe
 const inputWidth = document.getElementById('input-width');
 const inputHeight = document.getElementById('input-height');
 const inputWinCondition = document.getElementById('input-win-condition');
@@ -15,13 +15,12 @@ const settingsMenu = document.getElementById('settings-menu');
 
 let rowElement = '';
 let cellElement = '';
-
 let playerOneWin = 0;
 let playerTwoWin = 0;
 let currentPlayer = randomStart();
 
 const falseValue = document.createElement('h3');
-const falseText = document.createTextNode('The win condition cannot be met');
+const falseText = document.createTextNode('The victory goal cannot be met');
 falseValue.style.color = 'red';
 falseValue.style.display = 'none';
 falseValue.appendChild(falseText);
@@ -84,38 +83,29 @@ function startGame() {
 
 function boardStructering(rows, cells) {
     boardSection.innerHTML = '';
-    
     for(let row = 0; row < rows; row++){
         rowElement = document.createElement('div');
         rowElement.classList.add('row');
-
         for(let col = 0; col < cells; col++){
             cellElement = document.createElement('div');
             cellElement.classList.add('cell');
             cellElement.setAttribute('data-row', row);
             cellElement.setAttribute('data-col', col);
-
             cellElement.addEventListener('click', playGame);
-
             rowElement.appendChild(cellElement);
         }
-    
         boardSection.appendChild(rowElement);
-    }
+    };
 };
 
 function playGame(event) {
     const cell = event.target;
-
     if (cell.classList.contains('o') || cell.classList.contains('x')) {
         return
     };
-
     cell.classList.add(currentPlayer);
-
     checkTie();
     checkWin();
-
     if(currentPlayer === 'o'){
         currentPlayer = 'x';
     } else if (currentPlayer === 'x'){
@@ -139,24 +129,20 @@ function checkTie() {
     gameSection.style.display = 'block';
     setTimeout(() => {
         headingText.textContent = `Game set-up`;
-    }, 1000);
+    }, 1500);
 };
 
 function checkWin() {
     const winCondition = parseInt(inputWinCondition.value);
     const rows = parseInt(inputHeight.value);
     const cols = parseInt(inputWidth.value);
-
     function checkDirection(startRow, startCol, rowDir, colDir) {
         let count = 0;
-
         for (let i = 0; i < winCondition; i++) {
             const rowLength = startRow + i * rowDir;
             const colLength = startCol + i * colDir;
-         
             if (rowLength >= 0 && rowLength < rows && colLength >= 0 && colLength < cols) {
                 const cell = boardSection.querySelector(`[data-row='${rowLength}'][data-col='${colLength}']`);
-
                 if (cell && cell.classList.contains(currentPlayer)) {
                     count++;
                 } else {
@@ -164,10 +150,8 @@ function checkWin() {
                 };
             };
         };
-
         return count === winCondition;
     };
-
     for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
             if (
@@ -179,7 +163,7 @@ function checkWin() {
                 headingText.textContent = `${currentPlayer} is the winner!`
                 setTimeout(() => {
                     headingText.textContent = `Game set-up`
-                }, 1000);
+                }, 1500);
                 winCount();
                 resetBoard();
                 return
@@ -190,13 +174,13 @@ function checkWin() {
 
 function winCount() {
     if(currentPlayer === 'x'){
-        playerOneWin++
-        localStorage.setItem('playerOne', playerOneWin)
-        scoreX.textContent = `${localStorage.getItem('playerOne')}`
+        playerOneWin++;
+        localStorage.setItem('playerOne', playerOneWin);
+        scoreX.textContent = `${localStorage.getItem('playerOne')}`;
     } else if (currentPlayer === 'o') {
-        playerTwoWin++
-        localStorage.setItem('playerTwo', playerTwoWin)
-        scoreO.textContent = `${localStorage.getItem('playerTwo')}`
+        playerTwoWin++;
+        localStorage.setItem('playerTwo', playerTwoWin);
+        scoreO.textContent = `${localStorage.getItem('playerTwo')}`;
     };
 };
 
