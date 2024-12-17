@@ -126,12 +126,8 @@ header {
     text-align: center;
 }
 
-.return {
-    border-radius: 40px;
-    width: 120px;
-    padding-inline: 16px;
-    padding-block: 16px;
-    background-color: #9333B4;
+#total-credits {
+    padding-inline-end: 16px;
 }
 
 /* Content */
@@ -564,6 +560,10 @@ input[type="radio"]:disabled {
         margin-bottom: 24px;
     }
 
+    #total-credits {
+        padding-inline-end: 0px;
+    }
+
     /* Overview */
     .overview {
         margin-left: 8px;
@@ -663,6 +663,10 @@ input[type="radio"]:disabled {
         margin-inline: 6px;
         padding-inline: 8px;
         margin-bottom: 24px;
+    }
+
+    #total-credits {
+        padding-inline-end: 0px;
     }
 
     /* Overview */
@@ -767,7 +771,11 @@ input[type="radio"]:disabled {
         margin-inline: 6px;
         padding-inline: 8px;
         margin-bottom: 24px;
-     }
+    }
+
+    #total-credits {
+        padding-inline-end: 16px;
+    }
 
     .explainer-text {
         padding-top: 1%;

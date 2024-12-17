@@ -141,11 +141,6 @@ ol {
         margin-top: 10px;
         padding-left: 60px;
     }
-
-    footer {
-        margin-top: -20px;
-        margin-bottom: 36px;
-    }
 }
 
 @media only screen and (min-width: 601px) {
@@ -210,11 +205,6 @@ ol {
     ol {
         margin-top: 10px;
         padding-left: 60px;
-    }
-
-    footer {
-        margin-top: -20px;
-        margin-bottom: 36px;
     }
 }
 

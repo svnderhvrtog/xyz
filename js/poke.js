@@ -3,10 +3,8 @@
 // Start settings
 const startButton = document.getElementById('start-button').addEventListener('click', chooseBattle);
 const introduction = document.getElementById('introduction');
-
 const youName = document.getElementsByName('selection-you-name');
 const cpuName = document.getElementsByName('selection-cpu-name');
-
 const battleOne = document.getElementById('battle-option1');
 const battleTwo = document.getElementById('battle-option2');
 const battleThree = document.getElementById('battle-option3');

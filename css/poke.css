@@ -55,11 +55,6 @@ header {
     margin-top: 50px;
 }
 
-.returnbtn {
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-
 .selection-you {
     display: flex;
     flex-direction: row;
@@ -183,10 +178,6 @@ input {
 
     .startbtn { 
         margin-top: 50px;
-    }
-
-    .returnbtn {
-        margin-top: 10px;
         margin-bottom: 20px;
     }
 
