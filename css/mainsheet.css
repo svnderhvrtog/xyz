@@ -81,6 +81,10 @@ a {
     display: flex;
 }
 
+.item-jp {
+    margin-left: -8px;
+}
+
 .item:hover {
     opacity: 70%;
 }
@@ -178,10 +182,10 @@ button {
     }
 
     .container-items {
-        min-width: 360px;
-        max-width: 360px;
-        min-height: 300px;
-        max-height: 300px;
+        min-width: 350px;
+        max-width: 350px;
+        min-height: 280px;
+        max-height: 280px;
         padding-bottom: 3vh;
     }
 
@@ -248,8 +252,8 @@ button {
     .container-items {
         min-width: 400px;
         max-width: 400px;
-        min-height: 300px;
-        max-height: 300px;
+        min-height: 280px;
+        max-height: 280px;
         padding-bottom: 3vh;
     }
 
@@ -318,8 +322,8 @@ button {
     .container-items {
         min-width: 600px;
         max-width: 600px;
-        min-height: 300px;
-        max-height: 300px;
+        min-height: 280px;
+        max-height: 280px;
         padding-bottom: 1px;
     }
 

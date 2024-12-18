@@ -1,0 +1,294 @@
+/* Pre-settings */
+:root {
+  --color-blue: #012349;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Text etc */
+body {
+  font-family: "Goldman", serif;
+  font-weight: 400;
+  color: var(--color-blue);
+  background-color: var(--color-blue);
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 400;
+  appearance: soft-light;
+  mix-blend-mode: soft-light;
+  padding-top: 4%;
+  margin-bottom: 2%;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-block: 8px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-block: 8px;
+}
+
+.total-container {
+  grid-area: total;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.container-sort {
+  width: 430px;
+  background-color: #ffffffce;
+  padding-block: 4px;
+  padding-inline: 24px;
+  border-radius: 10px;
+  gap: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.item-sort {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding-top: 3px;
+  gap: 9px;
+}
+
+.container-items {
+  min-width: 478px;
+  max-width: 478px;
+  min-height: 560px;
+  max-height: 560px;
+  text-overflow: clip;
+  overflow-y: scroll;
+  padding-bottom: 8px;
+  mask-image: linear-gradient(to bottom, var(--color-blue) 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, var(--color-blue) 85%, transparent 100%);
+}
+
+.container-item {
+  width: 430px;
+  background-color: #ffffffce;
+  padding-block: 24px;
+  padding-inline: 24px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.conditions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 0px;
+  margin-block: -8px;
+}
+
+.condition {
+  width: 215px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-block: -5px;
+}
+
+.condition-text {
+  padding-top: 2px;
+}
+
+/* Background */
+.background {
+  height: 100%;
+  background-image: url(../images/weatherjp/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+      display: block;
+    }
+
+    h1 {
+      font-size: 44px;
+      margin-bottom: 4%;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    .condition-text {
+      padding-top: 0px;
+    }
+
+    .city-img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .container-items {
+      min-width: 346px;
+      max-width: 346px;
+      min-height: 440px;
+      max-height: 440px;
+      margin: 0 auto;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container-item {
+      width: 297px;
+      background-color: #ffffffce;
+      padding-block: 24px;
+      padding-inline: 24px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .condition {
+      width: 147px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
+      margin-block: -5px;
+    }
+
+    .container-sort {
+      width: 300px;
+      padding-block: 6px;
+      display: block;
+      align-items: center;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .total-container {
+      text-align: center;
+      align-self: center;
+      place-items: center;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    main {
+      display: block;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin-bottom: 2%;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .condition-text {
+      padding-top: 2px;
+    }
+
+    .city-img {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .container-items {
+      min-width: 478px;
+      max-width: 478px;
+      min-height: 560px;
+      max-height: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .container-item {
+      width: 430px;
+      background-color: #ffffffce;
+      padding-block: 24px;
+      padding-inline: 24px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .condition {
+      width: 215px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      margin-block: -5px;
+    }
+
+    .container-sort {
+      width: 430px;
+      padding-block: 4px;
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .total-container {
+      text-align: center;
+      align-self: center;
+      place-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+      ". . . . . . . total total . . ."
+      ". . . . . . . total total . . .";
+    }
+
+    h1 {
+      font-size: 64px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    main {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+      ". . . . . . . . total total . ."
+      ". . . . . . . . total total . .";
+    }
+}
