@@ -110,10 +110,15 @@ p {
   align-items: center;
   gap: 8px;
   margin-block: -5px;
+  overflow-x: hidden;
+  white-space: nowrap;
 }
 
 .condition-text {
   padding-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Background */

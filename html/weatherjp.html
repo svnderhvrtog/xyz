@@ -36,198 +36,199 @@
             <h1>WEATHER JP</h1>
             <section class="container-sort">
                 <h3>Sort on:</h3>
-                <div class="item-sort">
-                    <img src="../icons/weatherjp/rectangle-filled.png" alt="rectangle filled" draggable="false" width="11" height="11">
+                <div class="item-sort" id="sort-standard">
+                    <img src="../icons/weatherjp/rectangle-filled.png" id="icon-standard" alt="rectangle filled" draggable="false" width="11" height="11" loading="eager">
                     <h3>Standard</h3>
                 </div>
-                <div class="item-sort">
-                    <img src="../icons/weatherjp/rectangle-stroke.png" alt="rectangle stroke" draggable="false" width="11" height="11">
+                <div class="item-sort" id="sort-geography">
+                    <img src="../icons/weatherjp/rectangle-stroke.png" id="icon-geography" alt="rectangle stroke" draggable="false" width="11" height="11" loading="eager">
                     <h3>Geography</h3>
                 </div>
-                <div class="item-sort">
-                    <img src="../icons/weatherjp/rectangle-stroke.png" alt="rectangle stroke" draggable="false" width="11" height="11">
+                <div class="item-sort" id="sort-popularity">
+                    <img src="../icons/weatherjp/rectangle-stroke.png" id="icon-popularity" alt="rectangle stroke" draggable="false" width="11" height="11" loading="eager">
                     <h3>Popularity</h3>
                 </div>
             </section>
             <section class="container-items">
                 <div class="container-item">
-                    <img src="../images/weatherjp/morioka.png" class="city-img" alt="streetview of sapporo in japan" draggable="false">
+                    <img src="../images/weatherjp/morioka.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
                     <h2>Morioka</h2>
                     <div class="conditions">
                         <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Weather: Sunny</p>
+                            <img src="../icons/weatherjp/clear_day.png" id="morioka-weather-icon" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager"> 
+                            <p class="condition-text" id="morioka-weather-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Temperature: 12°</p>
+                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="morioka-temperature-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Precipitation: 10%</p>
+                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="morioka-precipitation-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Time: 12:00</p>
+                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text condition-time"></p>
                         </div>
                     </div>
                 </div>
                 <div class="container-item">
-                    <img src="../images/weatherjp/okayama.png" class="city-img" alt="streetview of sapporo in japan" draggable="false">
+                    <img src="../images/weatherjp/okayama.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
                     <h2>Okayama</h2>
                     <div class="conditions">
                         <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Weather: Sunny</p>
+                            <img src="../icons/weatherjp/clear_day.png" id="okayama-weather-icon" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="okayama-weather-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Temperature: 12°</p>
+                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="okayama-temperature-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Precipitation: 10%</p>
+                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="okayama-precipitation-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Time: 12:00</p>
+                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text condition-time"></p>
                         </div>
                     </div>
                 </div>
                 <div class="container-item">
-                    <img src="../images/weatherjp/tokyo.png" class="city-img" alt="streetview of sapporo in japan" draggable="false">
+                    <img src="../images/weatherjp/tokyo.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
                     <h2>Tokyo</h2>
                     <div class="conditions">
                         <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Weather: Sunny</p>
+                            <img src="../icons/weatherjp/clear_day.png" id="tokyo-weather-icon" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="tokyo-weather-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Temperature: 12°</p>
+                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="tokyo-temperature-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Precipitation: 10%</p>
+                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="tokyo-precipitation-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Time: 12:00</p>
+                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text condition-time"></p>
                         </div>
                     </div>
                 </div>
                 <div class="container-item">
-                    <img src="../images/weatherjp/sapporo.png" class="city-img" alt="streetview of sapporo in japan" draggable="false">
+                    <img src="../images/weatherjp/sapporo.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
                     <h2>Sapporo</h2>
                     <div class="conditions">
                         <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Weather: Sunny</p>
+                            <img src="../icons/weatherjp/clear_day.png" id="sapporo-weather-icon" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="sapporo-weather-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Temperature: 12°</p>
+                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="sapporo-temperature-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Precipitation: 10%</p>
+                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="sapporo-precipitation-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Time: 12:00</p>
+                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text condition-time"></p>
                         </div>
                     </div>
                 </div>
                 <div class="container-item">
-                    <img src="../images/weatherjp/miyazaki.png" class="city-img" alt="streetview of sapporo in japan" draggable="false">
+                    <img src="../images/weatherjp/miyazaki.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
                     <h2>Miyazaki</h2>
                     <div class="conditions">
                         <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Weather: Sunny</p>
+                            <img src="../icons/weatherjp/clear_day.png" id="miyazaki-weather-icon" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="miyazaki-weather-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Temperature: 12°</p>
+                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="miyazaki-temperature-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Precipitation: 10%</p>
+                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="miyazaki-precipitation-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Time: 12:00</p>
+                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text condition-time"></p>
                         </div>
                     </div>
                 </div>
                 <div class="container-item">
-                    <img src="../images/weatherjp/osaka.png" class="city-img" alt="streetview of sapporo in japan" draggable="false">
+                    <img src="../images/weatherjp/osaka.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
                     <h2>Osaka</h2>
                     <div class="conditions">
                         <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Weather: Sunny</p>
+                            <img src="../icons/weatherjp/clear_day.png" id="osaka-weather-icon" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="osaka-weather-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Temperature: 12°</p>
+                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="osaka-temperature-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Precipitation: 10%</p>
+                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="osaka-precipitation-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Time: 12:00</p>
+                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text condition-time"></p>
                         </div>
                     </div>
                 </div>
                 <div class="container-item">
-                    <img src="../images/weatherjp/kumamoto.png" class="city-img" alt="streetview of sapporo in japan" draggable="false">
+                    <img src="../images/weatherjp/kumamoto.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
                     <h2>Kumamoto</h2>
                     <div class="conditions">
                         <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Weather: Sunny</p>
+                            <img src="../icons/weatherjp/clear_day.png" id="kumamoto-weather-icon" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="kumamoto-weather-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Temperature: 12°</p>
+                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="kumamoto-temperature-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Precipitation: 10%</p>
+                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="kumamoto-precipitation-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Time: 12:00</p>
+                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text condition-time"></p>
                         </div>
                     </div>
                 </div>
                 <div class="container-item">
-                    <img src="../images/weatherjp/niigata.png" class="city-img" alt="streetview of sapporo in japan" draggable="false">
+                    <img src="../images/weatherjp/niigata.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
                     <h2>Niigata</h2>
                     <div class="conditions">
                         <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Weather: Sunny</p>
+                            <img src="../icons/weatherjp/clear_day.png" id="niigata-weather-icon" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text"  id="niigata-weather-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Temperature: 12°</p>
+                            <img src="../icons/weatherjp/thermostat.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="niigata-temperature-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Precipitation: 10%</p>
+                            <img src="../icons/weatherjp/rainy_light.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text" id="niigata-precipitation-text"></p>
                         </div>
                         <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13">
-                            <p class="condition-text">Time: 12:00</p>
+                            <img src="../icons/weatherjp/schedule.png" alt="rectangle stroke" draggable="false" width="13" height="13" loading="eager">
+                            <p class="condition-text condition-time"></p>
                         </div>
                     </div>
                 </div>
             </section>
         </section>
     </main>
+    <script src="../js/weatherjp.js"></script>
 </body>
 </html>
