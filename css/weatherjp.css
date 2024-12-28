@@ -3,6 +3,10 @@
   --color-blue: #012349;
 }
 
+*::selection {
+  color: #01070d;
+}
+
 body, html {
   height: 100%;
   overflow-x: hidden;

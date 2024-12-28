@@ -3,6 +3,10 @@
   --color-white: #ffffff;
 }
 
+*::selection {
+  color: #ffffff;
+}
+
 /* Text etc */
 body {
   background-color: #636363;
