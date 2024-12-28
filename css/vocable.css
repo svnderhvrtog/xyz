@@ -79,18 +79,36 @@ input::placeholder {
 }
   
 /* Media queries */
-@media (max-width: 667px) {
+@media (max-width: 780px) {
     body {
        height: 20vh;
     }
 
     .container {
-        display: block;
-        margin: 8em;
+        display: flex;
+        margin: 10em;
+        align-items: center;
+        justify-content: center;
     }
 
-    .item-score {
-        margin-top: 10%;
-        margin-left: 13%;
+    #input-field {
+        margin: 20px;
+        width: 366.5px;
+        height: 235.5px;
+        background-image: url('../images/vocable/corkboard.png');
+        background-size: cover;
+        background-position: center;
+        border: none;
+    }
+
+    .frame-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-frame {
+        width: 126px;
     }
 }
