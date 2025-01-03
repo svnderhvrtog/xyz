@@ -45,7 +45,7 @@ p {
     color: var(--color-white);
     font-weight: 300;
     margin-top: -16px;
-    text-shadow: 0px 1px #0000002a;
+    text-shadow: 0px 1px #00000010;
 }
 
 /* Header */
@@ -78,8 +78,8 @@ header {
     font-size: 21px;
 }
 
-/* Others */
-#swipe-container {
+/* Home */
+#home-container {
     width: 100%;
     height: 82vh;
     border-radius: 5px;
@@ -112,7 +112,7 @@ header {
     width: 64px;
     height: 64px;
     border-radius: 100%;
-    box-shadow: #959da533 0px 4px 24px;
+    box-shadow: #00000020 0px 0px 6px;
 }
 
 #swipe-description {
@@ -127,6 +127,92 @@ header {
 
 #swipe-catname {
     padding-bottom: 8px;
+}
+
+/* Chat */
+#chat-container {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    justify-content: flex-end; 
+    padding-top: 3%;
+}
+
+.chat-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 24px;
+}
+
+.chat-img {
+    margin-top: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    box-shadow: #00000020 0px 0px 6px;
+    object-fit: cover;
+}
+
+.chat-flex {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.chat-catname {
+    color: var(--color-black);
+    text-shadow: 0px 0px #00000000;
+}
+
+.chat-message {
+    color: var(--color-black);
+    text-shadow: 0px 0px #00000000;
+}
+
+hr {
+    border: 0.4px solid #7a7a7a7a;
+    width: 100%;
+}
+
+/* List */
+#list-container {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    justify-content: flex-end; 
+    padding-top: 3%;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 8px;
+}
+
+.list-img {
+    margin-top: 4px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    box-shadow: #00000020 0px 0px 6px;
+    object-fit: cover;
+}
+
+.list-catname {
+    color: var(--color-black);
+    text-shadow: 0px 0px #00000000;
+}
+
+.list-like-dislike-img {
+    margin-top: 16px;
+    width: 72px;
+    height: 36px;
 }
 
 @media (max-width: 768px) {
