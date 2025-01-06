@@ -1,9 +1,12 @@
 // Tincats
-window.addEventListener('load', apiLoad);
-window.addEventListener('load', loadListFromLocalStorage);
+window.addEventListener('load', () => {
+    apiLoad();
+    loadListFromLocalStorage();
+    loadChatFromLocalStorage();
+});
 
 // Header
-const homeIcon = document.getElementById('home')
+const homeIcon = document.getElementById('home');
 const chatIcon = document.getElementById('chat');
 const listIcon = document.getElementById('list');
 const homeContainer = document.getElementById('home-container');
@@ -27,7 +30,7 @@ chatIcon.addEventListener('click', () => {
     chatContainer.style.display = 'flex';
     listContainer.style.display = 'none';
     chatMessage = false;
-    chatIcon.innerText = 'chat'
+    chatIcon.innerText = 'chat';
 });
 
 listIcon.addEventListener('click', () => {
@@ -53,14 +56,14 @@ const requestOptions = {
 };
 
 function apiLoad() {
-//     fetch("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1", requestOptions)
-//     .then(response => response.json())
-//     .then(data => { 
-//         currentCatData = data[0];
-//         swipeCatContainer.style.backgroundImage = `url(${currentCatData.url})`
-//         swipeCatDescription.innerText = data[0].breeds[0].description
-//     })
-//     .catch(error => console.log('this is wrong:' + error))
+    fetch("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1", requestOptions)
+    .then(response => response.json())
+    .then(data => { 
+        currentCatData = data[0];
+        swipeCatContainer.style.backgroundImage = `url(${currentCatData.url})`
+        swipeCatDescription.innerText = data[0].breeds[0].description
+    })
+    .catch(error => console.log('this is wrong:' + error))
     swipeCatName.innerText = catNames[Math.floor(Math.random() * catNames.length)];
 };
 
@@ -70,7 +73,6 @@ const swipeCatDescription = document.getElementById('swipe-description');
 const swipeCatContainer = document.getElementById('home-container');
 const likeButton = document.getElementById('like-button');
 const dislikeButton = document.getElementById('dislike-button');
-
 const catNames = ['Angel', 'Bailey', 'Beverly', 'Callie', 'Eleanor', 'Ellie', 'Georgia', 'Gigi', 'Gladis', 'Honey', 'June', 'Maisy', 'Margot', 'Millie',
                   'Penny', 'Piper', 'Roxie', 'Sally', 'Sheba', 'Alvin', 'Aimsley', 'Andy', 'Bobby', 'Bubba', 'Charlie', 'George', 'Odie', 'Ralphie', 'Ricky',
                   'Theodore', 'Tubby', 'Wally', 'Winston', 'Ash', 'Aster', 'Basil', 'Buttercup', 'Camellia', 'Dahlia', 'Daisy', 'Daffodil', 'Dandelion', 'Fern',
@@ -91,128 +93,164 @@ const catNames = ['Angel', 'Bailey', 'Beverly', 'Callie', 'Eleanor', 'Ellie', 'G
                   'Parker', 'Robin', 'Shuri', 'Thor', 'Bert', 'Blue', 'Buyo', 'Chi', 'Cosmo', 'Daffy', 'Elmo', 'Ernie', 'Garfield', 'Jiji', 'Kermit', 'Oscar',
                   'Patrick', 'Scooby', 'Sylvester', 'Tom', 'Tweety', 'Winnie', 'Apalachicola', 'Charlotte', 'Dixie', 'Georgia', 'Houston', 'Magnolia', 'Monroe',
                   'Montgomery', 'Nash', 'Oxford', 'Pensacola', 'Ranger', 'Savanna', 'Tupelo', 'Virginia'];
-
 let catImagesSaved = [];
 let catNamesSaved = [];
-let hasLiked = true;
-let likeCount = 0;
 let chatMessage = false;
+let hasLiked = true;
+let likeCount = localStorage.getItem('likecount') || 0
 
-dislikeButton.addEventListener('click', dislikeFunc);
-likeButton.addEventListener('click', likeFunc);
-
-function dislikeFunc() {
+dislikeButton.addEventListener('click', () => {
     hasLiked = false;
     catNamesSaved.push(swipeCatName.innerText);
     catImagesSaved.push(currentCatData.url);
     pushListFunc();
     apiLoad();
-};
+});
 
-function likeFunc() {
+likeButton.addEventListener('click', () => {
     hasLiked = true;
     likeCount++;
+    localStorage.setItem('likecount', likeCount);
     catNamesSaved.push(swipeCatName.innerText);
     catImagesSaved.push(currentCatData.url);
     pushListFunc();
     apiLoad();
     chatMessageFunc();
-};
+});
 
 // Chat
+let chatData = JSON.parse(localStorage.getItem('chat')) || [];
+let randomNumber = 0;
+let usedNumbers = [];
+
 function chatMessageFunc() {
     switch(likeCount) {
         case 1: 
-            console.log('1 like')
-            createChat()
+            pushChatFunc();
             chatMessage = true;
             break;
         case 10:
-            console.log('10 likes')
-            createChat()
+            pushChatFunc();
             chatMessage = true;
             break;
         case 25:
-            console.log('25 likes')
-            createChat()
+            pushChatFunc();
             chatMessage = true;
             break;
         case 50:
-            console.log('50 likes')
-            createChat()
+            pushChatFunc();
             chatMessage = true;
             break;
-    }
-
+        case 75:
+            pushChatFunc();
+            chatMessage = true;
+            break;
+        case 100:
+            pushChatFunc();
+            chatMessage = true;
+            break;
+        case 150:
+            pushChatFunc();
+            chatMessage = true;
+            break;
+        case 200:
+            pushChatFunc();
+            chatMessage = true;
+            break;
+    };
     if(chatMessage === true){
-        chatIcon.innerText = 'mark_unread_chat_alt'
+        chatIcon.innerText = 'mark_unread_chat_alt';
     } else {
-        chatIcon.innerText = 'chat'
+        chatIcon.innerText = 'chat';
     };
 };
 
-function createChat() {
+function pushChatFunc() {
+    const chatItem = {
+        url: currentCatData.url,
+        name: catNamesSaved[catNamesSaved.length - 1],
+        chatText: textGenerate()
+    };
+    chatData.push(chatItem);
+    localStorage.setItem('chat', JSON.stringify(chatData));
+    renderChatItem(chatItem);
+};
+
+function renderChatItem(item) {
     const chatItemDiv = document.createElement('div');
     chatItemDiv.classList.add('chat-item');
 
     const chatItemImage = document.createElement('img');
     chatItemImage.classList.add('chat-img');
-    chatItemImage.src = 'item.url';
+    chatItemImage.setAttribute('draggable', false);
+    chatItemImage.src = item.url;
 
     const chatItemFlexDiv = document.createElement('div');
     chatItemFlexDiv.classList.add('chat-flex');
 
     const chatCatName = document.createElement('h2');
     chatCatName.classList.add('chat-catname');
-    const chatCatNameNode = document.createTextNode('Cat Name...');
+    const chatCatNameNode = document.createTextNode(item.name);
     chatCatName.appendChild(chatCatNameNode);
 
     const chatMessage = document.createElement('p');
     chatMessage.classList.add('chat-message');
-    const chatMessagNode = document.createTextNode(textGenerate());
+    const chatMessagNode = document.createTextNode(item.chatText);
     chatMessage.appendChild(chatMessagNode);
 
     const chatItemHr = document.createElement('hr');
-
+    chatContainer.appendChild(chatItemHr);
     chatContainer.appendChild(chatItemDiv);
     chatItemDiv.appendChild(chatItemImage);
     chatItemFlexDiv.appendChild(chatCatName);
     chatItemFlexDiv.appendChild(chatMessage);
     chatItemDiv.appendChild(chatItemFlexDiv);
-    chatContainer.appendChild(chatItemHr);
-};
-
-let randomNumber = 0;
-
-function textGenerate() {
-    randomNumberFunc()
-    switch(randomNumber){
-        case 1:
-            return 'MEEEEOWWIE'
-        case 2:
-            return 'Purr... This sounds exactly like what I wanted!'
-        case 3:
-            return 'Meow! I am so bored!'
-        case 4:
-            return 'Zzz... Hi... Zzz...'
-        case 5:
-            return 'Is it dinner time yet?'
-    }
 };
 
 function randomNumberFunc() {
-    randomNumber = Math.floor(Math.random() * 5) + 1;
+    randomNumber = Math.floor(Math.random() * 8) + 1;
+};
+
+function textGenerate() {
+    randomNumberFunc();
+    while (usedNumbers.includes(randomNumber)) {
+        randomNumberFunc();
+    };
+    usedNumbers.push(randomNumber);
+    switch(randomNumber){
+        case 1:
+            return `I'm feline good!`
+        case 2:
+            return `Purr... This sounds exactly like what I wanted!`
+        case 3:
+            return `You had me at meow.`
+        case 4:
+            return `Zzz... Hi... Zzz...`
+        case 5:
+            return `Is it dinner time yet?`
+        case 6:
+            return `You've got to be kitten me!`
+        case 7:
+            return `Stay pawsitive!`
+        case 8:
+            return `Living my best nine lives.`
+    };
+};
+
+function loadChatFromLocalStorage() {
+    chatData.forEach(item => renderChatItem(item));
 };
 
 // List
 let listData = JSON.parse(localStorage.getItem('list')) || [];
 
-function renderItem(item) {
+function renderListItem(item) {
     const listItemDiv = document.createElement('div');
     listItemDiv.classList.add('list-item');
 
     const listItemImage = document.createElement('img');
     listItemImage.classList.add('list-img');
+    listItemImage.setAttribute('draggable', false);
     listItemImage.src = item.url;
 
     const listCatName = document.createElement('h2');
@@ -222,6 +260,7 @@ function renderItem(item) {
 
     const listLikeDislikeImage = document.createElement('img');
     listLikeDislikeImage.classList.add('list-like-dislike-img');
+    listLikeDislikeImage.setAttribute('draggable', false);
     if(item.liked === true) {
         listLikeDislikeImage.src = '../images/tincats/badge-like.png';
     } else {
@@ -234,10 +273,6 @@ function renderItem(item) {
     listItemDiv.appendChild(listLikeDislikeImage);
 };
 
-function loadListFromLocalStorage() {
-    listData.forEach(item => renderItem(item));
-};
-
 function pushListFunc() {
     const listItem = {
         url: currentCatData.url,
@@ -246,5 +281,9 @@ function pushListFunc() {
     };
     listData.push(listItem);
     localStorage.setItem('list', JSON.stringify(listData));
-    renderItem(listItem);
+    renderListItem(listItem);
+};
+
+function loadListFromLocalStorage() {
+    listData.forEach(item => renderListItem(item));
 };

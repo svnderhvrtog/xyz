@@ -12,8 +12,6 @@
 :root {
     --color-white: #ffffff;
     --color-black: #101010;
-    --color-grey: #7A7A7A;
-    --color-red: #B30003;
 }
 
 /* Text */
@@ -23,13 +21,10 @@ body {
     padding-inline: 20%;
 }
 
-h1, h3 {
+h1 {
     font-size: 24px;
     color: var(--color-black);
     font-weight: 600;
-}
-
-h1 {
     padding-left: 36px;
 }
 
@@ -67,11 +62,11 @@ header {
 }
 
 #home {
-    color: var(--color-red);
+    color: #B30003;
 }
 
 #chat, #list {
-    color: var(--color-grey);
+    color: #7A7A7A;
 }
 
 #chat {
@@ -104,7 +99,7 @@ header {
     display: flex;
     flex-direction: row;
     gap: 24px;
-    margin-top: 16px;
+    margin-top: 2px;
     justify-content: center;
 }
 
@@ -133,11 +128,12 @@ header {
 #chat-container {
     width: 100%;
     display: none;
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: left;
     align-items: left;
     justify-content: flex-end; 
-    padding-top: 3%;
+    padding-top: 1.6%;
+    padding-bottom: 16px;
 }
 
 .chat-item {
@@ -159,15 +155,10 @@ header {
 .chat-flex {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 360px;
 }
 
-.chat-catname {
-    color: var(--color-black);
-    text-shadow: 0px 0px #00000000;
-}
-
-.chat-message {
+.chat-catname, .chat-message  {
     color: var(--color-black);
     text-shadow: 0px 0px #00000000;
 }
@@ -181,11 +172,12 @@ hr {
 #list-container {
     width: 100%;
     display: none;
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: left;
     align-items: left;
     justify-content: flex-end; 
     padding-top: 3%;
+    padding-bottom: 16px;
 }
 
 .list-item {
