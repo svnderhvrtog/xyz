@@ -12,6 +12,7 @@ const listIcon = document.getElementById('list');
 const homeContainer = document.getElementById('home-container');
 const chatContainer = document.getElementById('chat-container');
 const listContainer = document.getElementById('list-container');
+const chatWindow = document.getElementById('chat-window');
 
 homeIcon.addEventListener('click', () => {
     homeIcon.style.color = '#B30003';
@@ -20,6 +21,7 @@ homeIcon.addEventListener('click', () => {
     homeContainer.style.display = 'flex';
     chatContainer.style.display = 'none';
     listContainer.style.display = 'none';
+    chatWindow.style.display = 'none';
 });
 
 chatIcon.addEventListener('click', () => {
@@ -29,6 +31,7 @@ chatIcon.addEventListener('click', () => {
     homeContainer.style.display = 'none';
     chatContainer.style.display = 'flex';
     listContainer.style.display = 'none';
+    chatWindow.style.display = 'none';
     chatMessage = false;
     chatIcon.innerText = 'chat';
 });
@@ -40,6 +43,7 @@ listIcon.addEventListener('click', () => {
     homeContainer.style.display = 'none';
     chatContainer.style.display = 'none';
     listContainer.style.display = 'flex';
+    chatWindow.style.display = 'none';
 });
 
 // API
@@ -119,6 +123,11 @@ likeButton.addEventListener('click', () => {
 });
 
 // Chat
+const backButton = document.getElementById('back-button');
+const userInput = document.getElementById('user-input');
+const sendButton = document.getElementById('send-button');
+const chatFrame = document.getElementById('chat-frame');
+const isTyping = document.getElementById('is-typing-text');
 let chatData = JSON.parse(localStorage.getItem('chat')) || [];
 let randomNumber = 0;
 let usedNumbers = [];
@@ -239,6 +248,79 @@ function textGenerate() {
 
 function loadChatFromLocalStorage() {
     chatData.forEach(item => renderChatItem(item));
+};
+
+chatContainer.addEventListener('click', () => {
+    homeContainer.style.display = 'none';
+    chatContainer.style.display = 'none';
+    listContainer.style.display = 'none';
+    chatWindow.style.display = 'block';
+    catReplyFunc();
+});
+
+backButton.addEventListener('click', () => {
+    homeContainer.style.display = 'none';
+    chatContainer.style.display = 'flex';
+    listContainer.style.display = 'none';
+    chatWindow.style.display = 'none';
+});
+
+sendButton.addEventListener('click', () => {
+    const chatUserMessage = document.createElement('div');
+    chatUserMessage.classList.add('user-message');
+    const chatUserText = document.createTextNode(userInput.value);
+    chatUserMessage.appendChild(chatUserText);
+    chatFrame.appendChild(chatUserMessage);
+    userInput.value = '';
+    scrollToBottom();
+    catReplyFunc();
+});
+
+function catReplyFunc() {
+    isTyping.style.visibility = 'visible';
+    setTimeout(() => {
+        const chatCatMessage = document.createElement('div');
+        chatCatMessage.classList.add('cat-message');
+        const chatCatText = document.createTextNode(catReplies());
+        chatCatMessage.appendChild(chatCatText);
+        chatFrame.appendChild(chatCatMessage);
+        isTyping.style.visibility = 'hidden';
+        scrollToBottom();
+    }, 2000);
+};
+
+function catReplies() {
+    if(usedNumbers.length >= 8){
+        usedNumbers = [];
+    };
+    randomNumberFunc();
+    while (usedNumbers.includes(randomNumber)) {
+        randomNumberFunc();
+    };
+    usedNumbers.push(randomNumber);
+    switch(randomNumber){
+        case 1:
+            return `Meowtastic`
+        case 2:
+            return `Myaa`
+        case 3:
+            return `Mee-ow`
+        case 4:
+            return `Zzz...`
+        case 5:
+            return `Mrrrr`
+        case 6:
+            return `Purr`
+        case 7:
+            return `Meeowwwww`
+        case 8:
+            return `Nyow`
+    };
+};
+
+function scrollToBottom() {
+    const chatFrame = document.getElementById('chat-frame');
+    chatFrame.scrollTop = chatFrame.scrollHeight;
 };
 
 // List
