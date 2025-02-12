@@ -81,43 +81,65 @@ const welcomeImage = document.getElementById('welcome-image');
 const headerUserName = document.getElementById('header-username');
 const headerProfileImage = document.getElementById('header-profile');
 const inputDiv = document.getElementById('input-div');
-const submit = document.getElementById('submit').addEventListener('click', () => {
-    if(userNameInput.value === ''){
+
+document.getElementById('submit').addEventListener('click', async () => {
+    const username = document.getElementById('username').value.trim();
+    let profileImage = "";
+    const selectedProfileImage = document.querySelector('.profile-setupimg.selected');
+    if (selectedProfileImage) {
+        profileImage = selectedProfileImage.src.replace("-active", "");
+    }
+    const credits = 50;
+    if (!username) {
         errorMessage('Please enter a username');
-        return
-    } else if (userNameInput.value.length > 8){
+        return;
+    }
+    if (username.length > 8) {
         errorMessage('Your username cannot be more than 8 characters');
-        return
+        return;
     }
-    if(profilePictureSelected === true){
-        mainSection.style.display = "grid";
-        signUpSection.style.display = "none";
-    } else {
+    if (!profileImage) {
         errorMessage('Please choose a profile picture');
-        return
+        return;
     }
-    if (profilePicture1.src.includes("profile1-active.jpg")){
-        localStorage.setItem('userPicture', "../images/casino/profile/profile1.jpg")
-    } else if(profilePicture2.src.includes("profile2-active.jpg")){
-        localStorage.setItem('userPicture', "../images/casino/profile/profile2.jpg")
-    } else if(profilePicture3.src.includes("profile3-active.jpg")){
-        localStorage.setItem('userPicture', "../images/casino/profile/profile3.jpg")
-    } else if(profilePicture4.src.includes("profile4-active.jpg")){
-        localStorage.setItem('userPicture', "../images/casino/profile/profile4.jpg")
-    }
-    introAudio.play();
-    localStorage.setItem('userName', userNameInput.value);
-    localStorage.setItem('credits', credits);
-    welcomeText.textContent = `Welcome ${localStorage.getItem('userName')}!`;
-    welcomeImage.src = localStorage.getItem('userPicture');
-    headerUserName.textContent = localStorage.getItem('userName');
-    headerProfileImage.src = localStorage.getItem('userPicture');
-    mainSection.style.display = "none";
-    welcomeScreen.style.display = "flex";
-    setTimeout(() => {
-        welcomeScreen.style.display = "none";
+    try {
+        const response = await fetch("php/add_user.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `username=${encodeURIComponent(username)}&profile_picture=${encodeURIComponent(profileImage)}&credits=${credits}`,
+        });
+        const result = await response.text();
+        console.log("add_user.php response:", result);
+        if (!result.includes("succes")) {
+            errorMessage("Fout bij opslaan gebruiker.");
+            return;
+        }
+        localStorage.setItem('userName', username);
+        localStorage.setItem('userPicture', profileImage);
+        localStorage.setItem('credits', credits);
+        await loadLeaderboard();
+        welcomeText.textContent = `Welcome ${username}!`;
+        welcomeImage.src = profileImage;
+        headerUserName.textContent = username;
+        headerProfileImage.src = profileImage;
+        signUpSection.style.display = "none";
         mainSection.style.display = "grid";
-    }, animationDurationLong)
+        welcomeScreen.style.display = "flex";
+        setTimeout(() => {
+            welcomeScreen.style.display = "none";
+            mainSection.style.display = "grid";
+        }, animationDurationLong);
+    } catch (error) {
+        console.error("Fout bij opslaan gebruiker:", error);
+    }
+});
+
+// Profile picture set-up
+document.querySelectorAll('.profile-setupimg').forEach((img) => {
+    img.addEventListener('click', () => {
+        document.querySelectorAll('.profile-setupimg').forEach((img) => img.classList.remove('selected'));
+        img.classList.add('selected');
+    });
 });
 
 function errorMessage(text) {
@@ -332,3 +354,51 @@ function creditsAccumulated() {
         creditsText.textContent = `Total credits: ${credits} CR`;
     }, animationDurationShort)
 };        
+
+// Leaderboard function
+document.addEventListener("DOMContentLoaded", loadLeaderboard);
+async function loadLeaderboard() {
+    try {
+        const response = await fetch('/php/get_leaderboard.php');
+        const data = await response.json(); 
+        const leaderboardContainer = document.querySelector('.leaderboard-container');
+        leaderboardContainer.innerHTML = '';
+        const medals = ['🥇', '🥈', '🥉'];
+        data.forEach((player, index) => {
+            const playerDiv = document.createElement('div');
+            playerDiv.classList.add('leaderboard-player');
+            playerDiv.innerHTML = `
+                <img src="${player.profile_image}" width="70" height="70" draggable="false">
+                <div class="leaderboard-text">
+                    <h4>${player.name} ${medals[index]}</h4>
+                    <h5 class="leaderboard-h5">${player.credits} CR</h5>
+                </div>
+            `;
+            leaderboardContainer.appendChild(playerDiv);
+        });
+    } catch (error) {
+        console.error("Fout bij het laden van de leaderboard:", error);
+    }
+};
+setInterval(loadLeaderboard, 5000);
+
+// Update credits in leaderboard
+async function updateCredits(newCredits) {
+    const username = localStorage.getItem('userName');
+    if (!username) return;
+    try {
+        const response = await fetch('/php/update_leaderboard.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `name=${encodeURIComponent(username)}&profile_image=${encodeURIComponent(localStorage.getItem('userPicture'))}&credits=${newCredits}`
+        });
+        const result = await response.text();
+        console.log("Update response:", result);
+        if (result.includes("bijgewerkt")) {
+            localStorage.setItem('credits', newCredits);
+            loadLeaderboard();
+        }
+    } catch (error) {
+        console.error('Fout bij updaten credits:', error);
+    }
+};

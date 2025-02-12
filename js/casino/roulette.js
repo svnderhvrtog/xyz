@@ -28,6 +28,7 @@ confirmButtonRoulette.addEventListener('click', () => {
         }, animationDurationShort);
     };
     localStorage.credits = credits;
+    updateCredits(credits);
 });
 
 function rouletteDisabled() {
@@ -120,6 +121,7 @@ function startRouletteGame() {
             };
         }, 3000);
         localStorage.credits = credits;
+        updateCredits(credits);
     };
 
     function handleColorChoice(validNumbers) {
@@ -147,6 +149,7 @@ function startRouletteGame() {
             }
         }, 3000);
         localStorage.credits = credits;
+        updateCredits(credits);
     };
 };
 

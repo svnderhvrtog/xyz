@@ -16,6 +16,7 @@ confirmButtonRPS.addEventListener('click', () => {
         startRPSGame();
     }, animationDurationShort);
     localStorage.credits = credits;
+    updateCredits(credits);
     }
 );
 
@@ -129,6 +130,7 @@ function resultRPSFunc() {
                 messageElRPS.textContent = "You lost!";
             };
             localStorage.credits = credits;
+            updateCredits(credits);
             restartRPS.style.display = "block";
         } else if(randomSuit === 2) {
             cpuSuitImg.src = '../icons/casino/paper-icon.png';
@@ -147,6 +149,7 @@ function resultRPSFunc() {
                 creditsAccumulated();
             };
             localStorage.credits = credits;
+            updateCredits(credits);
             restartRPS.style.display = "block";
         } else if(randomSuit === 3) {
             cpuSuitImg.src = '../icons/casino/scissors-icon.png';
@@ -165,6 +168,7 @@ function resultRPSFunc() {
                 creditsAccumulated();
             };
             localStorage.credits = credits;
+            updateCredits(credits);
             restartRPS.style.display = "block";
         };
     }, 3400);

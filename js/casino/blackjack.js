@@ -28,6 +28,7 @@ confirmButtonBlack.addEventListener('click', () => {
         }, animationDurationShort);
     };
     localStorage.credits = credits;
+    updateCredits(credits);
 });
 
 function blackDisabled() {
@@ -130,6 +131,8 @@ function renderBlack(){
     };
     messageElBlack.textContent = messageBlack;
     localStorage.credits = credits;
+    updateCredits(credits);
+
 };
 
 function drawThirdCard() { 
@@ -221,6 +224,7 @@ function keepHandFunc() {
         };
         messageElBlack.textContent = messageBlack;
         localStorage.credits = credits;
+        updateCredits(credits);
 };
 
 function restartBlackFunc(){

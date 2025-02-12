@@ -16,6 +16,7 @@ confirmButtonSlots.addEventListener('click', () => {
         startSlotsGame();
     }, animationDurationShort)
     localStorage.credits = credits;
+    updateCredits(credits);
 });
 
 // Slots game
@@ -199,6 +200,7 @@ function renderSlots() {
         gameOnGoing = false;
     };
     localStorage.credits = credits;
+    updateCredits(credits);
 };
 
 function restartSlotsFunc() {

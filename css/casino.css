@@ -209,6 +209,9 @@ input[type="radio"]:disabled {
 }
 
 .leaderboard-text {
+    min-width: 92px;
+    max-width: 92px;
+    justify-content: center;
     margin-top: -8px;
 }
 
