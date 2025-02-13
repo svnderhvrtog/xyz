@@ -125,6 +125,7 @@ document.getElementById('submit').addEventListener('click', async () => {
         signUpSection.style.display = "none";
         mainSection.style.display = "grid";
         welcomeScreen.style.display = "flex";
+        introAudio.play();
         setTimeout(() => {
             welcomeScreen.style.display = "none";
             mainSection.style.display = "grid";
