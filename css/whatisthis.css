@@ -1,18 +1,20 @@
+/* Pre-settings */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*::selection {
+  color: #d0cca5;
+}
+
+/* Text etc */
 body {
   font-family: helvetica, arial, sans-serif;
   color: #FEFDE6;
   background-color: #0F2113;
   padding: 24px;
-}
-
-.background {
-  background-image: url('../images/whatisthis/forestbackground.png');
-  background-position: center;
-}
-
-#demos {
-  display: flex;
-  justify-content: space-evenly;
 }
   
 h1 {
@@ -33,6 +35,10 @@ p {
   padding-top: 4px;
 }
 
+i {
+  margin-top: 4px ;
+}
+
 button {
   font-size: 12px;
   font-weight: 800;
@@ -43,47 +49,33 @@ button {
   border: 2px solid #FEFDE6;
 }
 
-.information {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding-inline: 24px;
-  padding-block-start: 48px;
-  padding-block-end: 0px;
+button:hover {
+  background-color: #ffffff30;
 }
 
-.material-icons {
-  padding-top: 16px;
+img {
+  width: 124px;
+  height: auto;
 }
-  
-video {
-  display: block;
+
+/* Background */
+.background {
+  background-image: url('../images/whatisthis/forestbackground.png');
+  background-position: center;
 }
-  
-section {
-  opacity: 1;
-  transition: opacity 500ms ease-in-out;
-}
-  
-.removed {
-  display: none;
-}
-  
-.invisible {
-  opacity: 0.2;
-}
-  
+
+/* Application */
 .camView {
   position: relative;
   float: left;
-  width: calc(100% - 220px);
   margin: 10px;
   border: 2px solid #FEFDE6;
-  width: 640px;
-  height: 480px;
+  width: 644px;
+  height: 484px;
 }
   
 .camView p {
+  display: block;
   position: absolute;
   padding: 5px;
   background-color: #FEFDE6;
@@ -92,29 +84,30 @@ section {
   z-index: 2;
   font-size: 12px;
 }
-  
+
 .highlighter {
+  display: block;
   background: #6d6d6d40;
   border: 1px solid #FEFDE6;
   z-index: 1;
   position: absolute;
 }
 
-#person {
-  display: none;
+#demos {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  justify-content: space-evenly;
 }
 
-img {
-  width: 124px;
-  height: auto;
-}
-
-.objectives-fullcontainer {
-  padding-inline: 104px;
-}
-
-.camera-fullcontainer {
-  margin-top: 20px;
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 24px;
+  padding-block-start: 48px;
+  padding-block-end: 0px;
 }
 
 .flex-objective-container {
@@ -127,4 +120,113 @@ img {
   display: flex;
   flex-direction: row;
   gap: 16px;
+}
+
+video {
+  display: block;
+}
+ 
+section {
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
+}
+  
+.removed {
+  display: none;
+}
+  
+.invisible {
+  opacity: 0.2;
+}
+
+#webcamButton {
+  cursor: pointer;
+}
+
+.objectives-fullcontainer {
+  padding-inline: 44px;
+}
+
+.camera-fullcontainer {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .camView {
+    width: 300px;
+    height: 400px;
+  }
+
+  #camera {
+    width: 0px;
+    height: 0px;
+  }
+
+  #cameraButton {
+    display: none;
+  }
+
+  #cameraButtonMobile {
+    display: block;
+  }
+
+  .camView p {
+    display: none;
+  }
+
+  .highlighter {
+    display: none;
+  }
+
+  img {
+    width: 94px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .camView {
+    width: 644px;
+    height: 484px;
+  }
+
+  #camera {
+    width: 640px;
+    height: 480px;
+  }
+
+  #cameraButton {
+    display: block;
+  }
+
+  #cameraButtonMobile {
+    display: none;
+  }
+
+  .camView p {
+    display: block;
+  }
+
+  .highlighter {
+    display: block;
+  }
+
+  img {
+    width: 124px;
+    height: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .objectives-fullcontainer {
+    padding-inline: 10px;
+  }
+
+  #demos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column-reverse;
+  }
 }
