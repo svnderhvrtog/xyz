@@ -1,234 +1,232 @@
 <!DOCTYPE html>
 <html lang="en" translate="no">
-
-<head> 
-    <title>Sander Hartog - Weather JP XYZ</title>
-    <meta charset="utf-8">
-    <meta name="description" content="Stay updated with Japan's latest weather conditions! Weather JP got you covered, by Sander Hartog (XYZ).">
-    <meta name="keywords" content="Front-end, Developer, Sander, Hartog, Portfolio, XYZ, Workspace">
-    <meta name="author" content="Sander Hartog">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Sander Hartog - Weather JP XYZ"/>
-    <meta property="og:description" content="Stay updated with Japan's latest weather conditions! Weather JP got you covered, by Sander Hartog (XYZ).">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
-    <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
-    <link rel="manifest" href="../json/manifest.webmanifest">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/weatherjp.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
-</head>
-
-<body class="background">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-BB063KRF2M');
-    </script>
-    <main>
-        <section class="total-container">
-            <h1>WEATHER JP</h1>
-            <section class="container-sort">
-                <h3>Sort on:</h3>
-                <div class="item-sort" id="sort-standard">
-                    <img src="../icons/weatherjp/rectangle-filled.png" id="icon-standard" alt="rectangle icon" draggable="false" width="11" height="11" loading="eager">
-                    <h3>Standard</h3>
-                </div>
-                <div class="item-sort" id="sort-geography">
-                    <img src="../icons/weatherjp/rectangle-stroke.png" id="icon-geography" alt="rectangle icon" draggable="false" width="11" height="11" loading="eager">
-                    <h3>Geography</h3>
-                </div>
-                <div class="item-sort" id="sort-popularity">
-                    <img src="../icons/weatherjp/rectangle-stroke.png" id="icon-popularity" alt="rectangle icon" draggable="false" width="11" height="11" loading="eager">
-                    <h3>Popularity</h3>
-                </div>
+    <head> 
+        <title>Sander Hartog - Weather JP XYZ</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Stay updated with Japan's latest weather conditions! Weather JP got you covered, by Sander Hartog (XYZ).">
+        <meta name="keywords" content="Sander, Hartog, Portfolio, XYZ, Weather, Japan">
+        <meta name="author" content="Sander Hartog">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Sander Hartog - Weather JP XYZ"/>
+        <meta property="og:description" content="Stay updated with Japan's latest weather conditions! Weather JP got you covered, by Sander Hartog (XYZ).">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
+        <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
+        <link rel="manifest" href="../json/manifest.webmanifest">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/weatherjp.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body class="background">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BB063KRF2M');
+        </script>
+        <main>
+            <section class="total-container">
+                <h1>WEATHER JP</h1>
+                <section class="container-sort">
+                    <h3>Sort on:</h3>
+                    <div class="item-sort" id="sort-standard">
+                        <img src="../icons/weatherjp/rectangle-filled.png" id="icon-standard" alt="rectangle icon" draggable="false" width="11" height="11" loading="eager">
+                        <h3>Standard</h3>
+                    </div>
+                    <div class="item-sort" id="sort-geography">
+                        <img src="../icons/weatherjp/rectangle-stroke.png" id="icon-geography" alt="rectangle icon" draggable="false" width="11" height="11" loading="eager">
+                        <h3>Geography</h3>
+                    </div>
+                    <div class="item-sort" id="sort-popularity">
+                        <img src="../icons/weatherjp/rectangle-stroke.png" id="icon-popularity" alt="rectangle icon" draggable="false" width="11" height="11" loading="eager">
+                        <h3>Popularity</h3>
+                    </div>
+                </section>
+                <section class="container-items">
+                    <div class="container-item">
+                        <img src="../images/weatherjp/morioka.png" class="city-img" alt="streetview of morioka in japan with pink blossom trees" draggable="false" loading="eager">
+                        <h2>Morioka</h2>
+                        <div class="conditions">
+                            <div class="condition">
+                                <img src="../icons/weatherjp/clear_day.png" id="morioka-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager"> 
+                                <p class="condition-text" id="morioka-weather-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="morioka-temperature-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="morioka-precipitation-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text condition-time">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <img src="../images/weatherjp/okayama.png" class="city-img" alt="men in boat in okayama japan" draggable="false" loading="eager">
+                        <h2>Okayama</h2>
+                        <div class="conditions">
+                            <div class="condition">
+                                <img src="../icons/weatherjp/clear_day.png" id="okayama-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="okayama-weather-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="okayama-temperature-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="okayama-precipitation-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text condition-time">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <img src="../images/weatherjp/tokyo.png" class="city-img" alt="busy street in tokyo japan with bright lights" draggable="false" loading="eager">
+                        <h2>Tokyo</h2>
+                        <div class="conditions">
+                            <div class="condition">
+                                <img src="../icons/weatherjp/clear_day.png" id="tokyo-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="tokyo-weather-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="tokyo-temperature-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="tokyo-precipitation-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text condition-time">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <img src="../images/weatherjp/sapporo.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
+                        <h2>Sapporo</h2>
+                        <div class="conditions">
+                            <div class="condition">
+                                <img src="../icons/weatherjp/clear_day.png" id="sapporo-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="sapporo-weather-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="sapporo-temperature-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="sapporo-precipitation-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text condition-time">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <img src="../images/weatherjp/miyazaki.png" class="city-img" alt="horse on field in miyazaki japan" draggable="false" loading="eager">
+                        <h2>Miyazaki</h2>
+                        <div class="conditions">
+                            <div class="condition">
+                                <img src="../icons/weatherjp/clear_day.png" id="miyazaki-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="miyazaki-weather-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="miyazaki-temperature-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="miyazaki-precipitation-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text condition-time">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <img src="../images/weatherjp/osaka.png" class="city-img" alt="streetview of osaka in japan" draggable="false" loading="eager">
+                        <h2>Osaka</h2>
+                        <div class="conditions">
+                            <div class="condition">
+                                <img src="../icons/weatherjp/clear_day.png" id="osaka-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="osaka-weather-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="osaka-temperature-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="osaka-precipitation-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text condition-time">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <img src="../images/weatherjp/kumamoto.png" class="city-img" alt="empty street in kumamoto japan" draggable="false" loading="eager">
+                        <h2>Kumamoto</h2>
+                        <div class="conditions">
+                            <div class="condition">
+                                <img src="../icons/weatherjp/clear_day.png" id="kumamoto-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="kumamoto-weather-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="kumamoto-temperature-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="kumamoto-precipitation-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text condition-time">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <img src="../images/weatherjp/niigata.png" class="city-img" alt="streetview of niigata in japan" draggable="false" loading="eager">
+                        <h2>Niigata</h2>
+                        <div class="conditions">
+                            <div class="condition">
+                                <img src="../icons/weatherjp/clear_day.png" id="niigata-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text"  id="niigata-weather-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="niigata-temperature-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text" id="niigata-precipitation-text">Loading...</p>
+                            </div>
+                            <div class="condition">
+                                <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
+                                <p class="condition-text condition-time">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
-            <section class="container-items">
-                <div class="container-item">
-                    <img src="../images/weatherjp/morioka.png" class="city-img" alt="streetview of morioka in japan with pink blossom trees" draggable="false" loading="eager">
-                    <h2>Morioka</h2>
-                    <div class="conditions">
-                        <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" id="morioka-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager"> 
-                            <p class="condition-text" id="morioka-weather-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="morioka-temperature-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="morioka-precipitation-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text condition-time">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-item">
-                    <img src="../images/weatherjp/okayama.png" class="city-img" alt="men in boat in okayama japan" draggable="false" loading="eager">
-                    <h2>Okayama</h2>
-                    <div class="conditions">
-                        <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" id="okayama-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="okayama-weather-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="okayama-temperature-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="okayama-precipitation-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text condition-time">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-item">
-                    <img src="../images/weatherjp/tokyo.png" class="city-img" alt="busy street in tokyo japan with bright lights" draggable="false" loading="eager">
-                    <h2>Tokyo</h2>
-                    <div class="conditions">
-                        <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" id="tokyo-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="tokyo-weather-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="tokyo-temperature-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="tokyo-precipitation-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text condition-time">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-item">
-                    <img src="../images/weatherjp/sapporo.png" class="city-img" alt="streetview of sapporo in japan" draggable="false" loading="eager">
-                    <h2>Sapporo</h2>
-                    <div class="conditions">
-                        <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" id="sapporo-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="sapporo-weather-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="sapporo-temperature-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="sapporo-precipitation-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text condition-time">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-item">
-                    <img src="../images/weatherjp/miyazaki.png" class="city-img" alt="horse on field in miyazaki japan" draggable="false" loading="eager">
-                    <h2>Miyazaki</h2>
-                    <div class="conditions">
-                        <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" id="miyazaki-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="miyazaki-weather-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="miyazaki-temperature-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="miyazaki-precipitation-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text condition-time">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-item">
-                    <img src="../images/weatherjp/osaka.png" class="city-img" alt="streetview of osaka in japan" draggable="false" loading="eager">
-                    <h2>Osaka</h2>
-                    <div class="conditions">
-                        <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" id="osaka-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="osaka-weather-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="osaka-temperature-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="osaka-precipitation-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text condition-time">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-item">
-                    <img src="../images/weatherjp/kumamoto.png" class="city-img" alt="empty street in kumamoto japan" draggable="false" loading="eager">
-                    <h2>Kumamoto</h2>
-                    <div class="conditions">
-                        <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" id="kumamoto-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="kumamoto-weather-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="kumamoto-temperature-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="kumamoto-precipitation-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text condition-time">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-item">
-                    <img src="../images/weatherjp/niigata.png" class="city-img" alt="streetview of niigata in japan" draggable="false" loading="eager">
-                    <h2>Niigata</h2>
-                    <div class="conditions">
-                        <div class="condition">
-                            <img src="../icons/weatherjp/clear_day.png" id="niigata-weather-icon" alt="weather icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text"  id="niigata-weather-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/thermostat.png" alt="thermostat icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="niigata-temperature-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/rainy_light.png" alt="rainy drizzle icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text" id="niigata-precipitation-text">Loading...</p>
-                        </div>
-                        <div class="condition">
-                            <img src="../icons/weatherjp/schedule.png" alt="scedule clock icon" draggable="false" width="13" height="13" loading="eager">
-                            <p class="condition-text condition-time">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </main>
-    <script src="../js/weatherjp.js"></script>
-</body>
+        </main>
+        <script src="../js/weatherjp.js"></script>
+    </body>
 </html>

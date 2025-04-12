@@ -1,71 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" translate="no">
-
-<head>
-    <title>Sander Hartog - TinCats XYZ</title>
-    <meta charset="utf-8">
-    <meta name="description" content="TinCats is the purr-fect (Tinder) app for cat lovers! Like or pass, and let the feline matchmaking begin. Find your furrever friend, by Sander Hartog (XYZ).">
-    <meta name="keywords" content="Front-end, Developer, Sander, Hartog, XYZ, TinCats">
-    <meta name="author" content="Sander Hartog">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Sander Hartog - TinCats XYZ"/>
-    <meta property="og:description" content="TinCats is the purr-fect (Tinder) app for cat lovers! Like or pass, and let the feline matchmaking begin. Find your furrever friend, by Sander Hartog (XYZ).">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
-    <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
-    <link rel="manifest" href="../json/manifest.webmanifest">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/tincats.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-BB063KRF2M');
-    </script>
-    <header>
-        <i class="material-icons material-symbols-outlined" id="home">local_fire_department</i>
-        <h1>TinCats</h1>
-        <div class="flex-icons">
-            <i class="material-icons material-symbols-outlined" id="chat">chat</i>
-            <i class="material-icons material-symbols-outlined" id="list">list_alt</i>
-        </div>
-    </header>
-    <main>
-        <section id="home-container">
-                <div class="swipe-text">
-                    <h2 id="swipe-catname">Name is loading...</h2>
-                    <p id="swipe-description">Description is loading...</p>
-                </div>
-                <div class="like-dislike-container">
-                    <img src="../images/tincats/cross.png" id="dislike-button" class="like-dislike-img" draggable="false">
-                    <img src="../images/tincats/heart.png" id="like-button" class="like-dislike-img" draggable="false">
-                </div>
-        </section>
-        <section id="chat-container"></section>
-        <section id="chat-window">
-            <div class="chat-header">
-                <p class="chat-text" id="back-button">< Back</p>
-                <h3 class="chat-text">CatChat</h3>
+    <head>
+        <title>Sander Hartog - TinCats XYZ</title>
+        <meta charset="utf-8">
+        <meta name="description" content="TinCats is the purr-fect (Tinder) app for cat lovers! Like or pass, and let the feline matchmaking begin. Find your furrever friend, by Sander Hartog (XYZ).">
+        <meta name="keywords" content="Sander, Hartog, XYZ, TinCats">
+        <meta name="author" content="Sander Hartog">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Sander Hartog - TinCats XYZ"/>
+        <meta property="og:description" content="TinCats is the purr-fect (Tinder) app for cat lovers! Like or pass, and let the feline matchmaking begin. Find your furrever friend, by Sander Hartog (XYZ).">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
+        <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
+        <link rel="manifest" href="../json/manifest.webmanifest">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/tincats.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BB063KRF2M');
+        </script>
+        <header>
+            <i class="material-icons material-symbols-outlined" id="home">local_fire_department</i>
+            <h1>TinCats</h1>
+            <div class="flex-icons">
+                <i class="material-icons material-symbols-outlined" id="chat">chat</i>
+                <i class="material-icons material-symbols-outlined" id="list">list_alt</i>
             </div>
-            <div id="chat-frame"></div>
-            <p id="is-typing-text">Furry friend is typing...</p>
-            <div class="chat-input-container">
-                <input id="user-input">
-                <button id="send-button"><i class="material-icons material-symbols-outlined">send</i></button>
-            </div>
-        </section>
-        <section id="list-container"></section>
-    </main>
-    <script src="../js/tincats.js"></script>
-</body>
+        </header>
+        <main>
+            <section id="home-container">
+                    <div class="swipe-text">
+                        <h2 id="swipe-catname">Name is loading...</h2>
+                        <p id="swipe-description">Description is loading...</p>
+                    </div>
+                    <div class="like-dislike-container">
+                        <img src="../images/tincats/cross.png" id="dislike-button" class="like-dislike-img" draggable="false">
+                        <img src="../images/tincats/heart.png" id="like-button" class="like-dislike-img" draggable="false">
+                    </div>
+            </section>
+            <section id="chat-container"></section>
+            <section id="chat-window">
+                <div class="chat-header">
+                    <p class="chat-text" id="back-button">< Back</p>
+                    <h3 class="chat-text">CatChat</h3>
+                </div>
+                <div id="chat-frame"></div>
+                <p id="is-typing-text">Furry friend is typing...</p>
+                <div class="chat-input-container">
+                    <input id="user-input">
+                    <button id="send-button"><i class="material-icons material-symbols-outlined">send</i></button>
+                </div>
+            </section>
+            <section id="list-container"></section>
+        </main>
+        <script src="../js/tincats.js"></script>
+    </body>
 </html>

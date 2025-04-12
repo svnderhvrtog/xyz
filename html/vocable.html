@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" translate="no">
-
-<head>
-	<title>Sander Hartog - Vocable XYZ</title>
-	<meta charset="utf-8">
-	<meta name="description" content="Make words fun with Vocable! Turn them into emojis, reverse them, whisper gently, or panic wildly, by Sander Hartog (XYZ).">
-	<meta name="keywords" content="Front-end, Developer, Sander, Hartog, Vocable, XYZ, Words, Emojis">
-	<meta name="author" content="Sander Hartog">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Sander Hartog - Vocable XYZ"/>
-    <meta property="og:description" content="Make words fun with Vocable! Turn them into emojis, reverse them, whisper gently, or panic wildly, by Sander Hartog (XYZ).">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
-    <link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
-    <link rel="manifest" href="../json/manifest.webmanifest">
-	<link rel="stylesheet" href="../css/normalize.css">
-	<link rel="stylesheet" href="../css/vocable.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Unbounded:wght@200..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cursed-timer-ulil">
-</head>
-
-<body>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-BB063KRF2M');
-    </script>
-    <main class="container">
-        <h1 hidden>Make words fun with Vocable! Turn them into emojis, reverse them, whisper gently, or panic wildly, by Sander Hartog (XYZ).</h1>
-		<input id="input-field" type="text" placeholder="Type something..." value="">
-		<div class="frame-flex">
-			<img src="../images/vocable/text-frame1.png" class="text-frame" id="panic-btn" draggable="false" alt="text frame with the text 'panic'">
-			<img src="../images/vocable/text-frame2.png" class="text-frame" id="whisper-btn" draggable="false" alt="text frame with the text 'whisper'">
-			<img src="../images/vocable/text-frame3.png" class="text-frame" id="capslock-btn" draggable="false" alt="text frame with the text 'capslock?'"> 
-		</div>
-		<div class="frame-flex">
-			<img src="../images/vocable/text-frame4.png" class="text-frame" id="reverse-btn" draggable="false" alt="text frame with the text 'reverse'">
-			<img src="../images/vocable/text-frame5.png" class="text-frame" id="capital-btn" draggable="false" alt="text frame with the text 'capital words'">
-			<img src="../images/vocable/text-frame6.png" class="text-frame" id="emojify-btn" draggable="false" alt="text frame with the text 'emojify'">
-		</div>
-		<div class="frame-flex last-frame">
-			<img src="../images/vocable/text-frame7.png" class="text-frame" id="palindrome-btn" draggable="false" alt="text frame with the text 'palindrome?'">
-			<img src="../images/vocable/text-frame8.png" class="text-frame" id="no-duplicates-btn" draggable="false" alt="text frame with the text 'no duplicates'">
-		</div>
-	</main>
-    <script src="../js/vocable.js"></script>
-</body>
+	<head>
+		<title>Sander Hartog - Vocable XYZ</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Make words fun with Vocable! Turn them into emojis, reverse them, whisper gently, or panic wildly, by Sander Hartog (XYZ).">
+		<meta name="keywords" content="Sander, Hartog, Vocable, XYZ, Words, Emojis">
+		<meta name="author" content="Sander Hartog">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:title" content="Sander Hartog - Vocable XYZ"/>
+		<meta property="og:description" content="Make words fun with Vocable! Turn them into emojis, reverse them, whisper gently, or panic wildly, by Sander Hartog (XYZ).">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../icons/main/sanderhartog_featured.jpg">
+		<link rel="icon" href="../icons/main/favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="../icons/main/icon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="../icons/main/apple-touch-icon.png">
+		<link rel="manifest" href="../json/manifest.webmanifest">
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../css/vocable.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Unbounded:wght@200..900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cursed-timer-ulil">
+	</head>
+	<body>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-BB063KRF2M"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-BB063KRF2M');
+		</script>
+		<main class="container">
+			<h1 hidden>Make words fun with Vocable! Turn them into emojis, reverse them, whisper gently, or panic wildly, by Sander Hartog (XYZ).</h1>
+			<input id="input-field" type="text" placeholder="Type something..." value="">
+			<div class="frame-flex">
+				<img src="../images/vocable/text-frame1.png" class="text-frame" id="panic-btn" draggable="false" alt="text frame with the text 'panic'">
+				<img src="../images/vocable/text-frame2.png" class="text-frame" id="whisper-btn" draggable="false" alt="text frame with the text 'whisper'">
+				<img src="../images/vocable/text-frame3.png" class="text-frame" id="capslock-btn" draggable="false" alt="text frame with the text 'capslock?'"> 
+			</div>
+			<div class="frame-flex">
+				<img src="../images/vocable/text-frame4.png" class="text-frame" id="reverse-btn" draggable="false" alt="text frame with the text 'reverse'">
+				<img src="../images/vocable/text-frame5.png" class="text-frame" id="capital-btn" draggable="false" alt="text frame with the text 'capital words'">
+				<img src="../images/vocable/text-frame6.png" class="text-frame" id="emojify-btn" draggable="false" alt="text frame with the text 'emojify'">
+			</div>
+			<div class="frame-flex last-frame">
+				<img src="../images/vocable/text-frame7.png" class="text-frame" id="palindrome-btn" draggable="false" alt="text frame with the text 'palindrome?'">
+				<img src="../images/vocable/text-frame8.png" class="text-frame" id="no-duplicates-btn" draggable="false" alt="text frame with the text 'no duplicates'">
+			</div>
+		</main>
+		<script src="../js/vocable.js"></script>
+	</body>
 </html>
